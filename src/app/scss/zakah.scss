@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=El+Messiri');
+.zakah-body{
+    background-color: #f5f5f5;
+    /* font-family: 'El Messiri', sans-serif; */
+    color: #000;
+}
+
+.zakah-box{
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    margin: 30px 0;
+   
+}
+.box-line{
+ height:1px;
+ width: 100%;
+ background-color: #ddd;
+ margin-bottom: 5px;
+}
+.zakah-title{
+    color: #f16e00;;
+    font-weight: bold;
+    padding:5px 0;
+    font-size: 16px;
+}
+.input-title{
+    color: #f16e00;;
+    font-weight: bold;
+    padding:15px ;
+    padding-bottom: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+}
+.input-field{
+    border: none;
+    outline: none;
+    border-bottom: solid 1px #dddddd;
+    width: 100%;
+
+}
+.zkah-result{
+    padding:15px 25px;
+    width: 100%;
+ 
+}
+.result-line{
+    margin: 10px 2px;
+}
+.result{
+    color: #f16e00;;
+    float: left;
+    font-weight: bold;
+ 
+}
+.box-input, .box-unit{
+    /* background-color: #fff; */
+    padding: 30px 15px;
+  z-index: 0;
+  padding-top: 15px;
+  
+ 
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+.box-unit{
+    padding-top: 20px;
+    color: #f16e00;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+.zakah-row{
+    display: grid;
+}
