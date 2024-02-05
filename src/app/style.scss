@@ -6,7 +6,7 @@
 @import 'scss/playerskin' ; 
 // @import 'scss/vendor' ; 
 @import 'scss/zakah' ; 
-
-.red{
-    color: red !important;
+@import 'scss/sbha' ; 
+*{
+    direction: rtl;
 }
