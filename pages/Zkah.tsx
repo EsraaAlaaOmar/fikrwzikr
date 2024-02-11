@@ -1,26 +1,13 @@
 import React, { useState } from 'react'
 
 const Zkah = () => {
-    function mal(val:any) {
-        
-        document.getElementById('output-mall').innerHTML= Math.ceil(val*.025)  +'.00 ج.م'
-        console.log(val * .025)
-         // add new  inputs at any change 
-       var akarat1 = parseInt( document.getElementById('akarat-output').innerHTML.split('ج.م')[0]);
-       var gold1 = parseInt(document.getElementById('output-gold').innerHTML.split('ج.م')[0]);
-       var osolandmomtlkat1 =parseInt( document.getElementById('output-osolandmomtlkat').innerHTML.split('ج.م')[0]);
-       var mall1 =  parseInt(document.getElementById('output-mall').innerHTML.split('ج.م')[0]);
-      
-      var mall = mall1>0 ? mall1 : 0;
-      var gold = gold1>0 ? gold1 : 0;
-      var osolandmomtlkat= osolandmomtlkat1>0 ? osolandmomtlkat1 :0 ;
-      var akarat = akarat1>0 ? akarat1 :0 ;
-      
-       document.getElementById('output-total').innerHTML= parseInt(mall) + parseInt(gold) + parseInt( osolandmomtlkat) + parseInt(akarat )  +'.00 ج.م'
-    }
-    const setValues(e)=> {
-        [e.target.name] = e.target.value
-    }
+  const [mall, seTMall] = useState(0)
+  const [Ashoom, seTAShoom] = useState(0)
+  const [sndat, seTSndat] = useState(0)
+  const [arbah, seTArbah] = useState(0)
+  const [gold18, seTGold18] = useState(0)
+  const [gold21, seTGold21] = useState(0)
+  const[akarat, seTAkarat] = useState(0)
       const[outputMall, setOuputMall] = useState(0)
   return (
     <div className="container ">
@@ -31,7 +18,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">قيمة المال الذى املكة</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا"  id="input-mall" onkeyup="mal(this.value)"/>
+              <input className="input-field" type="number" placeholder="القيمة هنا" id="input-mall" onChange={(e:any)=>seTMall(e.target.value)} />
                  
              </div>
              <div className="box-unit ">
@@ -48,7 +35,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">قيمة الأسهم التي امتلكها فى السوق</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-ashom" onkeyup="osolandmomtlkat()"/>
+                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-ashom"onChange={(e:any)=>seTAShoom(e.target.value)}/>
                  
              </div>
              
@@ -60,7 +47,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">قيمة السندات التي امتلكها فى السوق</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-asol"  onkeyup="osolandmomtlkat()"/>
+                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-asol" onChange={(e:any)=>seTSndat(e.target.value)}/>
                  
              </div>
              
@@ -72,7 +59,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">قيمة الارباح التي حصلت عليها &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-arbah"  onkeyup="osolandmomtlkat()"/>
+                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-arbah" onChange={(e:any)=>seTArbah(e.target.value)}/>
                  
              </div>
              
@@ -90,7 +77,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">وزن الذهب الذي تملكة من عيار 18 بالجرام</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-eighteen" onkeyup="gold()"/>
+                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-eighteen" onChange={(e:any)=>seTGold18(e.target.value)}/>
                  
              </div>
              <div className="box-unit ">
@@ -103,13 +90,13 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">وزن الذهب الذي تملكة من عيار 21 بالجرام</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-twentyone" onkeyup="gold()"/>
+                <input className="input-field" type="number" placeholder="القيمة هنا" id="input-twentyone" onChange={(e:any)=>seTGold21(e.target.value)}/>
                  
              </div>
              <div className="box-unit ">
                   
 قيمة الذهب اليوم <br/>
-1830 جنية مصري
+3600 جنية مصري
              </div>
             </div>
            
@@ -120,7 +107,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">قيمة الأسهم التي امتلكها فى السوق</div>
-                <input className="input-field" type="number" placeholder="القيمة هنا"  onKeyUp="akarat(this.value)"/>
+                <input className="input-field" type="number" placeholder="القيمة هنا"  onChange={(e:any)=>seTAkarat(e.target.value)}/>
                  
              </div>
              
@@ -143,11 +130,11 @@ const Zkah = () => {
            <div className="box-line"></div>
            <div className="result-line">
                 <span className="name">زكاة المال</span>
-                <span className="result" id="output-mall">{outputMall} ج.م</span>
+                <span className="result" id="output-mall">{Math.ceil(mall*0.025)} ج.م</span>
            </div>
             <div className="result-line">
                 <span className="name">زكاة الاصول والممتلكات</span>
-                <span className="result" id="output-osolandmomtlkat">0.00 ج.م</span>
+          <span className="result" id="output-osolandmomtlkat">{Math.ceil((Ashoom + sndat + arbah ) * 0.025)}0.00 ج.م</span>
            </div>
             <div className="result-line">
                 <span className="name">زكاة الذهب</span>
