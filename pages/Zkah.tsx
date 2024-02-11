@@ -139,7 +139,7 @@ const Zkah = () => {
             <div className="result-line">
                 <span className="name">زكاة الذهب</span>
                 <span className="result" id="output-gold">0.00 ج.م</span>
-           </div>
+           </div> 
             <div className="result-line">
                 <span className="name">زكاة العقارات المملوكة</span>
                 <span className="result" id="akarat-output">0.00 ج.م</span>
