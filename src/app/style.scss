@@ -7,6 +7,8 @@
 // @import 'scss/vendor' ; 
 @import 'scss/zakah' ; 
 @import 'scss/sbha' ; 
-*{
+@import 'scss/Competition.scss';
+@import 'scss/video.scss';
+body{
     direction: rtl;
 }

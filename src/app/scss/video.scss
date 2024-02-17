@@ -1,0 +1,397 @@
+.rel{
+    position: relative;
+    .play-icon{
+      position: absolute;
+      top: calc( 50% - 18px);
+      left:calc( 50% - 18px);
+      color: #fff;
+    //   padding: 6px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+      border-radius: 50%;
+      font-size: 25px;
+      background-color: #292D32CC;
+      z-index: 19;
+      cursor: pointer;
+    }
+  }
+    video{
+      width: 100%;
+      height: 210px;
+      border-radius: 8px;
+      background: #EDCFB7;
+      object-fit:fill;
+      @media screen and (max-width: 500px){
+        width: 100%;
+        height: auto;
+      
+      }
+    }
+    .video-info{
+      display: inline-block;
+      float: left;
+      direction: ltr;
+      font-size: 16px;
+      margin-left: -7px;
+      margin-top: 5px;
+      color: #000000ce;
+      span{
+        display: inline-block;
+        margin: 0 0 0 10px;
+        font-size: 20px;
+        vertical-align: middle;
+      }
+   
+    
+    }
+    .userName{
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 3px 0;
+      margin-top: 5px;
+    }
+    .videoname{
+      color: #656464;
+      font-size: 14px;
+      display: inline-block;
+      font-weight: 600;
+      @media screen and (max-width: 263px){
+        font-size: 10px;
+        vertical-align: super;
+      
+      }
+      
+    }
+    .video-time{
+      font-size: 14px;
+      color: #656464;
+      display: inline-block;
+      float: left;
+      @media screen and (max-width: 263px){
+        font-size: 10px;
+      
+      }
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+     
+    }
+    .like-vid{
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      z-index:  19;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    
+    }
+    .list{
+      position: absolute;
+      top: 27px;
+      right: 15px;
+      z-index:  19;
+      background-color: #fff;
+      color: #0000009d;
+      font-size: 16px;
+      padding: 15px 17px ;
+      border-radius: 8px;
+    
+      div{
+        cursor: pointer;
+        &:hover{
+          color: #000;
+        }
+        span{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px 3px;
+      }
+    }
+    
+    }
+    .share-vid{
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      z-index: 19;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    
+    
+    }
+    .vote{
+      background-color: #fff;
+      color: #FF7A01;
+      border:solid 1px #FF7A01;
+      width: 100%;
+      text-align: center;
+      padding: var(--number-border-1, 8px);
+      justify-content: center;
+      height: 45px;
+      border-radius: 7px;
+      margin: 4px 0;
+      margin-bottom: 20px;
+      cursor: pointer;
+      &:hover{
+        color: #fff;
+        background-color: #fe7701;
+      }
+    }
+    .refuse-msg{
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      span{
+         color: red;
+         display: inline-block;
+         vertical-align: middle;
+         margin-left: 2px;
+      }
+     }
+     .videos-grid{
+      direction: rtl;
+        display: flex;
+       flex-wrap: wrap;
+        justify-content: space-between;
+       
+        padding: 20px 0;
+        align-items: center;
+     
+        @media screen and (max-width: 1100px){
+          
+        
+        }
+        @media screen and (max-width: 720px){
+           display: block;
+        
+        }
+      
+    }
+    .video-box{
+      float: 1  21% !important;
+        color: #000;
+       
+        // width: calc(90%/ 3 );
+        
+      position: relative;
+      border-radius: 8px;
+      @media screen and (max-width: 1100px){
+       
+      width: calc(90% / 2 );
+    
+    }
+    
+    @media screen and (max-width: 775px){
+      width: 90%;
+    
+    }
+    @media screen and (max-width: 550px){
+      width: 100%;
+      // min-width: 352px;
+    
+    }
+    
+    .rel{
+      position: relative;
+      .play-icon{
+        position: absolute;
+        top: calc( 50% - 15px);
+        left:calc( 50% - 15px);
+        color: #fff;
+        padding: 6px;
+        border-radius: 50%;
+        font-size: 22px;
+        background-color: #292D32CC;
+        z-index: 19;
+        cursor: pointer;
+      }
+    }
+      video{
+        width: 100%;
+        height: 210px;
+        border-radius: 8px;
+        background: #EDCFB7;
+        object-fit:fill;
+        @media screen and (max-width: 500px){
+          width: 100%;
+          height: auto;
+        
+        }
+      }
+      .video-info{
+        display: inline-block;
+        float: left;
+        direction: ltr;
+        font-size: 16px;
+        margin-left: -7px;
+        margin-top: 5px;
+        color: #000000ce;
+        span{
+          display: inline-block;
+          margin: 0 0 0 10px;
+          font-size: 20px;
+          vertical-align: middle;
+        }
+     
+      
+      }
+      .userName{
+        color: #000;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 3px 0;
+        margin-top: 5px;
+      }
+      .videoname{
+        color: #656464;
+        font-size: 14px;
+        display: inline-block;
+        font-weight: 600;
+        @media screen and (max-width: 263px){
+          font-size: 10px;
+          vertical-align: super;
+        
+        }
+        
+      }
+      .video-time{
+        font-size: 14px;
+        color: #656464;
+        display: inline-block;
+        float: left;
+        @media screen and (max-width: 263px){
+          font-size: 10px;
+        
+        }
+        span{
+          display: inline-block;
+          vertical-align: middle;
+        }
+       
+      }
+      .like-vid{
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        z-index:  19;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      
+      }
+      .list{
+        position: absolute;
+        top: 27px;
+        right: 15px;
+        z-index:  19;
+        background-color: #fff;
+        color: #0000009d;
+        font-size: 16px;
+        padding: 15px 17px ;
+        border-radius: 8px;
+      
+        div{
+          cursor: pointer;
+          &:hover{
+            color: #000;
+          }
+          span{
+          display: inline-block;
+          vertical-align: middle;
+          margin: 5px 3px;
+        }
+      }
+      
+      }
+      .share-vid{
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        z-index: 19;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      
+      
+      }
+      .vote{
+        background-color: #fff;
+        color: #FF7A01;
+        border:solid 1px #FF7A01;
+        width: 100%;
+        text-align: center;
+        padding: var(--number-border-1, 8px);
+        justify-content: center;
+        height: 45px;
+        border-radius: 7px;
+        margin: 4px 0;
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:hover{
+          color: #fff;
+          background-color: #fe7701;
+        }
+      }
+      .refuse-msg{
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        span{
+           color: red;
+           display: inline-block;
+           vertical-align: middle;
+           margin-left: 2px;
+        }
+       }
+      }
+
+      .videos-grid{
+        direction: rtl;
+          display: flex;
+         flex-wrap: wrap;
+          justify-content: space-between;
+         width: 100%;
+          padding: 20px 0;
+          align-items: center;
+       
+          @media screen and (max-width: 1100px){
+            
+          
+          }
+          @media screen and (max-width: 720px){
+             display: block;
+          
+          }
+        
+      }
+      .video-box{
+        float: 1  21% !important;
+          color: #000;
+         
+          // width: calc(90%/ 3 );
+          
+        position: relative;
+        border-radius: 8px;
+        @media screen and (max-width: 1100px){
+         
+        width: calc(90% / 2 );
+      
+      }
+      
+      @media screen and (max-width: 775px){
+        width: 90%;
+      
+      }
+      @media screen and (max-width: 550px){
+        width: 100%;
+        // min-width: 352px;
+      
+      }
+    }
+      
+    
