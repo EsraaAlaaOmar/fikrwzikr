@@ -7,7 +7,7 @@ import Video from '../components/competitioncomponents/Video'
 import Link from 'next/link'
 import Image from 'next/image'
 import Loader from '../components/competitioncomponents/Loader';
-
+import PaginationCom from '../components/reusable components/PaginationComp';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -26,39 +26,33 @@ interface VideoData {
 }
 
 const Competition = () => {
-  // const [data, setData] = useState<VideoData[] | null>(null);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState<Error | null>(null);
 
-  const fetchData = async () => {
+  // const fetchData = async () => {
   
-    const response = await axios.get('https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=1&PageSize=8', {
-      headers: {
+  //   const response = await axios.get('https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=1&PageSize=8', {
+  //     headers: {
 
       
-        'content-type': 'text/json'
-      }});
-      return response.data;
+  //       'content-type': 'text/json'
+  //     }});
+  //     return response.data;
  
     
-  };
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("videos", fetchData)
+  // };
+  // const { isLoading, data, isError, error, isFetching, refetch } = useQuery("videos", fetchData)
   
  
   
-  // useEffect(() => {
-  //   // fetchData();
+ 
+ 
+  // const renderedVideos = data?.slice(0, 3)?.map((video:VideoData) => {
+  //   return<span key={video.VideoId}>   <Video videodetails={video} /></span>
+  // })
 
-  //   console.log(data)
-  //   console.log('esraa')
-  // }, []);
- 
-  const renderedVideos = data?.slice(0, 3)?.map((video:VideoData) => {
-    return<span key={video.VideoId}>   <Video videodetails={video} /></span>
-  })
+  
   return (
-    <>
-    {isLoading ? <Loader />:
+  
+   
       <>
        
       <Link href='/AllVideos' className="section-title">
@@ -69,14 +63,14 @@ const Competition = () => {
           </Link>
           <br style={{clear: "both"}}/>
           <div className='videos-grid container'>
-              {renderedVideos}
+              {/* {renderedVideos} */}
            
         </div >
           
-      </>}
+      
     
 
-
+<PaginationCom itemsPerPage={12}/>
         
     </>
   )

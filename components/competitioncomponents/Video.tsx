@@ -7,6 +7,8 @@ import { IoIosTimer } from 'react-icons/io'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { useOnClickOutside } from 'usehooks-ts'
 import Head from 'next/head';
+import axios from 'axios';
+import { useQuery } from 'react-query';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -60,7 +62,52 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
       href: 'https://example.com', // URL you want to share
     });
   };
+  // const addVote = async (event: any) => {
+  //   console.log('vote');
+  //   event.preventDefault();
+  
+  //   try {
+  //     const response = await axios.post(
+  //       `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${12}&Vote=${true}`,
+  //       null, // Since there's no request body, pass null or an empty object
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json' // Correcting content type
+  //         }
+  //       }
+  //     );
+  
+  //     if (response.status === 200) {
+  //       // Success handling
+  //       // router.push('/myvideos');
+  //     } else {
+  //       // Handle error when status code is not 200
+  //     }
+  //   } catch (error) {
+  //     // Handle network error or any other error
+  //   }
+  // };
 
+  const addVote = async ({ videoId, vote }: { videoId: number, vote: boolean }) => {
+    console.log(videoId,vote)
+    try {
+      const response = await axios.post(
+        `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${1}&MobileNumber=01126214650&Vote=${true}`,
+        {
+          headers: {
+         'content-type': 'text/json'
+          }
+        }
+      );
+  
+      return response.data; // Return the response data
+    } catch (error) {
+      throw new Error('Error adding vote'); // Throw error to be caught by React Query
+      console.log(error)
+    }
+  };
+//     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
+//  console.log(error)
   return (
     <>
        <Head>
@@ -124,7 +171,7 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
       <div className='like-vid' onClick={()=>setLike(!like)} >{like? <AiFillHeart/>: <AiOutlineHeart /> }</div>
       <div className='share-vid' onClick={handleShareClick}><BiShare /></div>
       <div className='video-time'> <span><IoIosTimer /></span> 2023-09-10 .. 15:53:48.3</div>
-      <div className='vote'>تصويت</div>
+      <div className='vote' onClick={()=>addVote( {videoId: videodetails.VideoId, vote: true})}>تصويت</div>
       </div>
     </>
    

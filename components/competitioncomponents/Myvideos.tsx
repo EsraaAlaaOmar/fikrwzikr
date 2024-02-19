@@ -23,31 +23,44 @@ interface VideoData {
 const Myvideos = () => {
   // const [data, setData] = useState<VideoData[] | null>(null);
    const [upload,setUpload] = useState(false)
-  const fetchData = async () => {
+  // const fetchData = async () => {
     
 
   
-    try {
-        const Msisdn ="Msisdn"
-        const response = await axios.post(`https://vodafone.alerting.services/LawMawhobApis/Talents/GetMyVdeos?Msisdn=${Msisdn}`,{},{ headers: {
-          "Api_Key": "elinxfthr62023",
-          'content-type': 'text/json'
-        }});
+  //   try {
+  //       const Msisdn ="Msisdn"
+  //       const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=01126214650`,{},{ headers: {
+          
+  //       'Content-Type': 'application/json'
+  //       }});
       
-        if (response.status === 200) {
-          // Handle successful upload
-          console.log(response)
-          return response.data
-          // setData(response)
-        } else {
-          // Handle upload error
-        }
-      } catch (error) {
-        // Handle network error or any other error
-      }
+  //       if (response.status === 200) {
+  //         // Handle successful upload
+  //         console.log(response)
+  //         return response.data
+  //         // setData(response)
+  //       } else {
+  //         // Handle upload error
+  //       }
+  //     } catch (error) {
+  //       // Handle network error or any other error
+  //     }
 
+  // };
+
+
+  const fetchVideos = async () => {
+    const response = await axios.post(
+      'https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=01126214650',
+      {},
+      {
+    
+      }
+    );
+    return response.data;
   };
 
+  
   function useDeleteItem() {
     const queryClient = useQueryClient();
   
@@ -70,7 +83,7 @@ const Myvideos = () => {
       return  deleteItem(vidId)
     })
   }
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("myvideos", fetchData)
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("myvideos", fetchVideos)
   console.log(data)
   
   // const renderedVideos =
@@ -112,9 +125,9 @@ const Myvideos = () => {
     الفيديوهات المقبولة
       </div> 
       <div className='videos-grid videos-page'>
-      {/* {isLoading? <Loader />  : renderedVideos} */}
-      <Myvideo />
-      <Myvideo />
+      {isLoading? <Loader />  : renderedVideos}
+      {/* <Myvideo />
+      <Myvideo /> */}
    
 
     </div>

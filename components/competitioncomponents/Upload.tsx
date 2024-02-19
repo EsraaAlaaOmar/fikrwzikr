@@ -21,8 +21,8 @@ interface UploadProps {
     {
       Title: '',
       Description: '',
-      Msisdn: 'Msisdn',
-      formFile: '',
+      MobileNumber: '01126214650',
+      videoFile: '',
       
     }
   )
@@ -32,16 +32,16 @@ interface UploadProps {
   // if(upload_msg){upload_msg.style.display='block'}
 
 
-  const { Title, Description, Msisdn, formFile } = formData;
+  const { Title, Description, MobileNumber, videoFile } = formData;
   const onChange = (e: any) => {
  
-    if (e.target.name === 'formFile') {
-      // Set the formFile property to the selected file
+    if (e.target.name === 'videoFile') {
+      // Set the videoFile property to the selected file
       
-      setFormData({ ...formData, formFile: e.target.files[0] });
+      setFormData({ ...formData, videoFile: e.target.files[0] });
       console.log(e.target.files[0])
     } else {
-      // For other input fields (e.g., Title, Description, Msisdn), update accordingly
+      // For other input fields (e.g., Title, Description, MobileNumber), update accordingly
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
   };
@@ -55,8 +55,8 @@ interface UploadProps {
       const reqdata = new FormData();
       reqdata.append("Title", formData.Title);
       reqdata.append("Description", formData.Description);
-      reqdata.append("Msisdn", formData.Msisdn);
-      reqdata.append("formFile", formData.formFile);
+      reqdata.append("MobileNumber", formData.MobileNumber);
+      reqdata.append("videoFile", formData.videoFile);
       
       // try {
       //   const response = await fetch("https://vodafone.alerting.services/LawMawhobApis/Talents/Addvideo", {
@@ -75,8 +75,8 @@ interface UploadProps {
      
   console.log(formData)
       try {
-        const response = await axios.post("https://vodafone.alerting.services/LawMawhobApis/Talents/Addvideo", reqdata,{ headers: {
-          "Api_Key": "elinxfthr62023",
+        const response = await axios.post("https://vf.alerting.services/fekrwzekrApis/Users/Addvideo", reqdata,{ headers: {
+     
           'content-type': 'text/json'
         }});
       
@@ -175,7 +175,7 @@ interface UploadProps {
           
               Your browser does not support the video tag.
             </video>}
-          <input id='video_input' type="file" accept="video/*" onChange={(e)=>video(e)} name='formFile'  />
+          <input id='video_input' type="file" accept="video/*" onChange={(e)=>video(e)} name='videoFile'  />
           {!showvideo&&  <button id="choose-to-upload" className="video-upload-button" onClick={() => buttonClick()}>اضافة فيديو + </button> }
        { showvideo&&    <div className="actions">
          <button type='submit' className="video-action-upload-button" > نشر الفديو  </button> 

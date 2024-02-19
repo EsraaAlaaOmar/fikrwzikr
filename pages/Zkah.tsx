@@ -1,6 +1,18 @@
+import axios, { Axios } from 'axios';
 import React, { useState } from 'react'
 
 const Zkah = () => {
+  const AddZakaa = async () => {
+    const response = await axios.post(
+      'https://vf.alerting.services/fekrwzekrApis/Users/AddZakaa?MobileNumber=01126214650',
+      {},
+      {
+    
+      }
+    );
+    return response.data;
+  };
+  //calculat zkah 
   const [mall, seTMall] = useState<number>(0)
   const [Ashoom, seTAShoom] = useState<number>(0)
   const [sndat, seTSndat] = useState<number>(0)
@@ -14,6 +26,11 @@ const Zkah = () => {
    var outputAsoolwmomtlkat = Math.ceil((Ashoom + sndat + arbah )* 0.025)
    var outputGold=Math.ceil((gold18*3107 + gold21*3625)*.025)
    var outputAkarat = Math.ceil(akarat*0.025)
+//
+
+
+
+
   return (
     <div className="container ">
         <h2>احسب ذكاتك مع فكر وذكر </h2>
@@ -154,6 +171,10 @@ const Zkah = () => {
             <span className="total">إجمالي مبلغ الزكاة</span>
             <span className="result" id="output-total">{outputMall+outputAkarat+outputAsoolwmomtlkat+outputGold}ج.م</span>
            </div>
+       
+           <input type="checkbox" id="done" name="done" value="Bike" onChange={()=>AddZakaa()}/>
+           <label for="done">لقد اديت الزكاة</label><br/>
+          
         </div>
        
 

@@ -12,3 +12,27 @@
 body{
     direction: rtl;
 }
+
+.paginate-component {
+    text-align: center;
+    width: 100%;
+    background-color: #f2f0ed;;
+    color: pink;
+
+    ul{
+        width: 100%;
+    }
+.pagination li {
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+  }
+  
+  .pagination li.active {
+    background-color: #e00800;
+    color: #fff;
+    border: 1px solid #e00800;
+  }
+}
