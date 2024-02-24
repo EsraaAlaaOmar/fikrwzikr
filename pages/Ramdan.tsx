@@ -1,41 +1,74 @@
+import axios from 'axios';
 import React,{useState} from 'react'
 
 const Ramdan = () => {
   const [checkboxValues, setCheckboxValues] = useState({
-    checkbox_aa: false,
     checkbox_a: false,
+    checkbox_aa: false,
+    checkbox_b: false, 
     checkbox_bb: false,
-    checkbox_b: false,
-    checkbox_cc: false,
     checkbox_c: false,
-    checkbox_dd: false,
+    checkbox_cc: false,
     checkbox_d: false,
-    checkbox_ee: false,
+    checkbox_dd: false,
     checkbox_e: false,
+    checkbox_ee: false,
+  
+  
     checkbox_f: false,
     checkbox_g: false,
     checkbox_h: false,
     checkbox_i: false,
     checkbox_j: false,
   });
+  const checkboxKeys = [
+    'checkbox_aa','checkbox_a',  'checkbox_bb', 'checkbox_b','checkbox_cc', 'checkbox_c',
+    'checkbox_dd',  'checkbox_d', 'checkbox_ee','checkbox_e', 
+    'checkbox_f', 'checkbox_g', 'checkbox_h', 'checkbox_i', 'checkbox_j'
+];
 console.log(checkboxValues)
-    // Function to handle checkbox change
-  const handleCheckboxChange = (event) => {
+const requestData = {
+  "mobileNumber": "01126214650",
+  _ActiviteView: checkboxKeys.map((checkboxKey, index) => ({
+      activitId: index, // You can adjust this according to your requirements
+      status: checkboxValues[checkboxKey]
+  }))
+};
+console.log(requestData)  
+const handleCheckboxChange = (event) => {
     const { id, checked } = event.target;
+    addProfile(event)
     setCheckboxValues((prevValues) => ({
       ...prevValues,
       [id]: checked,
     }));
   };
+  const addProfile = async (event:any) => {
+    
+ 
+    event.preventDefault(); 
+      try {
+        const response = await axios.post("https://vf.alerting.services/fekrwzekrApis/Users/AddProfile",requestData ,{ headers: {
+     
+          'content-type': 'text/json'
+        }});
+      
+        if (response.status === 200) {
+       
+            // router.push('/myvideos');
+       
+        } else {
+          // Handle upload error
+        }
+      } catch (error) {
+        // Handle network error or any other error
+      }
+     
+    }
+ 
 
-  // Function to handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Checkbox values:', checkboxValues);
-    // You can send the checkbox values to the server or perform any other action here
-  };
   return (
-    <>
+    <div className='container'>
           <section className="single-content ramdan-content">
      <div className="container">
       <div className="row">
@@ -264,7 +297,8 @@ console.log(checkboxValues)
       </div>       
      </div>  
     </section>
-    </>
+
+    </div>
   )
 }
 
