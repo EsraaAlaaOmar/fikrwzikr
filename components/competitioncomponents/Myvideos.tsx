@@ -16,7 +16,7 @@ interface VideoData {
   NViews: number;
   TalentId: number;
   Title: string;
-  Url: string;
+  VideoUrl: string;
   VideoId: number;
   Votes:[]
 }
@@ -84,13 +84,29 @@ const Myvideos = () => {
     })
   }
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery("myvideos", fetchVideos)
-  console.log(data)
   
-  // const renderedVideos =
-//  ( data?.length === 0)?<>ليس لديك اي فديوهات </>
-//    :
-//   data?.map((video:VideoData)=><Myvideo key={video.VideoId} videodetails={video}  />)
-  return (
+  // start pending videos 
+  var pendingVideos =data?.filter((video:any)=>video?.Status === 0) 
+  const renderedPending =
+ ( pendingVideos?.length === 0)?<>ليس لديك اي فديوهات </>
+   :
+   pendingVideos?.map((video:VideoData)=><Pending key={video.VideoId} videodetails={video}  />)
+   // end pending videos 
+    // start accepted videos 
+    var acceptedVideos =data?.filter((video:any)=>video.Status === 1) 
+    const renderedaccepted =
+   ( acceptedVideos?.length === 0)?<>ليس لديك اي فديوهات </>
+     :
+     acceptedVideos?.map((video:VideoData)=><Myvideo key={video.VideoId} videodetails={video}  />)
+     // end pending videos 
+       // start pending videos 
+  var refusedVideos =data?.filter((video:any)=>video.Status === 2) 
+  const renderedrefused =
+ ( refusedVideos?.length === 0)?<>ليس لديك اي فديوهات </>
+   :
+   refusedVideos?.map((video:VideoData)=> <Refused  key={video.VideoId} videodetails={video}  />)
+   // end pending videos 
+   return (
       <div className='page container'>
         <div className='page-hierarchy'>
              <span className='parent'>
@@ -115,7 +131,7 @@ const Myvideos = () => {
      قيد  المراجعة
       </div> 
       <div className='videos-grid videos-page'>
-        <Pending  />
+       {renderedPending}
     
    
 
@@ -125,9 +141,10 @@ const Myvideos = () => {
     الفيديوهات المقبولة
       </div> 
       <div className='videos-grid videos-page'>
-      {isLoading? <Loader />  : renderedVideos}
+      {/* {isLoading? <Loader />  : renderedVideos} */}
       {/* <Myvideo />
       <Myvideo /> */}
+      {renderedaccepted}
    
 
     </div>
@@ -137,7 +154,7 @@ const Myvideos = () => {
       الفيديوهات المرفوضة
       </div> 
       <div className='videos-grid videos-page'>
-       <Refused />
+       {renderedrefused}
    
 
     </div>

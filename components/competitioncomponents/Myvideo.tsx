@@ -21,14 +21,14 @@ interface VideoData {
   NViews: number;
   TalentId: number;
   Title: string;
-  Url: string;
+  VideoUrl: string;
   VideoId: number;
   Votes:[]
 }
 
 
   
-const Myvideo = () => {
+const Myvideo = ({ videodetails }: { videodetails: VideoData }) => {
   const [showList, setShowList] = useState(false)
   
   const [play, setPlay] = useState(false)
@@ -71,18 +71,18 @@ const handleClickInside = () => {
            
            <div className='details'>
           
-           عنوان الفديو
+           {videodetails.Title}
            </div>
            <video
            ref={ref2}
-           onClick={handleClickOutside2}
-           src='/videos/vid.mp4'
+          
+           src={videodetails.VideoUrl}
              controls
           autoPlay
           >
       
-          <source  type="video/mp4" />
-          Your bro
+          <source  type={videodetails.VideoUrl} />
+        
            </video>
              </div>}
            
@@ -98,7 +98,7 @@ const handleClickInside = () => {
         muted
         >
     
-        <source src='' type="video/mp4" />
+        <source src={videodetails.VideoUrl} type="video/mp4" />
         Your bro
       </video>
       </div>
@@ -111,11 +111,11 @@ const handleClickInside = () => {
       
       </div>
   
-      <div className='userName'>عنوان الفديو</div>
+      <div className='userName'>{videodetails.Title}</div>
      <div></div>
      <div className='video-time'> <span><IoIosTimer /></span> 2023-09-10 .. 15:53:48.3</div>
-      <div className='videoname'>وصف الفديو</div>
-      <div className='like-vid'><AiOutlineHeart /></div>
+      <div className='videoname'> {videodetails.Description}</div>
+      <div className='like-vid'></div>
   
         <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
       

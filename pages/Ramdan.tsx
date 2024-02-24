@@ -1,6 +1,39 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const Ramdan = () => {
+  const [checkboxValues, setCheckboxValues] = useState({
+    checkbox_aa: false,
+    checkbox_a: false,
+    checkbox_bb: false,
+    checkbox_b: false,
+    checkbox_cc: false,
+    checkbox_c: false,
+    checkbox_dd: false,
+    checkbox_d: false,
+    checkbox_ee: false,
+    checkbox_e: false,
+    checkbox_f: false,
+    checkbox_g: false,
+    checkbox_h: false,
+    checkbox_i: false,
+    checkbox_j: false,
+  });
+console.log(checkboxValues)
+    // Function to handle checkbox change
+  const handleCheckboxChange = (event) => {
+    const { id, checked } = event.target;
+    setCheckboxValues((prevValues) => ({
+      ...prevValues,
+      [id]: checked,
+    }));
+  };
+
+  // Function to handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Checkbox values:', checkboxValues);
+    // You can send the checkbox values to the server or perform any other action here
+  };
   return (
     <>
           <section className="single-content ramdan-content">
@@ -28,14 +61,14 @@ const Ramdan = () => {
             </div>
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-aa" />
-                <label for="checkbox-aa"></label>
+                 <input type="checkbox" id="checkbox_aa" checked={checkboxValues.checkbox_aa} onChange={handleCheckboxChange} />
+                <label for="checkbox_aa"></label>
               </div>                
             </div>  
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-a" />
-                <label for="checkbox-a"></label>
+              <input type="checkbox" id="checkbox_a" checked={checkboxValues.checkbox_a} onChange={handleCheckboxChange} />
+                <label for="checkbox_a"></label>
                 <span className="suna">ركعتين قبل</span>  
               </div>                
             </div>                 
@@ -50,14 +83,14 @@ const Ramdan = () => {
             </div>
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-bb" />
-                <label for="checkbox-bb"></label>
+              <input type="checkbox" id="checkbox_bb" checked={checkboxValues.checkbox_bb} onChange={handleCheckboxChange} />
+                <label for="checkbox_bb"></label>
               </div>                
             </div>  
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-b" />
-                <label for="checkbox-b"></label>
+              <input type="checkbox" id="checkbox_b" checked={checkboxValues.checkbox_b} onChange={handleCheckboxChange} />
+                <label for="checkbox_b"></label>
                 <span className="suna"> ركعتين قبل <br/> 4 بعد</span>  
               </div>                
             </div>                 
@@ -72,14 +105,14 @@ const Ramdan = () => {
             </div>
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-cc" />
-                <label for="checkbox-cc"></label>
+              <input type="checkbox" id="checkbox_cc" checked={checkboxValues.checkbox_cc} onChange={handleCheckboxChange} />
+                <label for="checkbox_cc"></label>
               </div>                
             </div>  
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-c" />
-                <label for="checkbox-c"></label>
+              <input type="checkbox" id="checkbox_c" checked={checkboxValues.checkbox_c} onChange={handleCheckboxChange} />
+                <label for="checkbox_c"></label>
                 <span className="suna"></span>  
               </div>                
             </div>                 
@@ -94,14 +127,14 @@ const Ramdan = () => {
             </div>
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-dd" />
-                <label for="checkbox-dd"></label>
+              <input type="checkbox" id="checkbox_dd" checked={checkboxValues.checkbox_dd} onChange={handleCheckboxChange} />
+                <label for="checkbox_dd"></label>
               </div>                
             </div>  
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-d" />
-                <label for="checkbox-d"></label>
+              <input type="checkbox" id="checkbox_d" checked={checkboxValues.checkbox_d} onChange={handleCheckboxChange} />
+                <label for="checkbox_d"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
             </div>                 
@@ -116,14 +149,14 @@ const Ramdan = () => {
             </div>
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-ee" />
-                <label for="checkbox-ee"></label>
+              <input type="checkbox" id="checkbox_ee" checked={checkboxValues.checkbox_ee} onChange={handleCheckboxChange} />
+                <label for="checkbox_ee"></label>
               </div>                
             </div>  
             <div className="col-md-2 col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-e" />
-                <label for="checkbox-e"></label>
+              <input type="checkbox" id="checkbox_e" checked={checkboxValues.checkbox_e} onChange={handleCheckboxChange} />
+                <label for="checkbox_e"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
             </div>                 
@@ -175,8 +208,9 @@ const Ramdan = () => {
             </div>
             <div className="col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-1" />
-                <label for="checkbox-1"></label>
+              <input type="checkbox" id="checkbox_f" checked={checkboxValues.checkbox_f} onChange={handleCheckboxChange} />
+                <label for="checkbox_f"></label>
+                
               </div>                
             </div>   
            </div>
@@ -186,8 +220,8 @@ const Ramdan = () => {
             </div>
             <div className="col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-2" />
-                <label for="checkbox-2"></label>
+              <input type="checkbox" id="checkbox_g" checked={checkboxValues.checkbox_g} onChange={handleCheckboxChange} />
+                <label for="checkbox_g"></label>
               </div>                
             </div>   
            </div>  
@@ -197,8 +231,8 @@ const Ramdan = () => {
             </div>
             <div className="col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-3" />
-                <label for="checkbox-3"></label>
+              <input type="checkbox" id="checkbox_h" checked={checkboxValues.checkbox_h} onChange={handleCheckboxChange} />
+                <label for="checkbox_h"></label>
               </div>                
             </div>   
            </div>  
@@ -208,8 +242,8 @@ const Ramdan = () => {
             </div>
             <div className="col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-4" />
-                <label for="checkbox-4"></label>
+              <input type="checkbox" id="checkbox_i" checked={checkboxValues.checkbox_i} onChange={handleCheckboxChange} />
+                <label for="checkbox_i"></label>
               </div>                
             </div>   
            </div>  
@@ -219,8 +253,8 @@ const Ramdan = () => {
             </div>
             <div className="col-xs-3">
               <div className="round">
-                <input type="checkbox" id="checkbox-5" />
-                <label for="checkbox-5"></label>
+              <input type="checkbox" id="checkbox_j" checked={checkboxValues.checkbox_j} onChange={handleCheckboxChange} />
+                <label for="checkbox_j"></label>
               </div>                
             </div>   
            </div>                

@@ -1,6 +1,6 @@
 import React , {useState,useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
-import { Box, Text } from "@chakra-ui/react"
+
 import Image from 'next/image';
 import { IoIosPeople, IoIosTimer } from 'react-icons/io'
 import {BsPlay } from 'react-icons/bs'
@@ -28,7 +28,7 @@ interface VideoData {
 
 
   
-const Myvideo = () => {
+const Myvideo = ({ videodetails }: { videodetails: VideoData }) => {
   const [showList, setShowList] = useState(false)
   
   
@@ -75,11 +75,9 @@ const handleClickInside = () => {
       </video>
       </div>
    
-      <div className='userName'>عنوان الفديو</div>
-      <div className='videoname'>وصف الفديو</div>
-      <div className='like-vid'><AiOutlineHeart /></div>
-  
-        <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
+      <div className='userName'> {videodetails.Title}</div>
+      <div className='videoname'>{videodetails.Description} </div>
+      
  
        {showList && <div className='list'  ref={ref}  onClick={handleClickInside}>
           <div><span><BiShare /></span>مشاركة </div>

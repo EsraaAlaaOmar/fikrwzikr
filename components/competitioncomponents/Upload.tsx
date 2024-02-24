@@ -23,6 +23,7 @@ interface UploadProps {
       Description: '',
       MobileNumber: '01126214650',
       videoFile: '',
+      posterFile:"",
       
     }
   )
@@ -32,15 +33,22 @@ interface UploadProps {
   // if(upload_msg){upload_msg.style.display='block'}
 
 
-  const { Title, Description, MobileNumber, videoFile } = formData;
+  const { Title, Description, MobileNumber, videoFile,posterFile } = formData;
   const onChange = (e: any) => {
  
     if (e.target.name === 'videoFile') {
       // Set the videoFile property to the selected file
       
       setFormData({ ...formData, videoFile: e.target.files[0] });
-      console.log(e.target.files[0])
-    } else {
+
+    } 
+    else if ( e.target.name === 'posterFile') {
+      // Set the videoFile property to the selected file
+      
+      setFormData({ ...formData, posterFile: e.target.files[0] });
+      
+    } 
+    else {
       // For other input fields (e.g., Title, Description, MobileNumber), update accordingly
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
@@ -57,6 +65,7 @@ interface UploadProps {
       reqdata.append("Description", formData.Description);
       reqdata.append("MobileNumber", formData.MobileNumber);
       reqdata.append("videoFile", formData.videoFile);
+      reqdata.append("posterFile", formData.posterFile);
       
       // try {
       //   const response = await fetch("https://vodafone.alerting.services/LawMawhobApis/Talents/Addvideo", {
@@ -154,6 +163,10 @@ interface UploadProps {
           <label className="upload-video-label">وصف الفديو </label>
           <textarea  className="upload-video-textarea" placeholder="أدخل وصف الفديو " name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
       </div>
+      <div className="upload-video-input">
+          <label className="upload-video-label">غلاف الفديو(اختياري) </label>
+          <input type='file'  className="" placeholder="أدخل غلاف الفديو " name='posterFile'  onChange={e=>onChange(e)} />
+      </div>
             </div>
           {mutation.isLoading ? <Loader /> : <div id="uploaded-data">
             
@@ -183,6 +196,7 @@ interface UploadProps {
     
             </div>}
           </div>
+
        
         </form>
       </div>

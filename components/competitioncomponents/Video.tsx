@@ -21,9 +21,12 @@ interface VideoData {
   NViews: number;
   TalentId: number;
   Title: string;
-  Url: string;
+  VideoUrl: string;
   VideoId: number;
-  Votes:[]
+  VotesCount:number;
+  UsersVotes:[any];
+  PosterUrl:string
+
 }
 
 // { videodetails }: { videodetails: VideoData } in()
@@ -106,6 +109,9 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
       console.log(error)
     }
   };
+
+  var Liked = videodetails?.UsersVotes.find(vote=>vote?.UserId === 3)
+  
 //     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
 //  console.log(error)
   return (
@@ -133,7 +139,7 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
           <video
            ref={ref}
            onClick={handleClickInside}
-           src={videodetails?.Url}
+           src={videodetails?.VideoUrl}
              controls
           autoPlay
           >
@@ -149,8 +155,8 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
           <video
         className="competetion-video"
            
-            src={videodetails?.Url}
-            poster="https://i.ytimg.com/vi/-Yv1w-iVCJk/maxresdefault.jpg"
+            src={videodetails?.VideoUrl}
+            poster={videodetails.PosterUrl ?videodetails.PosterUrl:"https://i.ytimg.com/vi/-Yv1w-iVCJk/maxresdefault.jpg"}
         // controls="false"
         muted
         >
@@ -160,7 +166,7 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
       </video>
       </div>
       <div className='video-info'>
-      <span><AiOutlineHeart /></span>100
+      <span>{<AiOutlineHeart />}</span>{videodetails.VotesCount}
         
         <span><BiShare /> </span>3k
         <span><IoIosPeople /> </span>10k
@@ -168,9 +174,9 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
       </div>
         <div className='userName'>{videodetails?.Title}</div>
         <div className='videoname'>{ videodetails?.Description}</div>
-      <div className='like-vid' onClick={()=>setLike(!like)} >{like? <AiFillHeart/>: <AiOutlineHeart /> }</div>
+      <div className='like-vid' onClick={()=>setLike(!like)} >{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</div>
       <div className='share-vid' onClick={handleShareClick}><BiShare /></div>
-      <div className='video-time'> <span><IoIosTimer /></span> 2023-09-10 .. 15:53:48.3</div>
+      <div className='video-time'> <span><IoIosTimer /></span>{videodetails?.DateIn}</div>
       <div className='vote' onClick={()=>addVote( {videoId: videodetails.VideoId, vote: true})}>تصويت</div>
       </div>
     </>

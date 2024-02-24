@@ -20,19 +20,19 @@ interface VideoData {
   NViews: number;
   TalentId: number;
   Title: string;
-  Url: string;
+  VideoUrl: string;
   VideoId: number;
   Votes:[]
 }
 
 
   
-const Myvideo = () => {
+const Myvideo =({ videodetails }: { videodetails: VideoData }) => {
   const [showList, setShowList] = useState(false)
-  
+  const [play, setPlay] = useState(false)
   
 const ref = useRef(null)
-
+const ref2 = useRef(null)
 const handleClickOutside = () => {
   // Your custom logic here
   setShowList(false)
@@ -45,20 +45,38 @@ const handleClickInside = () => {
 }
 
   useOnClickOutside(ref, handleClickOutside)
-  
+  const handleClickOutside2 = () => {
+    // Your custom logic here
+    setPlay(false)
+    
+  }
+  useOnClickOutside(ref2, handleClickOutside2)
   return (
     <>
-      {/* <Box bgColor='#fff' w='100%' h="130px" textAlign='center' position='relative' bgImage={`url(${videodetails?.Url})`}  bgRepeat="no-repeat" bgSize="cover" borderRadius="10px">
+     {play && <div className='video-overlayer'>
+           
+           <div className='details'>
           
-          <Text  as="span" position='absolute' top='calc( 50% - 15px )' left =' calc(50% - 15px )' p="3px 4px" bgColor="#fe7701" color="#fff" fontSize="30px" borderRadius="50%" >     <BsFillPlayFill /></Text>
-      </Box>
-      <Text color="#fff">{videodetails?.Title}</Text> */}
+           {videodetails.Title}
+           </div>
+           <video
+           ref={ref2}
+           
+           src={videodetails.VideoUrl}
+             controls
+          autoPlay
+          >
+      
+          <source  type={videodetails.VideoUrl} />
+        
+           </video>
+             </div>}
           <div className='video-box'>
               <div className='refuse-msg'>
                   <span><AiOutlineCloseCircle /></span>تم رفض الفيديو بسبب عدم مراعاة الشروط والأحكام
               </div>
         <div className='rel'>
-          <span className='play-icon'><BsPlay /></span>
+          <span className='play-icon' onClick={()=>setPlay(true)}><BsPlay /></span>
           <video
         className="competetion-video"
         width="320"
@@ -73,8 +91,8 @@ const handleClickInside = () => {
       </video>
       </div>
    
-      <div className='userName'>عنوان الفديو</div>
-      <div className='videoname'>وصف الفديو</div>
+      <div className='userName'>{videodetails.Title}</div>
+      <div className='videoname'>{videodetails.Description} </div>
       <div className='like-vid'><AiOutlineHeart /></div>
   
         <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>

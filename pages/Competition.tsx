@@ -28,27 +28,6 @@ interface VideoData {
 
 const Competition = () => {
 
-  // const fetchData = async () => {
-  
-  //   const response = await axios.get('https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=1&PageSize=8', {
-  //     headers: {
-
-      
-  //       'content-type': 'text/json'
-  //     }});
-  //     return response.data;
- 
-    
-  // };
-  // const { isLoading, data, isError, error, isFetching, refetch } = useQuery("videos", fetchData)
-  
- 
-  
- 
- 
-  // const renderedVideos = data?.slice(0, 3)?.map((video:VideoData) => {
-  //   return<span key={video.VideoId}>   <Video videodetails={video} /></span>
-  // })
 
   
   return (

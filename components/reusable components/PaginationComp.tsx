@@ -14,9 +14,10 @@ interface VideoData {
   NViews: number;
   TalentId: number;
   Title: string;
-  Url: string;
+  VideoUrl: string;
   VideoId: number;
-  Votes: [];
+  VotesCount:number;
+  UsersVotes:[any];
 }
 interface Props {
    itemsPerPage: number;
@@ -45,7 +46,8 @@ interface Props {
   };
   console.log(currentPage);
   const renderedVideos = data?.map((video: VideoData) => {
-    return<span key={video.VideoId}>   <Video videodetails={video} /></span>
+    console.log( video.UsersVotes)
+    return<span key={video.VideoId}>  <Video videodetails={video} /></span>
 });
 
 
