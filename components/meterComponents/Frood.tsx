@@ -7,7 +7,7 @@ const Frood = () => {
         أقل
     </div>
     <table id="salah-table" style={{width:"100%"}} className="progress-table">
-
+    <tbody>
     <tr>
         <th></th>
         <th>الفجر</th>
@@ -59,7 +59,7 @@ const Frood = () => {
         <td><GiCheckMark /></td>
         <td>✘</td>
     </tr>
-
+    </tbody>
     </table>
  </>
   )

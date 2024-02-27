@@ -2,11 +2,25 @@ import React,{useState} from 'react'
 import Frood from '../components/meterComponents/Frood'
 import Sonan from '../components/meterComponents/Sonan'
 import Quraan from '../components/meterComponents/Quraan'
+import axios from 'axios'
+import { useQuery } from 'react-query'
 
 const RamdanMeter = () => {
     const[showfrood,setShowFrood] = useState(false)
     const[showsonan,setShowSonan] = useState(false)
     const[showquran,setShowQuran] = useState(false)
+    var MobileNumbr = '01126214650';
+    // const fetchData = async () => {
+    //   const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${MobileNumbr}`, {
+    //     headers: {
+    //       'content-type': 'text/json'
+    //     }
+    //   });
+    //   return response.data;
+    // };
+//  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
+  
+ console.log(showquran)
   return (
     <>
 <div className="progress-container">
@@ -23,7 +37,7 @@ const RamdanMeter = () => {
     معلومات أكثر
   </div>
 
- {showfrood && <Frood />}
+ {<Frood />}
   
 </div>
 
@@ -38,7 +52,7 @@ const RamdanMeter = () => {
   <div id="prodress-sonan-more"className="progress-more" onClick={()=>setShowSonan(true)} >
     معلومات أكثر
   </div>
-{showsonan&& <Sonan />}
+{<Sonan />}
   
 </div>
 
@@ -55,7 +69,8 @@ const RamdanMeter = () => {
   <div id="prodress-quran-more"className="progress-more"  onClick={()=>setShowQuran(true)}>
     معلومات أكثر
   </div>
-  {showquran && <Quraan />}
+   <Quraan />
+
   
 </div>
 

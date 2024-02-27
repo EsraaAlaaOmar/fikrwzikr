@@ -1,16 +1,23 @@
 /*
   #Google Fonts API
 */
-@import url("https://fonts.googleapis.com/css?family=El+Messiri");
+@font-face {
+  font-family: 'Suisse International';
+  src: url('../../../public/font/SuisseIntl-Regular.woff2') format('woff2'), /* Specify the path to your font files */
+       url('../../../public/font/SuisseIntl-Regular.woff') format('woff');
+  /* You can include additional font styles (e.g., bold, italic) if needed */
+}
+
 /*
   #Start General Layout
 */
 body {
   font-size: 14px;
-  font-family: "El Messiri", sans-serif;
+ 
   line-height: 1.5;
   color: #ccc;
   background-color: #fff;
+  text-align: right !important;
 }
 section {
   padding-top: 80px;
@@ -66,7 +73,7 @@ p {
 }
 .side-nav h3 {
   font-size: 25px;
-  color: #f16e00;
+  color: #E00800;
   padding-right: 20px;
   margin-bottom: 20px;
 }
@@ -79,7 +86,7 @@ p {
   line-height: 60px;
   text-align: center;
   font-size: 36px;
-  color: #f16e00;
+  color: #E00800;
   z-index: 999;
 }
 .side-nav .caret {
@@ -92,7 +99,7 @@ p {
   position: relative;
   display: block;
   font-size: 14px;
-  color: #fff;
+  color: #23201d;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -100,10 +107,10 @@ p {
 }
 .side-nav > ul > li > a:hover,
 .side-nav > ul > li > a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 .side-nav li > a {
-  color: #fff;
+  color: #23201d;;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -111,13 +118,13 @@ p {
 }
 .side-nav li > a:hover,
 .side-nav li > a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 .side-nav li > ul > li > a {
   position: relative;
   font-size: 12px;
   opacity: 0.8;
-  color: #fff;
+  color: #000;;
   padding: 10px 0 0;
 }
 .side-nav li > ul > li > a .caret {
@@ -184,13 +191,26 @@ p {
   flex-wrap: nowrap;
 }
 .affix .links {
-  position: absolute;
+  /* position: absolute;
   top: 45%;
-  width: 100%;
+  width: 100%; */
+  display: inline-block;
+  vertical-align: text-top;
+  font-size: 15px;
+  li{
+    display: inline-block;
+    margin:0 5px;
+    .react-icon{
+      vertical-align: middle;
+      display: inline-block;
+      font-size: 16px;
+      margin: 0 4px;
+    }
+  }
 }
 .menu ul li a {
   font-size: 15px;
-  color: #f16e00;
+  color: #E00800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -198,11 +218,15 @@ p {
 }
 .menu ul li a:hover,
 .menu ul li a:focus {
-  color: #fff;
+  color: #000;
+}
+.menu .col-sm-2{
+ 
+  direction: ltr;
 }
 .menu .menu-logo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  /* height: 50px; */
 }
 .menu img {
   opacity: 0;
@@ -212,6 +236,9 @@ p {
 .affix img {
   opacity: 1;
   display: block;
+  
+  width: 134px;
+  height: 34px;
 }
 /*
   #Alert
@@ -221,20 +248,20 @@ p {
   z-index: 9999;
   bottom: 5px;
   left: 30px;
-  background-color: #000;
-  color: #fff;
+  background-color: #e6e6db33;
+  color:  #f2f0ed;
   border: none;
   border-radius: 5px;
 }
 .alert-warning p {
-  color: #fff;
+  color: #23201d;;
   padding: 5px 0;
   max-width: 325px;
   margin-bottom: 5px;
 }
 .alert-warning .close {
   opacity: 1;
-  color: #f16e00;
+  color: #E00800;
   outline: 0;
   box-shadow: none;
   text-shadow: none;
@@ -243,22 +270,23 @@ p {
 .alert-warning .btn:hover,
 .alert-warning .btn:focus {
   display: inline-block;
-  font-size: 13px;
+  font-size: 12px;
   color: #fff;
   border: none;
   border-radius: 3px;
-  background-color: #f16e00;
-  padding: 10px 20px;
+  background-color: #E00800;
+  padding: 8px 16px;
   margin: 6px 0 10px;
 }
 .alert-warning a {
-  color: #f16e00;
+  color: #E00800;
+  font-size: 12px;
 }
 /*
   #Intro
 */
 .intro-caption {
-  background-image: url(/images/header-bg.jpg);
+  // background-image: url(../images/header-bg.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -295,7 +323,7 @@ p {
 }
 .philosophy .item h5 {
   font-size: 15px;
-  color: #f16e00;
+  color: #000;
   text-transform: uppercase;
   margin-bottom: 35px;
 }
@@ -306,14 +334,17 @@ p {
   display: block;
   font-size: 40px;
   font-weight: 700;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 5px;
+}
+.prayer{
+  color: #E00800;
 }
 /*
   #Most Viewed
 */
 .most-viewed {
-  background-image: url(/images/most-viewdbg.png);
+  // background-image: url(../images/most-viewdbg.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
@@ -322,7 +353,7 @@ p {
   display: block;
   font-size: 40px;
   font-weight: 700;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 5px;
 }
 .most-viewed .heading {
@@ -347,7 +378,7 @@ p {
 .most-viewed .item h3 {
   font-size: 18px;
   line-height: 1.5;
-  color: #f16e00;
+  color: #000;
   margin-bottom: 0;
 }
 .most-viewed .slick-Next,
@@ -389,10 +420,24 @@ p {
 */
 .single-header {
   position: relative;
-  background-image: url(/images/single-bg.jpg);
+ 
   background-size: cover;
   background-position: center;
   height: 80vh;
+}
+.single-header::after {
+  content: "";
+  // background-image: url('your-image-url.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Change the opacity value as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+  // background-image: url(../images/single-bg.jpg);
 }
 .single-header .container {
   position: absolute;
@@ -427,7 +472,7 @@ p {
 }
 .single-header .breadcrumb > li + li:before {
   content: "\e113";
-  font-family: "Glyphicons Halflings";
+  // //font-family: "Glyphicons Halflings";
   font-size: 13px;
   color: #fff;
   display: inline-block;
@@ -451,7 +496,7 @@ p {
 .single-content .heading h2 {
   display: inline-block;
   font-size: 40px;
-  color: #f16e00;
+  color: #E00800;
   margin: 0;
 }
 .single-content .item {
@@ -461,7 +506,7 @@ p {
 .single-content .item h3 {
   font-size: 18px;
   line-height: 30px;
-  color: #f16e00;
+  color: #000;
   margin-bottom: 8px;
 }
 .single-content .item img {
@@ -481,7 +526,7 @@ p {
 
 .category-content ul > h5 {
   font-size: 23px;
-  color: #f16e00;
+  color: #E00800;
   padding: 20px;
   margin-top: 0;
   margin-bottom: 20px;
@@ -499,11 +544,11 @@ p {
 }
 .category-content .panel:before {
   content: "\f10c";
-  font-family: "fontAwesome";
+  //font-family: "fontAwesome";
   position: absolute;
   right: 15px;
   font-size: 9px;
-  color: #f16e00;
+  color: #E00800;
   top: 11px;
 }
 .category-content .panel:last-of-type {
@@ -531,11 +576,11 @@ p {
 }
 .category-content .panel ul li a:before {
   content: "\f10c";
-  font-family: "fontAwesome";
+  //font-family: "fontAwesome";
   position: absolute;
   right: -13px;
   font-size: 9px;
-  color: #f16e00;
+  color: #E00800;
   top: 3px;
 }
 /*
@@ -545,7 +590,7 @@ p {
   padding: 120px 0;
 }
 .sub-phase:before {
-  background-image: url(/images/single-bg.jpg);
+  // background-image: url(../images/single-bg.jpg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -556,6 +601,7 @@ p {
   right: 0;
   top: 0;
   z-index: -1;
+  opacity: .3;
 }
 .sub-phase img {
   width: 60%;
@@ -606,7 +652,7 @@ p {
   border-radius: 0;
   padding: 10px 20px;
   color: #fff;
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .sub-phase .confirm .btns {
   margin-top: 20px;
@@ -694,8 +740,8 @@ p {
   }
   .menu .menu-logo {
     display: block;
-    width: 40px;
-    height: 40px;
+    /* width: 40px; */
+    /* height: 40px; */
     margin: auto;
   }
   .philosophy .item {
@@ -705,9 +751,8 @@ p {
     width: 75%;
   }
   .affix .links {
-    position: relative;
-    top: 40%;
-    width: auto;
+    display: inline-block;
+    vertical-align: text-top;
   }
   .menu img {
     width: 100%;
@@ -763,7 +808,7 @@ p {
 */
 body {
   font-size: 14px;
-  font-family: "El Messiri", sans-serif;
+  // //font-family: "El Messiri", sans-serif;
   line-height: 1.5;
   color: #ccc;
   background-color: #fff;
@@ -806,7 +851,7 @@ p {
   right: -280px;
   bottom: 0;
   width: 280px;
-  background-color: #23201d;
+  background-color: #f2f0ed;
   padding: 20px 0 20px;
   z-index: 99999;
   overflow-y: auto;
@@ -823,7 +868,7 @@ p {
 }
 .side-nav h3 {
   font-size: 25px;
-  color: #e00800;
+  color: #E00800;
   padding-right: 20px;
   margin-bottom: 20px;
 }
@@ -836,7 +881,7 @@ p {
   line-height: 60px;
   text-align: center;
   font-size: 36px;
-  color: #e00800;
+  color: #E00800;
   z-index: 999;
 }
 .side-nav .caret {
@@ -849,7 +894,7 @@ p {
   position: relative;
   display: block;
   font-size: 14px;
-  color: #fff;
+  color: #23201d;;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -857,7 +902,7 @@ p {
 }
 .side-nav > ul > li > a:hover,
 .side-nav > ul > li > a:focus {
-  color: #e00800;
+  color: #E00800;
 }
 .side-nav li > a {
   color: #fff;
@@ -868,13 +913,13 @@ p {
 }
 .side-nav li > a:hover,
 .side-nav li > a:focus {
-  color: #e00800;
+  color: #E00800;
 }
 .side-nav li > ul > li > a {
   position: relative;
   font-size: 12px;
   opacity: 0.8;
-  color: #fff;
+  color: #000;
   padding: 10px 0 0;
 }
 .side-nav li > ul > li > a .caret {
@@ -897,11 +942,11 @@ p {
   width: 100%;
   z-index: 99;
   padding: 45px 20px 0;
-  background-color: #23201d;
+  background-color: #f2f0ed;
 }
 .side-nav .wrapper-level .back a {
   font-size: 14px;
-  color: #e00800;
+  color: #E00800;
   font-weight: 600;
   border: none;
 }
@@ -933,20 +978,19 @@ p {
   top: 0;
   width: 100%;
   padding: 15px 0;
-  background-color: #23201d;
+  background-color: #f2f0ed;
 }
 .affix .row {
   display: flex;
   flex-wrap: nowrap;
 }
 .affix .links {
-  position: absolute;
-  top: 45%;
-  width: 100%;
+  display: inline-block;
+  vertical-align: text-top;
 }
 .menu ul li a {
   font-size: 14px;
-  color: #e00800;
+  color: #E00800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -962,12 +1006,14 @@ p {
   position: relative;
 }
 .menu .menu-logo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  /* height: 50px; */
 }
 .affix img {
   opacity: 1;
   display: block;
+  width: 134px;
+  height: 34px;
 }
 /*
   #Alert
@@ -977,21 +1023,21 @@ p {
   z-index: 9999;
   bottom: 5px;
   left: 30px;
-  background-color: #23201d;
+  background-color: #FFFFFF;
   color: #fff;
   border: 1px solid rgba(204, 204, 204, 0.11);
   border-radius: 5px;
 }
 .alert-warning p {
   font-size: 12px;
-  color: #fff;
+  color: #23201d;;
   padding: 5px 0;
   max-width: 325px;
   margin-bottom: 5px;
 }
 .alert-warning .close {
   opacity: 1;
-  color: #e00800;
+  color: #E00800;
   outline: 0;
   box-shadow: none;
   text-shadow: none;
@@ -1004,18 +1050,18 @@ p {
   color: #fff;
   border: none;
   border-radius: 3px;
-  background-color: #e00800;
-  padding: 10px 30px;
+  background-color: #E00800;
+  padding: 8px 24px;
   margin: 6px 0 10px;
 }
 .alert-warning a {
-  color: #e00800;
+  color: #E00800;
 }
 /*
   #Intro
 */
 .intro-caption {
-  /* background-image: url(/img/header-bg.jpg); */
+  /* background-image: url(../images/header-bg.jpg); */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -1052,7 +1098,7 @@ p {
 }
 .philosophy .item h5 {
   font-size: 15px;
-  color: #e00800;
+  color: #000;
   text-transform: uppercase;
   margin-bottom: 35px;
 }
@@ -1063,14 +1109,14 @@ p {
   display: block;
   font-size: 30px;
   font-weight: 700;
-  color: #e00800;
+  color: #E00800;
   margin-bottom: 5px;
 }
 /*
   #Most Viewed
 */
 .most-viewed {
-  /* background-image: url(/img/most-viewdbg.png); */
+  /* background-image: url(../images/most-viewdbg.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
@@ -1079,7 +1125,7 @@ p {
   display: block;
   font-size: 35px;
   font-weight: 700;
-  color: #e00800;
+  color: #E00800;
   margin-bottom: 5px;
 }
 .most-viewed .heading {
@@ -1105,11 +1151,11 @@ p {
 .most-viewed .item h3 {
   font-size: 18px;
   line-height: 1.5;
-  color: #e00800;
+  color: #000;
   margin-bottom: 0;
 }
 .most-viewed .item .free {
-  background-color: #e00800;
+  background-color: #E00800;
   color: #fff;
   padding: 15px 20px;
   position: absolute;
@@ -1136,7 +1182,7 @@ p {
   border: none;
   border-radius: 50%;
   box-shadow: none;
-  background-color: #23201d;
+  background-color: #f2f0ed;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -1159,7 +1205,7 @@ p {
 */
 .single-header {
   position: relative;
-  /* background-image: url(/img/single-bg.jpg); */
+  /* background-image: url(../images/single-bg.jpg); */
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -1193,11 +1239,11 @@ p {
   margin-top: 12px;
 }
 .single-header .breadcrumb li.active {
-  color: #e00800;
+  color: #E00800;
 }
 .single-header .breadcrumb > li + li:before {
   content: "\e113";
-  font-family: "Glyphicons Halflings";
+  //font-family: "Glyphicons Halflings";
   font-size: 13px;
   color: #fff;
   display: inline-block;
@@ -1220,7 +1266,7 @@ p {
 .single-content .heading h2 {
   display: inline-block;
   font-size: 40px;
-  color: #e00800;
+  color: #E00800;
   margin: 0;
 }
 .single-content .item {
@@ -1232,7 +1278,7 @@ p {
   position: relative;
 }
 .single-content .item a .free {
-  background-color: #e00800;
+  background-color: #E00800;
   color: #fff;
   padding: 8px 20px;
   position: absolute;
@@ -1248,7 +1294,7 @@ p {
 .single-content .item h3 {
   font-size: 18px;
   line-height: 30px;
-  color: #e00800;
+  color: #000;
   margin-bottom: 8px;
 }
 .single-content .item img {
@@ -1267,11 +1313,11 @@ p {
 */
 .category-content ul > h5 {
   font-size: 23px;
-  color: #e00800;
+  color: #E00800;
   padding: 20px;
   margin-top: 0;
   margin-bottom: 20px;
-  background-color: #23201d;
+  background-color: #f2f0ed;
 }
 .category-content ul.parent-ul {
   padding-right: 0;
@@ -1285,7 +1331,7 @@ p {
 }
 .category-content .panel:before {
   content: "\f10c";
-  font-family: "fontAwesome";
+  //font-family: "fontAwesome";
   position: absolute;
   right: 15px;
   font-size: 9px;
@@ -1317,11 +1363,11 @@ p {
 }
 .category-content .panel ul li a:before {
   content: "\f10c";
-  font-family: "fontAwesome";
+  //font-family: "fontAwesome";
   position: absolute;
   right: -13px;
   font-size: 9px;
-  color: #bf8a2c;
+  color: #ffbdc0;
   top: 3px;
 }
 /*
@@ -1332,7 +1378,7 @@ p {
   padding: 120px 0;
 }
 .sub-phase:before {
-  /* background-image: url(/img/single-bg.jpg); */
+  /* background-image: url(../images/single-bg.jpg); */
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1397,7 +1443,7 @@ p {
   border-radius: 0;
   padding: 10px 20px;
   color: #fff;
-  background-color: #e00800;
+  background-color: #E00800;
 }
 .sub-phase .btn:disabled {
   display: block;
@@ -1409,7 +1455,7 @@ p {
   border-radius: 0;
   padding: 10px 20px;
   color: #fff;
-  background-color: #e00800;
+  background-color: #E00800;
 }
 .sub-phase .confirm .btns {
   margin-top: 20px;
@@ -1430,14 +1476,14 @@ p {
 .sub-phase .terms {
   border-radius: 10px;
   padding: 40px 15px;
-  background-color: #23201d;
+  background-color: #f2f0ed;
 }
 .sub-phase .terms:not(:last-child) {
   margin-bottom: 10px;
 }
 .sub-phase .terms h4 {
   font-size: 22px;
-  color: #e00800;
+  color: #E00800;
   margin-top: 25px;
   margin-bottom: 15px;
 }
@@ -1501,7 +1547,7 @@ p {
   position: relative;
   display: inline-block;
   font-size: 28px;
-  color: #e00800;
+  color: #E00800;
   margin: 0;
 }
 .prayer-times .header h2:before {
@@ -1513,13 +1559,13 @@ p {
   position: relative;
   top: -4px;
   margin-left: 5px;
-  /* background-image: url(/img/muslim-prayer.png); */
+  /* background-image: url(../images/muslim-prayer.png); */
 }
 .prayer-times .header .dropdown .btn-default,
 .prayer-times .header .dropdown .btn-default:hover,
 .prayer-times .header .dropdown .btn-default:focus {
   color: #fff;
-  background-color: #e00800;
+  background-color: #E00800;
   border: none;
   border-radius: 3px;
   padding: 10px 45px;
@@ -1547,7 +1593,7 @@ p {
   padding: 40px 0;
 }
 .prayer-times .item-container {
-  background: url(/img/prayers-bg.jpg) no-repeat center;
+  // background: url(../images/prayers-bg.jpg) no-repeat center;
   background-size: cover;
   padding: 30px 15px;
 }
@@ -1578,21 +1624,25 @@ p {
   #Start Footer
 */
 footer {
-  background-color: #23201d;
+  background-color: #f2f0ed;
   padding: 30px 0 25px;
+  font-weight: 500;
 }
 footer h3 {
   position: relative;
-  color: #e00800;
+  color: #E00800;
   letter-spacing: -1px;
   margin-bottom: 25px;
 }
 footer ul li {
   margin-bottom: 10px;
+  margin: 3px;
+  display: inline-block;
+  
 }
 footer ul li a {
   font-size: 13px;
-  color: #fff;
+  color: #23201d;;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1600,16 +1650,16 @@ footer ul li a {
 }
 footer ul li a:hover,
 footer ul li a:focus {
-  color: #e00800;
+  color: #E00800;
 }
 footer ul.list-inline li a {
   font-size: 20px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   line-height: 43px;
   text-align: center;
   border-radius: 50px;
-  border: 1px solid #fff;
+  border: 1px solid #23201d;;
 }
 footer .sub-footer {
   display: flex;
@@ -1629,6 +1679,7 @@ footer .sub-footer .copyright {
 }
 footer .sub-footer img {
   margin-top: -8px;
+
 }
 footer .sub-footer span {
   display: block;
@@ -1650,14 +1701,13 @@ footer .sub-footer span {
     width: 75%;
   }
   .affix .links {
-    position: relative;
-    top: 40%;
-    width: auto;
+    display: inline-block;
+    vertical-align: text-top;
   }
   .menu .menu-logo {
     display: block;
-    width: 40px;
-    height: 50px;
+    /* width: 40px; */
+    /* height: 50px; */
     margin: auto;
   }
   .menu img {
@@ -1665,7 +1715,7 @@ footer .sub-footer span {
   }
   .single-header {
     height: 75vh;
-    /* background-image: url(/images/single-bg.jpg); */
+    /* background-image: url(../images/single-bg.jpg); */
   }
   .single-header h3 {
     font-size: 20px;
@@ -1693,9 +1743,9 @@ footer .sub-footer span {
   .prayer-times .header .dropdown .btn-default,
   .prayer-times .header .dropdown .btn-default:hover,
   .prayer-times .header .dropdown .btn-default:focus {
-    color: #e00800;
+    color: #E00800;
     background-color: transparent;
-    border: 2px solid #e00800;
+    border: 2px solid #E00800;
   }
   .prayer-times .header .dropdown .btn-default .caret {
     position: absolute;
@@ -1737,12 +1787,12 @@ p.small {
   margin: 0 auto 10px;
 }
 p.small a {
-  color: #e00800;
+  color: #E00800;
   font-weight: bold;
   text-decoration: underline;
 }
 .alert-warning p.heighlight {
-  color: #e00800;
+  color: #E00800;
 }
 .more {
   font-size: 17px;
@@ -1750,18 +1800,18 @@ p.small a {
   width: 100%;
   position: relative;
   text-align: center;
-  color: #e00800;
+  color: #E00800;
   margin-top: 15px;
   transition: all 0.3s ease-in-out;
 }
 .more:hover,
 .more:focus {
   opacity: 0.8;
-  color: #e00800;
+  color: #E00800;
 }
 .terms-nav {
   border: none;
-  background-color: #23201d;
+  background-color: #f2f0ed;
   border-radius: 6px;
   margin-bottom: 10px;
 }
@@ -1804,7 +1854,7 @@ p.small a {
   color: #fff;
 }
 .ramdan-content .box-item {
-  border: 1px solid #e00800;
+  border: 1px solid #E00800;
   border-radius: 3px;
   margin-bottom: 40px;
 }
@@ -1812,7 +1862,7 @@ p.small a {
   display: inline-block;
   font-size: 20px;
   color: #fff;
-  background-color: #e00800;
+  background-color: #E00800;
   padding: 10px 20px;
   border-radius: 3px;
   margin: 0;
@@ -1850,7 +1900,7 @@ p.small a {
   color: #fff;
   padding: 7px 12px;
   border-radius: 3px;
-  background-color: #e00800;
+  background-color: #E00800;
 }
 .ramdan-content .content-read .item-col:after {
   content: "";
@@ -1869,7 +1919,7 @@ p.small a {
   height: 28px;
   left: 50%;
   position: absolute;
-  top: 0;
+  top: 0 !important;
   width: 28px;
   transform: translateX(-50%);
 }
@@ -1901,14 +1951,14 @@ p.small a {
   opacity: 1;
 }
 .ramdan-content .prayer-box {
-  border: 1px solid #e00800;
+  border: 1px solid #E00800;
   border-radius: 3px;
   margin-bottom: 40px;
 }
 .ramdan-content .prayer-box h3 {
   display: inline-block;
   color: #fff;
-  background-color: #e00800;
+  background-color: #E00800;
   padding: 10px 20px;
   font-size: 20px;
   border-radius: 3px;
@@ -1926,7 +1976,7 @@ p.small a {
   color: #fff;
   padding: 7px 0;
   border-radius: 3px;
-  background-color: #e00800;
+  background-color: #E00800;
   text-align: center;
 }
 .ramdan-content .prayer-box ul li:nth-child(3) {
@@ -1950,7 +2000,7 @@ p.small a {
 .ramdan-content .prayer-box .suna {
   display: block;
   position: absolute;
-  left: -20px;
+  left: -60px;
   font-size: 15px;
   top: 86%;
   color: #333;
@@ -1963,6 +2013,7 @@ p.small a {
   color: #333;
   font-weight: 600;
   margin-bottom: 10px;
+  margin-left: 55px;
 }
 .ramdan-content .prayer-box p {
   font-size: 15px;
@@ -2069,7 +2120,7 @@ p.small a {
   margin: 20px auto;
 }
 .progress-bar {
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .progress-title {
   color: #000;
@@ -2099,10 +2150,10 @@ td {
 }
 .progress-table {
   margin-top: 10px;
-  // display: none;
+  display: none;
 }
 .table-void {
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .not-bold {
   color: #444444;
@@ -2299,23 +2350,136 @@ td {
   color: #fff;
   margin-top: 5px;
 }
+*{ direction: rtl;
+  font-family: 'Suisse International';
+  // font-weight: 500;
 
+
+}
+.fa{
+  vertical-align: middle;
+}
 /*#ddlCounty {
     background-repeat: no-repeat;
-    background-image: url(/img/en.png);
+    background-image: url(/images/en.png);
     background-position: left center;
     padding-left: 20px;
 }
     #ddlCounty option:nth-child(1) {
-        background: url(/img/602.png) no-repeat left center;
+        background: url(/images/602.png) no-repeat left center;
     }
     #ddlCounty option:nth-child(2) {
-        background: url(/img/420.png) no-repeat left center;
+        background: url(/images/420.png) no-repeat left center;
     }
     #ddlCounty option:nth-child(3) {
-        background: url(/img/602.png) no-repeat left center;
+        background: url(/images/602.png) no-repeat left center;
     }*/
-*{
-  direction: rtl;
-  text-align: right;
-}
+    .ramdan-content .prayer-box {
+      border: 1px solid #E00800;
+      border-radius: 3px;
+      margin-bottom: 40px;
+    }
+    .ramdan-content .prayer-box h3 {
+      display: inline-block;
+      color: #fff;
+      background-color: #E00800;
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 3px;
+      margin: 0;
+    }
+    .ramdan-content .prayer-box .content {
+      padding: 30px 15px;
+    }
+    .ramdan-content .prayer-box .col {
+      margin-bottom: 20px;
+    }
+    .ramdan-content .prayer-box ul {
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 7px 0;
+      border-radius: 3px;
+      background-color: #E00800;
+      text-align: center;
+    }
+    .ramdan-content .prayer-box ul li:nth-child(3) {
+      text-transform: uppercase;
+    }
+    .ramdan-content .prayer-box ul li:last-child {
+      text-align: center;
+    }
+    .ramdan-content .prayer-box ul li:first-child {
+      text-align: right;
+      padding: 0 15px;
+    }
+    .ramdan-content .prayer-box .round label {
+      width: 40px;
+      height: 40px;
+    }
+    .ramdan-content .prayer-box .round label:after {
+      left: 13px;
+      top: 14px;
+    }
+    .ramdan-content .prayer-box .suna {
+      display: block;
+      position: absolute;
+      left: -20px;
+      font-size: 15px;
+      top: 86%;
+      color: #333;
+      font-weight: 700;
+      max-width: 80%;
+      transform: translateY(-50%);
+    }
+    .ramdan-content .prayer-box h4 {
+      font-size: 18px;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .ramdan-content .prayer-box p {
+      font-size: 15px;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .ramdan-content .content-read .round label {
+      top: 50%;
+    }
+    @media (max-width: 767px) {
+      .ramdan-content .prayer-box h4 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .ramdan-content .prayer-box p {
+        font-size: 13px;
+      }
+      .ramdan-content .prayer-box ul li:first-child,
+      .ramdan-content .prayer-box ul li:last-child {
+        text-align: center;
+      }
+      .ramdan-content .prayer-box .suna {
+        text-align: center;
+        top: -28px;
+        left: 0;
+        font-size: 13px;
+        max-width: 100%;
+      }
+      .ramdan-content .prayer-box .col {
+        padding-top: 30px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #eee;
+      }
+      .ramdan-content .prayer-box ul {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+      .round label {
+        top: 50%;
+      }
+      .ramdan-content .prayer-box .round label {
+        width: 35px;
+        height: 35px;
+      }
+    }

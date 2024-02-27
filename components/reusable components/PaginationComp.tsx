@@ -24,6 +24,7 @@ interface Props {
    }
    const MyComponent: React.FC<Props> = ({itemsPerPage}) => {
   // const itemsPerPage = itemsPerPage; // Number of items to display per page
+  const [pageNum, setPageNum] = useState();
   const [currentPage, setCurrentPage] = useState(0);
 
   const fetchData = async (page: number) => {
@@ -65,13 +66,13 @@ interface Props {
             activeClassName="active"
           />
         </div> */}
-     <Pagination>  
-     <Pagination.Item>1</Pagination.Item>  
-     <Pagination.Item>2</Pagination.Item>  
-     <Pagination.Item>3</Pagination.Item>  
-     <Pagination.Item>4</Pagination.Item>  
-     <Pagination.Item>5</Pagination.Item>  
-   </Pagination>  
+        <div className="pagination-butons">
+          
+           <span  onClick={()=>setCurrentPage(currentPage-1)}>prev</span> 
+           page{currentPage + 1}
+           <span onClick={()=>setCurrentPage(currentPage+1)}>next</span>
+        </div>
+
         </>
       )}
     </div>

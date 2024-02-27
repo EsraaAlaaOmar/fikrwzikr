@@ -7,6 +7,7 @@ const Sonan = () => {
     أقل
   </div>
   <table id="sonan-table" style={{width:"100%"}} className="progress-table">
+    <tbody>
     <tr>
       <th></th>
       <th>الفجر</th>
@@ -60,6 +61,7 @@ const Sonan = () => {
       <td>✘</td>
     </tr>
  
+    </tbody>
   </table>
    </>
   )

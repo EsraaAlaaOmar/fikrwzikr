@@ -7,6 +7,7 @@ const Quraan = () => {
     أقل
   </div>
   <table id="quran-table" style={{width:"100%"}} className="progress-table">
+  <tbody>
     <tr>
       <th></th>
       <th>الفجر</th>
@@ -58,7 +59,7 @@ const Quraan = () => {
       <td>✔</td>
       <td>✘</td>
     </tr>
- 
+    </tbody>
   </table>
    </>
   )

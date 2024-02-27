@@ -1,10 +1,17 @@
-import React from 'react'
+import React,{useState,useRef} from 'react'
+import { FaCircleUser } from "react-icons/fa6";
+import { BsListUl } from "react-icons/bs";
+import { useOnClickOutside } from 'usehooks-ts'
 
 const Navbar = () => {
+  const [showSidebar, setShowSidebar] = useState(false)
+  
+  const ref = useRef(null)
+  useOnClickOutside(ref, ()=>setShowSidebar(false))
   return (
-    <div>    
-   {/* <div className="side-nav" style={{right: "0px"}}>      
-      <a href="javascript:void(0);" className="close-btn"><span>×</span></a>     
+    <div>  
+{ showSidebar &&  <div className="side-nav" style={{right: "0px"}} ref={ref}>      
+      <a href="javascript:void(0);" className="close-btn" onClick={()=>setShowSidebar(false)}><span>×</span></a>     
       <ul className="list-unstyled" id="accordion" role="tablist" aria-multiselectable="true">          
         <h3>القائمه</h3>  
         <li className="panel"><a href="index.html">الرئيسية</a></li>   
@@ -151,9 +158,8 @@ const Navbar = () => {
          </ul>
         </li> 
       </ul>     
-     </div> */}
-     
- 
+     </div>
+     }
      <div className="menu affix" data-spy="affix" data-offset-top="100">
      <div className="container">
       <div className="row"> 
@@ -161,13 +167,14 @@ const Navbar = () => {
         <div className="links">  
           <ul className="list-inline">
         <li>
-            <a href="javascript:void(0)" className="show-btn">    
-                <i className="fa fa-list" aria-hidden="true"></i> القائمة  
+            <a href="javascript:void(0)" className="show-btn"  onClick={()=>setShowSidebar(true)}>    
+            <span className='react-icon'><BsListUl /> </span> القائمة  
             </a>                
         </li>
         <li>
             <a href="subscribe.html">
-                <i className="fa fa-user-circle" aria-hidden="true"></i>  تسجيل دخول
+            <span className='react-icon'>  <FaCircleUser /> </span>
+                تسجيل دخول
             </a>
         </li>       
     </ul> 
@@ -180,6 +187,7 @@ const Navbar = () => {
      </div>
          
     </div>
+   
    
    </div>
   )

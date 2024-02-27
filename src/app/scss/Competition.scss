@@ -126,7 +126,7 @@
       vertical-align: middle;
     }
     .child{
-      color: #FF7A01;
+      color: #E00800;
     }
   }
   .page-title{
@@ -159,12 +159,12 @@
   .add-vid-button{
     padding: 8px 20px;
     border-radius: 8px;
-    border: 1px solid #FF7A01;
+    border: 1px solid #E00800;
     font-weight: 700;
     float: left;
     margin-top: 8px;
     &:hover{
-      background-color: #FF7A01;
+      background-color: #E00800;
       color: #fff;
     }
   }
@@ -228,8 +228,8 @@
         justify-content: center;
         align-items: center;
         background-color: #fff;
-        color: #FF7A01;
-        border: 1px dashed #FF7A01;
+        color: #E00800;
+        border: 1px dashed #E00800;
         font-size: 24px;
         font-weight: 700;
         max-width: 100%;

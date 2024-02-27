@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Loader from '../components/competitioncomponents/Loader';
 import PaginationCom from '../components/reusable components/PaginationComp';
-import Navbar from '../components/reusable components/Navbar';
+
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -34,7 +34,7 @@ const Competition = () => {
   
    
       <>
-       <Navbar />
+  
       <Link href='/AllVideos' className="section-title">
           فديوهات المواهب
           </Link>

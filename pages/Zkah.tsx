@@ -32,6 +32,7 @@ const Zkah = () => {
 
 
   return (
+    <div className="row">
     <div className="container ">
         <h2>احسب ذكاتك مع فكر وذكر </h2>
         <div className="zkah-input col-sm-8">
@@ -176,8 +177,9 @@ const Zkah = () => {
            <label for="done">لقد اديت الزكاة</label><br/>
           
         </div>
-       
-
+  
+        </div>
+        <br/>
     </div>
   )
 }

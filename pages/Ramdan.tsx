@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React,{useState} from 'react'
+import { Col } from 'react-bootstrap';
 
 const Ramdan = () => {
   const [checkboxValues, setCheckboxValues] = useState({
@@ -30,7 +31,7 @@ console.log(checkboxValues)
 const requestData = {
   "mobileNumber": "01126214650",
   _ActiviteView: checkboxKeys.map((checkboxKey, index) => ({
-      activitId: index, // You can adjust this according to your requirements
+      activitId: index+1, // You can adjust this according to your requirements
       status: checkboxValues[checkboxKey]
   }))
 };
@@ -68,131 +69,131 @@ const handleCheckboxChange = (event) => {
  
 
   return (
-    <div className='container'>
+    <div>
           <section className="single-content ramdan-content">
      <div className="container">
       <div className="row">
         <div className="col-md-12">
-         <div className="prayer-box">
+        <div className="prayer-box">
           <h3>مواقيت الصلاة</h3> 
           <div className="content">
            <div className="row">
-            <div className="col-md-7 col-xs-6">
+           <Col xs={6} md={7} >
                 <h4> 1 رمضان 1441 هجريا</h4>
                 <p>مواقيت الصلاة حسب مدينة القاهرة</p>  
-            </div>
-            <div className="col-md-2 col-xs-3 text-center"><h4>فرض</h4></div>
-            <div className="col-md-2 col-xs-3 text-center"><h4>سنة</h4></div>   
+            </Col>
+            <Col xs={3} md={2} className="col-md-2 col-xs-3 text-center"><h4>فرض</h4></Col>
+            <Col xs={3} md={2} className="col-md-2 col-xs-3 text-center"><h4>سنة</h4></Col>   
            </div>          
            <div className="col row">
-            <div className="col-md-7 col-xs-6">
+            <Col xs={6} md={7} className="col-md-7 col-s-6">
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الفجر</li>
               <li className="col-md-6 hidden-xs">-</li>   
               <li className="col-md-3 col-xs-12">3:08 صباحا</li>     
              </ul>   
-            </div>
-            <div className="col-md-2 col-xs-3">
+            </Col>
+            <Col xs={3} md={2}>
               <div className="round">
-                 <input type="checkbox" id="checkbox_aa" checked={checkboxValues.checkbox_aa} onChange={handleCheckboxChange} />
-                <label for="checkbox_aa"></label>
+                <input type="checkbox" id="checkbox-aa" />
+                <label for="checkbox-aa"></label>
               </div>                
-            </div>  
-            <div className="col-md-2 col-xs-3">
+            </Col>  
+            <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_a" checked={checkboxValues.checkbox_a} onChange={handleCheckboxChange} />
-                <label for="checkbox_a"></label>
+                <input type="checkbox" id="checkbox-a" />
+                <label for="checkbox-a"></label>
                 <span className="suna">ركعتين قبل</span>  
               </div>                
-            </div>                 
+            </Col>                 
            </div>   
            <div className="col row">
-            <div className="col-md-7 col-xs-6">
+           <Col xs={6} md={7} className="col-md-7 col-s-6">
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الظهر</li>
               <li className="col-md-6 hidden-xs">-</li>   
               <li className="col-md-3 col-xs-12">11:54 صباحا</li>     
              </ul>   
-            </div>
-            <div className="col-md-2 col-xs-3">
+            </Col>
+            <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_bb" checked={checkboxValues.checkbox_bb} onChange={handleCheckboxChange} />
-                <label for="checkbox_bb"></label>
+                <input type="checkbox" id="checkbox-bb" />
+                <label for="checkbox-bb"></label>
               </div>                
-            </div>  
-            <div className="col-md-2 col-xs-3">
+            </Col>  
+            <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_b" checked={checkboxValues.checkbox_b} onChange={handleCheckboxChange} />
-                <label for="checkbox_b"></label>
+                <input type="checkbox" id="checkbox-b" />
+                <label for="checkbox-b"></label>
                 <span className="suna"> ركعتين قبل <br/> 4 بعد</span>  
               </div>                
-            </div>                 
+            </Col>                 
            </div>   
            <div className="col row">
-            <div className="col-md-7 col-xs-6">
+           <Col xs={6} md={7} className="col-md-7 col-s-6">
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">العصر</li>
               <li className="col-md-6 hidden-xs">-</li>   
               <li className="col-md-3 col-xs-12">3:30 مساء</li>     
              </ul>   
-            </div>
-            <div className="col-md-2 col-xs-3">
+            </Col>
+               <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_cc" checked={checkboxValues.checkbox_cc} onChange={handleCheckboxChange} />
-                <label for="checkbox_cc"></label>
+                <input type="checkbox" id="checkbox-cc" />
+                <label for="checkbox-cc"></label>
               </div>                
-            </div>  
-            <div className="col-md-2 col-xs-3">
+            </Col>  
+               <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_c" checked={checkboxValues.checkbox_c} onChange={handleCheckboxChange} />
-                <label for="checkbox_c"></label>
+                <input type="checkbox" id="checkbox-c" />
+                <label for="checkbox-c"></label>
                 <span className="suna"></span>  
               </div>                
-            </div>                 
+            </Col>                 
            </div>   
            <div className="col row">
-            <div className="col-md-7 col-xs-6">
+           <Col xs={6} md={7} className="col-md-7 col-s-6">
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">المغرب</li>
               <li className="col-md-6 hidden-xs">-</li>   
               <li className="col-md-3 col-xs-12">6:54 مساء</li>     
              </ul>   
-            </div>
-            <div className="col-md-2 col-xs-3">
+            </Col>
+               <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_dd" checked={checkboxValues.checkbox_dd} onChange={handleCheckboxChange} />
-                <label for="checkbox_dd"></label>
+                <input type="checkbox" id="checkbox-dd" />
+                <label for="checkbox-dd"></label>
               </div>                
-            </div>  
-            <div className="col-md-2 col-xs-3">
+            </Col>  
+               <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_d" checked={checkboxValues.checkbox_d} onChange={handleCheckboxChange} />
-                <label for="checkbox_d"></label>
+                <input type="checkbox" id="checkbox-d" />
+                <label for="checkbox-d"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
-            </div>                 
+            </Col>                 
            </div>   
            <div className="col row">
-            <div className="col-md-7 col-xs-6">
+           <Col xs={6} md={7} className="col-md-7 col-s-6">
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">العشاء</li>
               <li className="col-md-6 hidden-xs">-</li>  
               <li className="col-md-3 col-xs-12">8:27 مساء</li>     
              </ul>   
-            </div>
-            <div className="col-md-2 col-xs-3">
+            </Col>
+               <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_ee" checked={checkboxValues.checkbox_ee} onChange={handleCheckboxChange} />
-                <label for="checkbox_ee"></label>
+                <input type="checkbox" id="checkbox-ee" />
+                <label for="checkbox-ee"></label>
               </div>                
-            </div>  
-            <div className="col-md-2 col-xs-3">
+            </Col>  
+               <Col xs={3} md={2}>
               <div className="round">
-              <input type="checkbox" id="checkbox_e" checked={checkboxValues.checkbox_e} onChange={handleCheckboxChange} />
-                <label for="checkbox_e"></label>
+                <input type="checkbox" id="checkbox-e" />
+                <label for="checkbox-e"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
-            </div>                 
+            </Col>                 
            </div> 
            <div className="col row">
             <div className="col-md-7 col-xs-6">
@@ -213,7 +214,7 @@ const handleCheckboxChange = (event) => {
             </div>                 
            </div>                
           </div>     
-         </div>    
+         </div>     
         </div>
         <div className="col-md-6">
          <div className="box-item" id="zikr">
@@ -231,12 +232,13 @@ const handleCheckboxChange = (event) => {
         <div className="col-md-6">
          <div className="box-item" id="goza">
           <h3>قراءة جزء</h3>
-          <div className="content-read row">
+          <div className="content-read ">
            <div className="col-xs-3 col-xs-offset-9 text-center">
             <span className="quran-pages">4 صفحات</span>   
            </div>      
            <div className="item-col">
-            <div className="col-xs-9">
+            <div className="">
+            <div className="col-xs-9 text-center">
              <h5>الفجر</h5>    
             </div>
             <div className="col-xs-3">
@@ -245,10 +247,11 @@ const handleCheckboxChange = (event) => {
                 <label for="checkbox_f"></label>
                 
               </div>                
-            </div>   
+            </div>  
+            </div> 
            </div>
            <div className="item-col">
-            <div className="col-xs-9">
+            <div className="col-xs-9 text-center">
              <h5>الظهر</h5>    
             </div>
             <div className="col-xs-3">
@@ -259,7 +262,7 @@ const handleCheckboxChange = (event) => {
             </div>   
            </div>  
            <div className="item-col">
-            <div className="col-xs-9">
+            <div className="col-xs-9 text-center">
              <h5>العصر</h5>    
             </div>
             <div className="col-xs-3">
@@ -270,7 +273,7 @@ const handleCheckboxChange = (event) => {
             </div>   
            </div>  
            <div className="item-col">
-            <div className="col-xs-9">
+            <div className="col-xs-9 text-center">
              <h5>المغرب</h5>    
             </div>
             <div className="col-xs-3">
@@ -281,7 +284,7 @@ const handleCheckboxChange = (event) => {
             </div>   
            </div>  
            <div className="item-col">
-            <div className="col-xs-9">
+            <div className="col-xs-9 text-center">
              <h5>العشاء</h5>    
             </div>
             <div className="col-xs-3">
