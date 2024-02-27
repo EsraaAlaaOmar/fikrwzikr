@@ -44,7 +44,7 @@ interface Props {
 
   const handlePageChange = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
-   
+    
   };
   console.log(currentPage);
   const renderedVideos = data?.map((video: VideoData) => {

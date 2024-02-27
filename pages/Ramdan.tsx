@@ -4,21 +4,7 @@ import { Col } from 'react-bootstrap';
 import SingleHeader from '../components/reusable components/SingleHeader';
 
 interface CheckboxState {
-  checkbox_a: boolean;
-  checkbox_aa: boolean;
-  checkbox_b: boolean; 
-  checkbox_bb: boolean;
-  checkbox_c: boolean;
-  checkbox_cc: boolean;
-  checkbox_d: boolean;
-  checkbox_dd: boolean;
-  checkbox_e: boolean;
-  checkbox_ee: boolean;
-  checkbox_f: boolean;
-  checkbox_g: boolean;
-  checkbox_h: boolean;
-  checkbox_i: boolean;
-  checkbox_j: boolean;
+  [key: string]: boolean;
 }
 const Ramdan = () => {
   const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
@@ -48,7 +34,7 @@ const Ramdan = () => {
 
 const requestData = {
   "mobileNumber": "01126214650",
-  _ActiviteView: checkboxKeys.map((checkboxKey:any, index) => ({
+  _ActiviteView: checkboxKeys.map((checkboxKey:string, index) => ({
       activitId: index+1, // You can adjust this according to your requirements
       status: checkboxValues[checkboxKey]
   }))
