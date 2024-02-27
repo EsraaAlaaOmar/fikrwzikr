@@ -7,7 +7,7 @@ interface VideoData {
   // title: string;
   // Url: string;
   // Add other properties as needed
-  DateIn: Date;
+    DateIn: string;
   Deleted: Boolean;
   Description: string;
   NViews: number;

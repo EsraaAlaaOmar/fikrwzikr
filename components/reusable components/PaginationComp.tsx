@@ -8,7 +8,7 @@ import { Pagination } from 'react-bootstrap';
 
 interface VideoData {
   // Define the properties of the video data you are expecting
-  DateIn: Date;
+    DateIn: string;
   Deleted: Boolean;
   Description: string;
   NViews: number;

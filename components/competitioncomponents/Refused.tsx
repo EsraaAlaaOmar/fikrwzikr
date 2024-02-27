@@ -1,6 +1,5 @@
 import React , {useState,useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
-import { Box, Text } from "@chakra-ui/react"
 import Image from 'next/image';
 import {BsPlay } from 'react-icons/bs'
 import { BiShare , BiBasket} from 'react-icons/bi'
@@ -14,7 +13,7 @@ interface VideoData {
   // title: string;
   // url: string;
   // Add other properties as needed
-  DateIn: Date;
+    DateIn: string;
   Deleted: Boolean;
   Description: string;
   NViews: number;
@@ -22,7 +21,8 @@ interface VideoData {
   Title: string;
   VideoUrl: string;
   VideoId: number;
-  Votes:[]
+  Votes:[];
+  Url:string
 }
 
 

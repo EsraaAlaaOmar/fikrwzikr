@@ -10,7 +10,7 @@ import Upload from './Upload';
 const axios = require("axios");
 
 interface VideoData {
-  DateIn: Date;
+    DateIn: string;
   Deleted: Boolean;
   Description: string;
   NViews: number;
@@ -18,7 +18,8 @@ interface VideoData {
   Title: string;
   VideoUrl: string;
   VideoId: number;
-  Votes:[]
+  Votes:[];
+  Url:string
 }
 const Myvideos = () => {
   // const [data, setData] = useState<VideoData[] | null>(null);

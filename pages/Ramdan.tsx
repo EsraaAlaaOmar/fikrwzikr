@@ -3,8 +3,25 @@ import React,{useState} from 'react'
 import { Col } from 'react-bootstrap';
 import SingleHeader from '../components/reusable components/SingleHeader';
 
+interface CheckboxState {
+  checkbox_a: boolean;
+  checkbox_aa: boolean;
+  checkbox_b: boolean; 
+  checkbox_bb: boolean;
+  checkbox_c: boolean;
+  checkbox_cc: boolean;
+  checkbox_d: boolean;
+  checkbox_dd: boolean;
+  checkbox_e: boolean;
+  checkbox_ee: boolean;
+  checkbox_f: boolean;
+  checkbox_g: boolean;
+  checkbox_h: boolean;
+  checkbox_i: boolean;
+  checkbox_j: boolean;
+}
 const Ramdan = () => {
-  const [checkboxValues, setCheckboxValues] = useState({
+  const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
     checkbox_a: false,
     checkbox_aa: false,
     checkbox_b: false, 
@@ -28,16 +45,16 @@ const Ramdan = () => {
     'checkbox_dd',  'checkbox_d', 'checkbox_ee','checkbox_e', 
     'checkbox_f', 'checkbox_g', 'checkbox_h', 'checkbox_i', 'checkbox_j'
 ];
-console.log(checkboxValues)
+
 const requestData = {
   "mobileNumber": "01126214650",
-  _ActiviteView: checkboxKeys.map((checkboxKey, index) => ({
+  _ActiviteView: checkboxKeys.map((checkboxKey:any, index) => ({
       activitId: index+1, // You can adjust this according to your requirements
       status: checkboxValues[checkboxKey]
   }))
 };
 console.log(requestData)  
-const handleCheckboxChange = (event) => {
+const handleCheckboxChange = (event:any) => {
     const { id, checked } = event.target;
     addProfile(event)
     setCheckboxValues((prevValues) => ({
