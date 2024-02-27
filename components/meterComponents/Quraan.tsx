@@ -1,9 +1,12 @@
 import React from 'react'
-
-const Quraan = () => {
+import { GiCheckMark } from "react-icons/gi";
+interface QuraanProps {
+  hide: (arg0: boolean) => void; // Specify the type of hide function
+}
+const Quraan: React.FC<QuraanProps> = ({hide}) => {
   return (
    <>
-       <div id="prodress-quran-les" className="progress-less"   >
+       <div id="prodress-quran-les" className="progress-less"  onClick={()=>hide(false)}  >
     أقل
   </div>
   <table id="quran-table" style={{width:"100%"}} className="progress-table">
@@ -20,43 +23,43 @@ const Quraan = () => {
     </tr>
     <tr>
       <td>1</td>
-      <td>✔</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
       <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>✔</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>✔</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>✔</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>✔</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     </tbody>

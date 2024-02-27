@@ -201,10 +201,10 @@ p {
     display: inline-block;
     margin:0 5px;
     .react-icon{
-      vertical-align: middle;
+      vertical-align: top;
       display: inline-block;
       font-size: 16px;
-      margin: 0 4px;
+      margin-left: 2px;
     }
   }
 }
@@ -427,7 +427,7 @@ p {
 }
 .single-header::after {
   content: "";
-  // background-image: url('your-image-url.jpg');
+  background-image: url(/images/single-bg.jpg);
   background-size: cover;
   background-position: center;
   opacity: 0.3; /* Change the opacity value as needed */
@@ -1715,7 +1715,7 @@ footer .sub-footer span {
   }
   .single-header {
     height: 75vh;
-    /* background-image: url(../images/single-bg.jpg); */
+    //  background-image: url(../images/single-bg.jpg); 
   }
   .single-header h3 {
     font-size: 20px;
@@ -2120,26 +2120,26 @@ p.small a {
   margin: 20px auto;
 }
 .progress-bar {
-  background-color: #E00800;
+  background-color: #E00800 !important;
 }
 .progress-title {
   color: #000;
   font-size: 16px;
 }
 .progress-more {
-  margin-top: -15px;
+  margin-top: 3px;
   color: #383838;
   float: left;
   font-size: 10px;
   cursor: pointer;
 }
 .progress-less {
-  margin-top: -15px;
+  margin-top: 3px;
   color: #383838;
   float: left;
   font-size: 10px;
   cursor: pointer;
-  display: none;
+  
 }
 .progress-table,
 th,
@@ -2150,7 +2150,7 @@ td {
 }
 .progress-table {
   margin-top: 10px;
-  display: none;
+  // display: none;
 }
 .table-void {
   background-color: #E00800;

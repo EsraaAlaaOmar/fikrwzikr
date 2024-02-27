@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Zikr from '../components/Zikr';
+import SingleHeader from '../components/reusable components/SingleHeader';
 
 const Sbha = () => {
 
@@ -37,7 +38,7 @@ const Sbha = () => {
   // console.log(zikr)
   return (
     <>
- 
+ <SingleHeader pageName='السبحة'/>
     <div className="single-header category-header">
      <div className="container text-center">
       <div className="animatable fadeInUp">     

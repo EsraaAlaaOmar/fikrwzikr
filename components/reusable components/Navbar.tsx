@@ -1,7 +1,9 @@
 import React,{useState,useRef} from 'react'
-import { FaCircleUser } from "react-icons/fa6";
+
 import { BsListUl } from "react-icons/bs";
 import { useOnClickOutside } from 'usehooks-ts'
+
+import { LuUser } from "react-icons/lu";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -173,7 +175,7 @@ const Navbar = () => {
         </li>
         <li>
             <a href="subscribe.html">
-            <span className='react-icon'>  <FaCircleUser /> </span>
+            <span className='react-icon'>  <LuUser /> </span>
                 تسجيل دخول
             </a>
         </li>       

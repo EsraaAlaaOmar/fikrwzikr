@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{useState} from 'react'
 import { Col } from 'react-bootstrap';
+import SingleHeader from '../components/reusable components/SingleHeader';
 
 const Ramdan = () => {
   const [checkboxValues, setCheckboxValues] = useState({
@@ -69,7 +70,9 @@ const handleCheckboxChange = (event) => {
  
 
   return (
-    <div>
+    <div className="wrapper">
+      <SingleHeader pageName='30 يوم
+رحلة التقرب إلي الله'/>
           <section className="single-content ramdan-content">
      <div className="container">
       <div className="row">

@@ -1,9 +1,13 @@
 import React from 'react'
+import { GiCheckMark } from "react-icons/gi";
 
-const Sonan = () => {
+interface SonanProps {
+  hide: (arg0: boolean) => void; // Specify the type of hide function
+}
+const Sonan: React.FC<SonanProps> = ({hide}) => {
   return (
    <>
-       <div id="prodress-sonan-les" className="progress-less"   >
+       <div id="prodress-sonan-les" className="progress-less"  onClick={()=>hide(false)}  >
     أقل
   </div>
   <table id="sonan-table" style={{width:"100%"}} className="progress-table">
@@ -20,44 +24,44 @@ const Sonan = () => {
     </tr>
     <tr>
       <td>1</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
       <td className="table-void"></td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
       <td  rowSpan={30} style={{fontWeight:"bold", fontSize:"18px"}}>65%</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
       <td className="table-void"></td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
      
       <td>✘</td>
       <td className="table-void"></td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
       <td className="table-void"></td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
       <td className="table-void"></td>
-      <td>✔</td>
+      <td>{<GiCheckMark />}</td>
       <td>✘</td>
     </tr>
  

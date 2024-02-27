@@ -4,6 +4,7 @@ import Sonan from '../components/meterComponents/Sonan'
 import Quraan from '../components/meterComponents/Quraan'
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import SingleHeader from '../components/reusable components/SingleHeader'
 
 const RamdanMeter = () => {
     const[showfrood,setShowFrood] = useState(false)
@@ -24,6 +25,7 @@ const RamdanMeter = () => {
   return (
     <>
 <div className="progress-container">
+<SingleHeader pageName='تفاصيل عبادتك'/>
   <h2 className="ramadan-meter-title">تفاصيل  عباداتك خلال رمضان</h2>
    {/* <!-- salah --> */}
  <div className="progress-category">
@@ -31,13 +33,13 @@ const RamdanMeter = () => {
      الصلاة
   </div>
   <div className="progress">
-    <div className="progress-bar" role="progressbar" style={{width: "75"}} aria-valuenow={75} aria-valuemin={0} aria-valuemax={100}></div>
+  <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
   </div>
-  <div id="prodress-salah-more"className="progress-more" onClick={()=>setShowFrood(true)} >
+  {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>setShowFrood(true)} >
     معلومات أكثر
-  </div>
+  </div>}
 
- {<Frood />}
+ {showfrood && <Frood  hide={setShowFrood} />}
   
 </div>
 
@@ -49,10 +51,10 @@ const RamdanMeter = () => {
   <div className="progress">
     <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
   </div>
-  <div id="prodress-sonan-more"className="progress-more" onClick={()=>setShowSonan(true)} >
+  {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>setShowSonan(true)} >
     معلومات أكثر
-  </div>
-{<Sonan />}
+  </div>}
+{showsonan && <Sonan  hide={setShowSonan}  />}
   
 </div>
 
@@ -66,10 +68,10 @@ const RamdanMeter = () => {
   <div className="progress">
     <div className="progress-bar" role="progressbar" style={{width: "50%"}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
   </div>
-  <div id="prodress-quran-more"className="progress-more"  onClick={()=>setShowQuran(true)}>
+ {!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>setShowQuran(true)}>
     معلومات أكثر
-  </div>
-   <Quraan />
+  </div>}
+  {showquran && <Quraan  hide={setShowQuran} />}
 
   
 </div>

@@ -1,9 +1,13 @@
 import React from 'react'
 import { GiCheckMark } from "react-icons/gi";
-const Frood = () => {
+
+interface FroodProps {
+    hide: (arg0: boolean) => void; // Specify the type of hide function
+  }
+  const Frood: React.FC<FroodProps> = ({hide}) => {
   return (
  <>
-    <div id="prodress-salah-les" className="progress-less"   >
+    <div id="prodress-salah-les" className="progress-less"  onClick={()=>hide(false)}  >
         أقل
     </div>
     <table id="salah-table" style={{width:"100%"}} className="progress-table">
@@ -11,7 +15,7 @@ const Frood = () => {
     <tr>
         <th></th>
         <th>الفجر</th>
-        <th>الحمد لله</th>
+        <th>الظهر</th>
         <th>العصر</th>
         <th>المغرب</th>
         <th>العشاء</th>
@@ -20,43 +24,43 @@ const Frood = () => {
     </tr>
     <tr>
         <td>1</td>
-        <td><GiCheckMark /></td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
         <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
     </tr>
     <tr>
         <td>2</td>
-        <td><GiCheckMark /></td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
     </tr>
     <tr>
         <td>3</td>
-        <td><GiCheckMark /></td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
     </tr>
     <tr>
         <td>4</td>
-        <td><GiCheckMark /></td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
     </tr>
     <tr>
         <td>5</td>
-        <td><GiCheckMark /></td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
-        <td><GiCheckMark /></td>
+        <td>{<GiCheckMark />}</td>
         <td>✘</td>
     </tr>
     </tbody>
