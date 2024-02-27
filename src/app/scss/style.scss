@@ -989,7 +989,7 @@ p {
   vertical-align: text-top;
 }
 .menu ul li a {
-  font-size: 14px;
+  font-size: 12px;
   color: #E00800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1209,6 +1209,7 @@ p {
   background-size: cover;
   background-position: center;
   height: 80vh;
+  width: 100vw;
 }
 .single-header .container {
   position: absolute;

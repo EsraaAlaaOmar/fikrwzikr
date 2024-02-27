@@ -1,5 +1,6 @@
 import axios, { Axios } from 'axios';
 import React, { useState } from 'react'
+import SingleHeader from '../components/reusable components/SingleHeader';
 
 const Zkah = () => {
   const AddZakaa = async () => {
@@ -32,9 +33,12 @@ const Zkah = () => {
 
 
   return (
-    <div className="row">
+    <>
+     <SingleHeader pageName='الزكاة'/>
+
+    <div className="row zakah-body">
     <div className="container ">
-        <h2>احسب ذكاتك مع فكر وذكر </h2>
+        <h2>احسب زكاتك مع  كأنك تراه </h2>
         <div className="zkah-input col-sm-8">
             <div className="zakah-box " >
               <div className="input-title">زكاة المال</div>
@@ -172,7 +176,7 @@ const Zkah = () => {
             <span className="total">إجمالي مبلغ الزكاة</span>
             <span className="result" id="output-total">{outputMall+outputAkarat+outputAsoolwmomtlkat+outputGold}ج.م</span>
            </div>
-       
+       <br/>
            <input type="checkbox" id="done" name="done" value="Bike" onChange={()=>AddZakaa()}/>
            <label htmlFor="done">لقد اديت الزكاة</label><br/>
           
@@ -180,7 +184,8 @@ const Zkah = () => {
   
         </div>
         <br/>
-    </div>
+    </div>    
+  </>
   )
 }
 

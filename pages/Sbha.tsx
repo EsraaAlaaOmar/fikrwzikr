@@ -39,18 +39,8 @@ const Sbha = () => {
   return (
     <>
  <SingleHeader pageName='السبحة'/>
-    <div className="single-header category-header">
-     <div className="container text-center">
-      <div className="animatable fadeInUp">     
-       <a href="index.html"><img src="/images/menu-logo.png" className="center-block" alt="logo" /></a>     
-       <h3 className='red'>السبحة</h3>       
-      </div>      
-     </div>    
-    </div>  
-    {/* <!-- End Single Header -->
-    <!-- Start Single Content -->
-    
-    <!-- End Single Content -->   */}
+   
+ <div className="sbha-body">
     
     <select name="zkr" id="select-zekr" className="select-zekr" onChange={e=>setZikr(e.target.value)}>
       <option value="سبحان الله" >سبحان الله</option>
@@ -64,7 +54,7 @@ const Sbha = () => {
      {zikr=="الله اكبر" && <Zikr zikrName="الله اكبر"/>}
 
 
-
+</div>
   
   
         

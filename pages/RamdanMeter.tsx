@@ -96,75 +96,7 @@ const RamdanMeter = () => {
 
 {/* <!-- sbha --> */}
 
-<div className="progress-category">
-  <div className="progress-title">
-     التسبيح
-  </div>
-  <div className="progress">
-    <div className="progress-bar" role="progressbar" style={{width: "75%"}} aria-valuenow={75} aria-valuemin={0} aria-valuemax={100}></div>
-  </div>
-  {/* <div id="prodress-sbha-more"className="progress-more" >
-    معلومات أكثر
-  </div>
-  <div id="prodress-sbha-les" className="progress-less"  >
-    أقل
-  </div> */}
-  {/* <table id="sbha-table" style={{width:"100%"}} className="progress-table">
-    <tr>
-      <th></th>
-      <th>سبحان الله <br/><span className="not-bold"> 100 مرة </span></th>
-      <th>الحمد لله <span className="not-bold"> 100 مرة </span></th>
-      <th>لا اله الا الله <span className="not-bold"> 100 مرة </span></th>
-      <th>الله اكبر <span className="not-bold"> 100 مرة </span></th>
-      
-      <th>المجموع</th>
 
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✘</td>
-      <td>✔</td>
-     
-      <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✘</td>
-      <td>✔</td>
-   
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✘</td>
-      <td>✔</td>
-    
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✘</td>
-      <td>✔</td>
-
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✘</td>
-      <td>✔</td>
-      
-    </tr>
- 
-  </table> */}
-  
-</div>
 
 
 </div>
