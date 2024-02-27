@@ -174,7 +174,7 @@ const Zkah = () => {
            </div>
        
            <input type="checkbox" id="done" name="done" value="Bike" onChange={()=>AddZakaa()}/>
-           <label for="done">لقد اديت الزكاة</label><br/>
+           <label htmlFor="done">لقد اديت الزكاة</label><br/>
           
         </div>
   

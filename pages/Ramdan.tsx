@@ -102,13 +102,13 @@ const handleCheckboxChange = (event:any) => {
             <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-aa" />
-                <label for="checkbox-aa"></label>
+                <label htmlFor="checkbox-aa"></label>
               </div>                
             </Col>  
             <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-a" />
-                <label for="checkbox-a"></label>
+                <label htmlFor="checkbox-a"></label>
                 <span className="suna">ركعتين قبل</span>  
               </div>                
             </Col>                 
@@ -124,13 +124,13 @@ const handleCheckboxChange = (event:any) => {
             <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-bb" />
-                <label for="checkbox-bb"></label>
+                <label htmlFor="checkbox-bb"></label>
               </div>                
             </Col>  
             <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-b" />
-                <label for="checkbox-b"></label>
+                <label htmlFor="checkbox-b"></label>
                 <span className="suna"> ركعتين قبل <br/> 4 بعد</span>  
               </div>                
             </Col>                 
@@ -146,13 +146,13 @@ const handleCheckboxChange = (event:any) => {
                <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-cc" />
-                <label for="checkbox-cc"></label>
+                <label htmlFor="checkbox-cc"></label>
               </div>                
             </Col>  
                <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-c" />
-                <label for="checkbox-c"></label>
+                <label htmlFor="checkbox-c"></label>
                 <span className="suna"></span>  
               </div>                
             </Col>                 
@@ -168,13 +168,13 @@ const handleCheckboxChange = (event:any) => {
                <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-dd" />
-                <label for="checkbox-dd"></label>
+                <label htmlFor="checkbox-dd"></label>
               </div>                
             </Col>  
                <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-d" />
-                <label for="checkbox-d"></label>
+                <label htmlFor="checkbox-d"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
             </Col>                 
@@ -190,13 +190,13 @@ const handleCheckboxChange = (event:any) => {
                <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-ee" />
-                <label for="checkbox-ee"></label>
+                <label htmlFor="checkbox-ee"></label>
               </div>                
             </Col>  
                <Col xs={3} md={2}>
               <div className="round">
                 <input type="checkbox" id="checkbox-e" />
-                <label for="checkbox-e"></label>
+                <label htmlFor="checkbox-e"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
             </Col>                 
@@ -250,7 +250,7 @@ const handleCheckboxChange = (event:any) => {
             <div className="col-xs-3">
               <div className="round">
               <input type="checkbox" id="checkbox_f" checked={checkboxValues.checkbox_f} onChange={handleCheckboxChange} />
-                <label for="checkbox_f"></label>
+                <label htmlFor="checkbox_f"></label>
                 
               </div>                
             </div>  
@@ -263,7 +263,7 @@ const handleCheckboxChange = (event:any) => {
             <div className="col-xs-3">
               <div className="round">
               <input type="checkbox" id="checkbox_g" checked={checkboxValues.checkbox_g} onChange={handleCheckboxChange} />
-                <label for="checkbox_g"></label>
+                <label htmlFor="checkbox_g"></label>
               </div>                
             </div>   
            </div>  
@@ -274,7 +274,7 @@ const handleCheckboxChange = (event:any) => {
             <div className="col-xs-3">
               <div className="round">
               <input type="checkbox" id="checkbox_h" checked={checkboxValues.checkbox_h} onChange={handleCheckboxChange} />
-                <label for="checkbox_h"></label>
+                <label htmlFor="checkbox_h"></label>
               </div>                
             </div>   
            </div>  
@@ -285,7 +285,7 @@ const handleCheckboxChange = (event:any) => {
             <div className="col-xs-3">
               <div className="round">
               <input type="checkbox" id="checkbox_i" checked={checkboxValues.checkbox_i} onChange={handleCheckboxChange} />
-                <label for="checkbox_i"></label>
+                <label htmlFor="checkbox_i"></label>
               </div>                
             </div>   
            </div>  
@@ -296,7 +296,7 @@ const handleCheckboxChange = (event:any) => {
             <div className="col-xs-3">
               <div className="round">
               <input type="checkbox" id="checkbox_j" checked={checkboxValues.checkbox_j} onChange={handleCheckboxChange} />
-                <label for="checkbox_j"></label>
+                <label htmlFor="checkbox_j"></label>
               </div>                
             </div>   
            </div>                
