@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Loader from '../components/competitioncomponents/Loader';
 import PaginationCom from '../components/reusable components/PaginationComp';
-
+import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -34,24 +34,29 @@ const Competition = () => {
   
    
       <>
-  
-      <Link href='/AllVideos' className="section-title">
-          فديوهات المواهب
-          </Link>
-          <Link href='/AllVideos' className="section-page">
-            عرض الكل 
-          </Link>
+
+     
           <br style={{clear: "both"}}/>
+          <div className='page-hierarchy'>
+                <span className='parent'>
+                        <Link href='/' style={{color:"#000"}}>
+                            الرئيسية 
+                        </Link>
+                    <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
+                    </span>
+                    <span className='child'>مسابقة رمضان </span>
+
+                    <br />
+      
+    </div>
           <div className='videos-grid container'>
               {/* {renderedVideos} */}
            
         </div >
-          
-      
-    
+   
 
 <PaginationCom itemsPerPage={12}/>
-        
+
     </>
   )
 }

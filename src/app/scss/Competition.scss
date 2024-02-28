@@ -117,13 +117,17 @@
     color: #4B4A4A;
     font-size: 20px;
     text-align: right;
+    margin-right: 10px;
+    a{
+      display: inline-block;
+    }
     .parent{
      
       
     }
     .arow-icon{
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: text-top;
     }
     .child{
       color: #E00800;
