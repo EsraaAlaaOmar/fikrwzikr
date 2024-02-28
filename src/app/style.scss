@@ -15,7 +15,10 @@ body{
 
 .pagination-butons{
   text-align: center;
-  margin-bottom: 20px;
+  width: 160px;
+    display: block;
+    margin: 20px auto;
+  
   span{
     padding: 5px ;
     color: #fff;

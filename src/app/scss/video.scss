@@ -75,7 +75,7 @@
       }
       span{
         display: inline-block;
-        vertical-align: middle;
+      
       }
      
     }
@@ -217,6 +217,7 @@
         border-radius: 8px;
         background: #f2f0ed;
         object-fit:fill;
+        min-width: 420px;
         @media screen and (max-width: 500px){
           width: 100%;
           height: auto;
@@ -264,13 +265,16 @@
         color: #656464;
         display: inline-block;
         float: left;
+        position: absolute;
+        left: 5px;
         @media screen and (max-width: 263px){
           font-size: 10px;
         
         }
         span{
           display: inline-block;
-          vertical-align: middle;
+        
+          vertical-align: text-top;
         }
        
       }

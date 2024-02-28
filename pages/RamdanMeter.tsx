@@ -11,17 +11,17 @@ const RamdanMeter = () => {
     const[showsonan,setShowSonan] = useState(false)
     const[showquran,setShowQuran] = useState(false)
     var MobileNumbr = '01126214650';
-    // const fetchData = async () => {
-    //   const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${MobileNumbr}`, {
-    //     headers: {
-    //       'content-type': 'text/json'
-    //     }
-    //   });
-    //   return response.data;
-    // };
-//  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
+    const fetchData = async () => {
+      const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${MobileNumbr}`, {
+        headers: {
+          'content-type': 'text/json'
+        }
+      });
+      return response.data;
+    };
+ const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
   
- console.log(showquran)
+ console.log(data?.description._FurdDVView)
   return (
     <>
 <div className="progress-container">

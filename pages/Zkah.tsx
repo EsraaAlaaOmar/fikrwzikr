@@ -21,12 +21,15 @@ const Zkah = () => {
   const [gold18, seTGold18] = useState<number>(0)
   const [gold21, seTGold21] = useState<number>(0)
   const[akarat, seTAkarat] = useState<number>(0)
-
+   const gold18Price= 2588;
+   const gold21Price = 3020;
   var  outputMall = 0 
-   outputMall = Math.ceil(mall*0.025)
-   var outputAsoolwmomtlkat = Math.ceil((Ashoom + sndat + arbah )* 0.025)
-   var outputGold=Math.ceil((gold18*3107 + gold21*3625)*.025)
-   var outputAkarat = Math.ceil(akarat*0.025)
+   outputMall =!isNaN(mall) ? Math.ceil( mall*0.025) : 0
+   var outputSum =(!isNaN(Ashoom)?Ashoom:0) +( !isNaN(sndat) ? sndat : 0) +( !isNaN(arbah)? arbah :0)
+   var outputAsoolwmomtlkat = Math.ceil(outputSum* 0.025)
+   var outoutGoldSum =  (!isNaN(gold18)?gold18 * gold18Price :0) + ( !isNaN(gold21) ? gold21 * gold21Price : 0) 
+   var outputGold=Math.ceil((outoutGoldSum)*.025)
+   var outputAkarat = !isNaN(mall) ? Math.ceil(akarat*0.025) :0
 //
 
 
@@ -104,7 +107,7 @@ const Zkah = () => {
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">وزن الذهب الذي تملكة من عيار 18 بالجرام</div>
-                <input className="input-field" type="number" min="0" placeholder="القيمة هنا" id="input-eighteen" onChange={(e:any)=>seTSndat(parseFloat(e.target.value))}/>
+                <input className="input-field" type="number" min="0" placeholder="القيمة هنا" id="input-eighteen" onChange={(e:any)=>seTGold18(parseFloat(e.target.value))}/>
                  
              </div>
              <div className="box-unit ">
@@ -178,7 +181,7 @@ const Zkah = () => {
            </div>
        <br/>
            <input type="checkbox" id="done" name="done" value="Bike" onChange={()=>AddZakaa()}/>
-           <label htmlFor="done">لقد اديت الزكاة</label><br/>
+           <label htmlFor="done" className="done">لقد اديت الزكاة</label><br/>
           
         </div>
   

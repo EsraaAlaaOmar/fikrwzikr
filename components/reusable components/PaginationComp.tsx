@@ -58,22 +58,14 @@ interface Props {
       {isLoading ? <Loader /> : (
         <>
          <div className='videos-grid container'>   {renderedVideos}</div>
-        {/* <div className='paginate-component'>  <ReactPaginate
-            pageCount={data?.length / itemsPerPage} // Calculate pageCount based on fetched data
-            pageRangeDisplayed={5} // Adjust as needed
-            marginPagesDisplayed={2} // Adjust as needed
-            onPageChange={handlePageChange}
-            containerClassName="pagination"
-            activeClassName="active"
-          />
-        </div> */}
         <div className="pagination-butons">
-          
-           <span  onClick={()=>setCurrentPage(currentPage-1)}>prev</span> 
-           page{currentPage + 1}
-           <span onClick={()=>setCurrentPage(currentPage+1)}>next</span>
+        <Pagination>
+        <li className="page-item" onClick={()=>setCurrentPage(currentPage-1)}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
+        <li className="page-item"><a className="page-link" style={{color: '#000'}} >{currentPage + 1}</a></li>
+        <li className="page-item"  onClick={()=>setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
+       </Pagination>
         </div>
-
+       
         </>
       )}
     </div>

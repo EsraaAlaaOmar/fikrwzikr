@@ -66,7 +66,7 @@ const handleClickInside = () => {
         width="320"
         height="240"
             // controls="false"
-            poster="https://i.ytimg.com/vi/-Yv1w-iVCJk/maxresdefault.jpg"
+            poster="https://i.ytimg.com/vi/aPYOyxX8KeI/maxresdefault.jpg"
         muted
         >
     

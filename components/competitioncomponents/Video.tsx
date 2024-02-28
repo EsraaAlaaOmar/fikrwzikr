@@ -157,7 +157,7 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
         className="competetion-video"
            
             src={videodetails?.VideoUrl}
-            poster={videodetails.PosterUrl ?videodetails.PosterUrl:"https://i.ytimg.com/vi/-Yv1w-iVCJk/maxresdefault.jpg"}
+            poster={videodetails.PosterUrl ?videodetails.PosterUrl:"https://i.ytimg.com/vi/aPYOyxX8KeI/maxresdefault.jpg"}
         // controls="false"
         muted
         >
