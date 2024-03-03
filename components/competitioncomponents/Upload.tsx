@@ -164,8 +164,8 @@ interface UploadProps {
           <textarea  className="upload-video-textarea" placeholder="أدخل وصف الفديو " name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
       </div>
       <div className="upload-video-input">
-          <label className="upload-video-label">غلاف الفديو(اختياري) </label>
-          <input type='file'  className="" placeholder="أدخل غلاف الفديو " name='posterFile'  onChange={e=>onChange(e)} />
+          <label className="upload-video-label" style={{fontSize:"14px"}}>غلاف الفديو(اختياري) </label>
+          <input type='file'  className="" placeholder="أدخل غلاف الفديو " name='posterFile'  onChange={e=>onChange(e)} style={{fontSize:"14px"}} />
       </div>
             </div>
           {mutation.isLoading ? <Loader /> : <div id="uploaded-data">
