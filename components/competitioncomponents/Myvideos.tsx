@@ -131,7 +131,7 @@ const Myvideos = () => {
      <div className='section-title'>
      قيد  المراجعة
       </div> 
-      <div className='videos-grid videos-page'>
+      <div className=' videos-page'>
        {renderedPending}
     
    

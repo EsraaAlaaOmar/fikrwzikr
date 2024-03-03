@@ -55,6 +55,7 @@ interface Props {
 
   return (
     <div>
+    
       {isLoading ? <Loader /> : (
         <>
          <div className='videos-grid container'>   {renderedVideos}</div>
