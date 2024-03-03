@@ -11,7 +11,12 @@
 @import 'scss/video.scss';
 body{
     direction: rtl;
-    padding-top: 120px;
+    padding-top:100px;
+    @media screen and (max-width: 500px){
+      padding-top:104px;
+    
+    }
+
 }
 
 .pagination-butons{
