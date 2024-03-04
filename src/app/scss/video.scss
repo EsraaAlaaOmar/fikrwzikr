@@ -397,5 +397,37 @@
       
       }
     }
+    .my-videos-link-div{
+      background-color: #e00800;
+      width: 500px;
+      height: 50px;
+      border-radius: 25px;
+      margin: auto;
+      text-decoration: none;
+      &:hover{
+        text-decoration:none;
+        border-color: #E00800;
+      }
+      border-color: #E00800;
+  .my-videos-link{
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    display: block;
+    background-color: #e00800;
+    color: #fff;
+    border: solid;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+   
+      text-decoration: none;
+      &:hover{
+        text-decoration:none
+      }
+    }
+    
+  }
       
     

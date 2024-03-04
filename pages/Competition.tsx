@@ -37,11 +37,7 @@ const Competition = () => {
 
      
           <br style={{clear: "both"}}/>
-          <Link href='/Myvideos' style={{color:"#000"}}>
-          <button className="add-vid-button" >
-       فديوهاتي
-        </button>
-        </Link>
+      
           <div className='page-hierarchy'>
                 <span className='parent'>
                         <Link href='/' style={{color:"#000"}}>
@@ -55,7 +51,11 @@ const Competition = () => {
                     <br />
       
     </div>
-    
+        <Link className='my-videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+          <button className="my-videos-link" >
+       فديوهاتي
+        </button>
+        </Link>
           <div className='videos-grid '>
       
               {/* {renderedVideos} */}

@@ -41,7 +41,7 @@ const Zkah = () => {
 
     <div className="row zakah-body">
     <div className="container ">
-        <h2>احسب زكاتك مع  كأنك تراه </h2>
+        <h3>احسب زكاتك مع  كأنك تراه </h3>
         <div className="zkah-input col-sm-8">
             <div className="zakah-box " >
               <div className="input-title">زكاة المال</div>
