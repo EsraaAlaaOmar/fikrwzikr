@@ -150,11 +150,11 @@ const handleCheckboxChange = (event:any) => {
               </div>                
             </Col>  
                <Col xs={3} md={2}>
-              <div className="round">
+              {/* <div className="round">
                 <input type="checkbox" id="checkbox-c" />
                 <label htmlFor="checkbox-c"></label>
                 <span className="suna"></span>  
-              </div>                
+              </div>                 */}
             </Col>                 
            </div>   
            <div className="col row">

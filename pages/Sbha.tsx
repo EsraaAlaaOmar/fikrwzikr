@@ -38,16 +38,19 @@ const Sbha = () => {
   // console.log(zikr)
   return (
     <>
- <SingleHeader pageName='السبحة'/>
+ <SingleHeader pageName=''/>
    
- <div className="sbha-body">
-    
-    <select name="zkr" id="select-zekr" className="select-zekr" onChange={e=>setZikr(e.target.value)}>
+ <div className="sbha-body ">
+    {/* <img src='/images/muslim-tasbih.png' /> */}
+    <h3>السبحة <img src='/images/muslim-tasbih.png' /></h3>
+
+   <div className='select-div'> <select name="zkr" id="select-zekr" className="select-zekr" onChange={e=>setZikr(e.target.value)}>
       <option value="سبحان الله" >سبحان الله</option>
       <option value="الحمد لله">الحمد لله</option>
       <option value="لا اله الا الله">لا اله الا الله</option>
       // <option value="الله اكبر">الله اكبر </option>
     </select>
+    </div>
    { zikr=="سبحان الله"  && <Zikr zikrName="سبحان الله" />}
     {zikr== "الحمد لله" &&  <Zikr zikrName="الحمد لله" />}
      {zikr== "لا اله الا الله" && <Zikr zikrName="لا اله الا الله" />}

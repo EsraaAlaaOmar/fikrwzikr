@@ -1,27 +1,59 @@
 .sbha-body{
     margin-top: 50px;
     margin-bottom:150px ;
+    h3{
+        font-weight: bold;
+        margin-right: 50px;position: relative;
+        margin-top: 93px;
+     
+    }
+    img{
+        position: absolute;
+        right: -10px;
+        top: -45px;
+        width: 50px;
+    }
 }
 .zkr-box{
     text-align: center; 
     width: 400px;
     margin:20px auto;
-    border: solid 1px #000;
+    // border: solid 1px #000;
     max-width:80%;
+}
+.select-div{
+    // padding:10px 20px;
+    background-color: #e00800;
+    width: 325px;
+    margin: auto;
+
+    border-radius: 20px;
 }
 .select-zekr{
     display:block;
-    width: 600px;
+    width: 320px;
     margin:20px auto;
     max-width:85%;
-    padding: 10px 5px;
+    padding: 14px;
     color: #000;
     font-size: 18px;
     outline: none;
+    background-color: #e00800;
+    border-color: #e00800;
+    color: #fff;
+    border-radius: 20px;
+    option{
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        &:hover{
+            background-color: #000 !important;
+        }
+    }
 }
 .zkr-name{
     width: 100%;
-    background-color: #000000;
+    background-color: #000;
     color: #fff;
     text-align: center;
     font-size: 18px;
@@ -30,14 +62,17 @@
 .zkr-button{
     padding: 50px auto;
     border-radius: 50%;
-    font-size: 24px;
-    background-color: #e00800;
-    color: #fff;
+    font-size: 30px;
+    background-color: #f2f2f2;
+    color: #000;
+    font-weight: bold;
     border: solid 2px #fff;
     outline-color: #fff;
-    width: 116.94px;
-    height: 116.94px;
+    width: 150px;
+    height: 150px;
     margin: 10px 0;
+    border-radius: 30px 10px 30px 30px !important;
+    cursor: pointer;
 }
 .sbha-reset{
     color: #999595;
