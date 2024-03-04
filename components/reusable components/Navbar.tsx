@@ -16,9 +16,9 @@ const Navbar = () => {
       <a href="javascript:void(0);" className="close-btn" onClick={()=>setShowSidebar(false)}><span>×</span></a>     
       <ul className="list-unstyled" id="accordion" role="tablist" aria-multiselectable="true">          
         <h3>القائمه</h3>  
-        <li className="panel"><a href="index.html">الرئيسية</a></li>   
+        <li className="panel"><a href="https://ka2naktraho.com/Index">الرئيسية</a></li>   
         <li className="panel">
-         <a href="#one" data-toggle="collapse" data-parent="#accordion">القرآن الكريم <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=1" data-toggle="collapse" data-parent="#accordion">القرآن الكريم <span className="caret"></span></a>
          <ul className="collapse" id="one">
           <li>
             <a href="#" className="level-2">الختمات القرآنية <span className="caret"></span></a>
@@ -59,7 +59,7 @@ const Navbar = () => {
          </ul>    
         </li> 
         <li className="panel">
-         <a href="#two" data-toggle="collapse" data-parent="#accordion">الأدعية والابتهالات الدينية <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=18" data-toggle="collapse" data-parent="#accordion">الأدعية والابتهالات الدينية <span className="caret"></span></a>
          <ul className="collapse" id="two">
           <li>
             <a href="#" className="level-2">أدعية القرآن الكريم <span className="caret"></span></a>
@@ -81,7 +81,7 @@ const Navbar = () => {
          </ul>    
         </li> 
         <li className="panel">
-         <a href="#three" data-toggle="collapse" data-parent="#accordion">الرقائق الإيمانية <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=26" data-toggle="collapse" data-parent="#accordion">الرقائق الإيمانية <span className="caret"></span></a>
          <ul className="collapse" id="three">
           <li><a href="single-6.html">السيرة اليسيرة</a></li>
           <li><a href="single-7.html">نسمات</a></li>
@@ -92,7 +92,7 @@ const Navbar = () => {
          </ul>    
         </li> 
         <li className="panel">
-         <a href="#four" data-toggle="collapse" data-parent="#accordion">الحديث الشريف <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=33" data-toggle="collapse" data-parent="#accordion">الحديث الشريف <span className="caret"></span></a>
          <ul className="collapse" id="four">
           <li><a href="single-12.html">من وحي الأربعين</a></li>
           <li><a href="single-13.html">قصة حديث</a></li>
@@ -102,7 +102,7 @@ const Navbar = () => {
          </ul>    
         </li>
         <li className="panel">
-         <a href="#five" data-toggle="collapse" data-parent="#accordion">أفكار وأذكار <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=39" data-toggle="collapse" data-parent="#accordion">أفكار وأذكار <span className="caret"></span></a>
           <ul className="collapse" id="five">
            <li><a href="single-17.html">أفلا يتفكرون</a></li>
            <li><a href="single-18.html">هدى للناس</a></li>
@@ -111,7 +111,7 @@ const Navbar = () => {
          </ul>
         </li>                
         <li className="panel">
-         <a href="#six" data-toggle="collapse" data-parent="#accordion">اكتشف نفسك <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=44" data-toggle="collapse" data-parent="#accordion">اكتشف نفسك <span className="caret"></span></a>
           <ul className="collapse" id="six">
            <li><a href="single-21.html">قيم حضارية</a></li>
            <li><a href="single-22.html">من عمل يده</a></li>
@@ -120,7 +120,7 @@ const Navbar = () => {
          </ul>
         </li>                     
         <li className="panel">
-         <a href="#seven" data-toggle="collapse" data-parent="#accordion">كأنك تراه - ﷺ <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=49" data-toggle="collapse" data-parent="#accordion">كأنك تراه - ﷺ <span className="caret"></span></a>
           <ul className="collapse" id="seven">
            <li><a href="single-25.html">مقتنيات</a></li>
            <li><a href="single-26.html">أوسمة نبوية</a></li>
@@ -130,7 +130,7 @@ const Navbar = () => {
          </ul>
         </li>               
         <li className="panel">
-         <a href="#eight" data-toggle="collapse" data-parent="#accordion">كأنك معه - ﷺ  <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=55" data-toggle="collapse" data-parent="#accordion">كأنك معه - ﷺ  <span className="caret"></span></a>
           <ul className="collapse" id="eight">
            <li><a href="single-30.html">ذاكرة الأماكن النبوية</a></li>
            <li><a href="single-31.html">في محراب النبوة</a></li>
@@ -139,7 +139,7 @@ const Navbar = () => {
          </ul>
         </li>               
         <li className="panel">
-         <a href="#nine" data-toggle="collapse" data-parent="#accordion">فيديو كليب <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=60" data-toggle="collapse" data-parent="#accordion">إنشاد <span className="caret"></span></a>
           <ul className="collapse" id="nine">
            <li><a href="single-34.html">أشعار وأنوار</a></li>
            <li><a href="single-35.html">أم القرى</a></li>
@@ -151,7 +151,7 @@ const Navbar = () => {
          </ul>
         </li> 
         <li className="panel">
-         <a href="#ten" data-toggle="collapse" data-parent="#accordion">خواطر الأحباب <span className="caret"></span></a>
+         <a href="https://ka2naktraho.com/Category?id=68" data-toggle="collapse" data-parent="#accordion">خواطر الأحباب <span className="caret"></span></a>
           <ul className="collapse" id="ten">
            <li><a href="single-41.html">النبي في أعين الأطفال</a></li>
            <li><a href="single-42.html">كأنك معه - صلى الله عليه وسلم</a></li>
