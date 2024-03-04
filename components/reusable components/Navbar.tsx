@@ -4,6 +4,7 @@ import { BsListUl } from "react-icons/bs";
 import { useOnClickOutside } from 'usehooks-ts'
 
 import { LuUser } from "react-icons/lu";
+import Link from 'next/link';
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -16,7 +17,12 @@ const Navbar = () => {
       <a href="javascript:void(0);" className="close-btn" onClick={()=>setShowSidebar(false)}><span>×</span></a>     
       <ul className="list-unstyled" id="accordion" role="tablist" aria-multiselectable="true">          
         <h3>القائمه</h3>  
-        <li className="panel"><a href="https://ka2naktraho.com/Index">الرئيسية</a></li>   
+        <li className="panel"><a href="https://ka2naktraho.com/Index">الرئيسية</a></li> 
+      <li className="panel">    <Link href="/Sbha"> السبحة </Link></li>
+      <li className="panel">    <Link href="/Zkah"> الزكاة </Link></li>
+      <li className="panel">    <Link href="/Ramdan"> رمضان </Link></li>
+      <li className="panel">    <Link href="/RamdanMeter"> مقياس العبادات </Link></li>
+      <li className="panel">    <Link href="/Competition"> مسابقة رمضان </Link></li>
         <li className="panel">
          <a href="https://ka2naktraho.com/Category?id=1" data-toggle="collapse" data-parent="#accordion">القرآن الكريم <span className="caret"></span></a>
          <ul className="collapse" id="one">
@@ -174,7 +180,7 @@ const Navbar = () => {
             </a>                
         </li>
         <li>
-            <a href="subscribe.html">
+            <a href="https://ka2naktraho.com/SignIn">
             <span className='react-icon'>  <LuUser /> </span>
                 تسجيل دخول
             </a>
