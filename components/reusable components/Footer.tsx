@@ -57,7 +57,7 @@ const Footer = () => {
        <Col sm={4} xs={6}>
       
         <p>Produced By</p>
-        <img src="images/elinx-logo.png" className="img-responsive" alt="egyptlinx" /> 
+        <img src="images/elinx-logo.png" className="egyptlinx-logo" alt="egyptlinx" /> 
       </Col>    
       </Row>
     </Container>   
