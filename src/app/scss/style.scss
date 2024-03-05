@@ -2162,6 +2162,9 @@ td {
   border: 1px solid #d3d3d3;
   text-align: center;
   color: #000;
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 }
 .progress-table {
   margin-top: 10px;

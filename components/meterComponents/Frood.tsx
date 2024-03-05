@@ -23,7 +23,7 @@ interface FroodProps {
 
     </tr>
     <tr>
-        <td>1</td>
+        <td>1 رمضان</td>
         <td>{<GiCheckMark />}</td>
         <td>{<GiCheckMark />}</td>
         <td>✘</td>
@@ -32,7 +32,7 @@ interface FroodProps {
         <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
     </tr>
     <tr>
-        <td>2</td>
+        <td>2 رمضان</td>
         <td>{<GiCheckMark />}</td>
         <td>{<GiCheckMark />}</td>
         <td>✘</td>
@@ -40,7 +40,7 @@ interface FroodProps {
         <td>✘</td>
     </tr>
     <tr>
-        <td>3</td>
+        <td>3 رمضان</td>
         <td>{<GiCheckMark />}</td>
         <td>{<GiCheckMark />}</td>
         <td>✘</td>
@@ -48,7 +48,7 @@ interface FroodProps {
         <td>✘</td>
     </tr>
     <tr>
-        <td>4</td>
+        <td>4 رمضان</td>
         <td>{<GiCheckMark />}</td>
         <td>{<GiCheckMark />}</td>
         <td>✘</td>
@@ -56,7 +56,7 @@ interface FroodProps {
         <td>✘</td>
     </tr>
     <tr>
-        <td>5</td>
+        <td>5 رمضان</td>
         <td>{<GiCheckMark />}</td>
         <td>{<GiCheckMark />}</td>
         <td>✘</td>
