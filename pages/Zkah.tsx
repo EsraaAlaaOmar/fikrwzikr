@@ -36,7 +36,7 @@ const Zkah = () => {
 
 
   return (
-    <>
+    <div style={{backgroundColor:"#f2f0ed54"}}>
      <SingleHeader pageName='الزكاة'/>
 
     <div className="row zakah-body">
@@ -188,7 +188,7 @@ const Zkah = () => {
         </div>
         <br/>
     </div>    
-  </>
+  </div>
   )
 }
 
