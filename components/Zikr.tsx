@@ -12,7 +12,7 @@ const Zikr: React.FC<MyComponentProps> = ({ zikrName})  => {
         {zikrName}
       </div> */}
       
-      <button className="zkr-button" id="sbha" onClick={() => setCounter(counter + 1)}>{ counter }</button>
+      <button className="zkr-button" id="sbha" onClick={() => setCounter(counter + 1)} style={{ outline:"none"}}>{ counter }</button>
         <div onClick={()=>setCounter(0)} className="sbha-reset">reset</div>
     </div>
 
