@@ -75,8 +75,12 @@
     height: 150px;
     margin: 10px 0;
     border-radius: 30px 10px 30px 30px !important;
-    border-color: #e00800;
+    border:solid 1px #e00800;
     cursor: pointer;
+    outline: none;
+    &:hover{
+        border-color: #e00800;
+    }
 }
 .sbha-reset{
     color: #999595;
