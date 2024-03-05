@@ -54,7 +54,7 @@ const Footer = () => {
         <p> جميع الحقوق محفوظة © 2024 لدى شركة إيجيبت لينكس </p>    
        </div>     
   </Col>        
-       <Col sm={8} xs={6}>
+       <Col sm={4} xs={6}>
       
         <p>Produced By</p>
         <img src="images/elinx-logo.png" className="img-responsive" alt="egyptlinx" /> 

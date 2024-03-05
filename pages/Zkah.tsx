@@ -103,7 +103,7 @@ const Zkah = () => {
             </div>
 
             <div className="zakah-box " >
-              <div className="input-title">زكاة الذهب</div>
+              <div className="input-title">زكاة الذهب ( ذهب الزينة ليس عليه زكاة )</div>
             <div className="zakah-row">
               <div className=" box-input">
                 <div className="title">وزن الذهب الذي تملكة من عيار 18 بالجرام</div>
