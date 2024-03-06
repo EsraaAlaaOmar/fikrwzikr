@@ -5,6 +5,7 @@ import Quraan from '../components/meterComponents/Quraan'
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import SingleHeader from '../components/reusable components/SingleHeader'
+import { BsArrowUpLeft } from "react-icons/bs";
 
 const RamdanMeter = () => {
     const[showfrood,setShowFrood] = useState(false)
@@ -36,7 +37,8 @@ const RamdanMeter = () => {
   <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
   </div>
   {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>setShowFrood(true)} >
-    معلومات أكثر
+   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
+</span>
   </div>}
 
  {showfrood && <Frood  hide={setShowFrood} />}
@@ -52,7 +54,8 @@ const RamdanMeter = () => {
     <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
   </div>
   {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>setShowSonan(true)} >
-    معلومات أكثر
+   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
+</span>
   </div>}
 {showsonan && <Sonan  hide={setShowSonan}  />}
   
@@ -69,7 +72,8 @@ const RamdanMeter = () => {
     <div className="progress-bar" role="progressbar" style={{width: "50%"}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
   </div>
  {!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>setShowQuran(true)}>
-    معلومات أكثر
+   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
+</span>
   </div>}
   {showquran && <Quraan  hide={setShowQuran} />}
 
