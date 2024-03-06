@@ -28,13 +28,13 @@ interface VideoData {
 
 const Competition = () => {
  
-  useEffect(() => {
-    alert(`شروط وأحكام المسابقة
-   //localhost:3000/
-   ` );
+  // useEffect(() => {
+  //   alert(`شروط وأحكام المسابقة
+  //  //localhost:3000/
+  //  ` );
     
     
-  }, []);
+  // }, []);
   
   return (
   
@@ -46,9 +46,9 @@ const Competition = () => {
       
           <div className='page-hierarchy'>
                 <span className='parent'>
-                        <Link href='/' style={{color:"#000"}}>
+                <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
                             الرئيسية 
-                        </Link>
+                        </a>
                         
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
                     </span>

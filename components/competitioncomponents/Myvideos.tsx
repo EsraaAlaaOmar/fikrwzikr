@@ -111,9 +111,9 @@ const Myvideos = () => {
       <div className='page container'>
         <div className='page-hierarchy'>
              <span className='parent'>
-              <Link href='/https://ka2naktraho.com/Index'>
+             <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
                 الرئيسية 
-             </Link>
+             </a>
            <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
            </span>
            <span className='child'>فديوهاتي</span>
