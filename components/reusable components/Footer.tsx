@@ -23,17 +23,17 @@ const Footer = () => {
        <Row>
        <ul >
         <Col xs={6} />
-        <li ><a href="Index"> الرئيسية</a></li>
+        <li className="col-xs-6" ><a href="Index"> الرئيسية</a></li>
         <li className="col-xs-5"><a href="Category?id=1">القرآن الكريم</a></li>
-        <li ><a href="Category?id=18">الأدعية والابتهالات الدينية</a></li>
+        <li className="col-xs-6" ><a href="Category?id=18">الأدعية والابتهالات الدينية</a></li>
         <li className="col-xs-5"><a href="Category?id=26">الرقائق الإيمانية</a></li>
-        <li ><a href="Category?id=33">الحديث الشريف</a></li>
+        <li className="col-xs-6" ><a href="Category?id=33">الحديث الشريف</a></li>
         <li className="col-xs-5"><a href="Category?id=39">أفكار وأذكار</a></li>
-        <li ><a href="Category?id=44">اكتشف نفسك</a></li>
+        <li className="col-xs-6" ><a href="Category?id=44">اكتشف نفسك</a></li>
         <li className="col-xs-5"><a href="Category?id=49">كأنك تراه - ﷺ</a></li>
-        <li ><a href="Category?id=55">كأنك معه - ﷺ</a></li>
-        <li className="col-xs-5"><a href="Category?id=60">فيديو كليب</a></li>
-        <li ><a href="Category?id=68">خواطر الأحباب</a></li> 
+        <li className="col-xs-6" ><a href="Category?id=55">كأنك معه - ﷺ</a></li>
+        <li className="col-xs-5"><a href="Category?id=60">إنشاد</a></li>
+        <li className="col-xs-6" ><a href="Category?id=68">خواطر الأحباب</a></li> 
        </ul> 
        </Row>
       </Col>
