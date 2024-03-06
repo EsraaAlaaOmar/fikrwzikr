@@ -31,9 +31,16 @@ interface VideoData {
 }
 
 // { videodetails }: { videodetails: VideoData } in()
-const Video = ({ videodetails }: { videodetails: VideoData }) => {
+const Video = ({ videodetails }: { videodetails: VideoData },Rfetch:()=>{}) => {
+  //need to change user ID
+  var userId =3;
+  var mobileNumber= "01126214650"
+  var Liked = videodetails?.UsersVotes.find((vote) => {
+    return vote?.UserId === userId && vote?.Liked === true;
+  });
+  {console.log(Liked)}
   const [play, setPlay] = useState(false)
-  const [like, setLike] = useState(false)
+  const [like, setLike] = useState(Liked)
   
   const ref = useRef(null)
 
@@ -91,19 +98,19 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
   //     // Handle network error or any other error
   //   }
   // };
-
-  const addVote = async ({ videoId, vote }: { videoId: number, vote: boolean }) => {
-    console.log(videoId,vote)
+  
+  const addVote = async ( videoId: number) => {
+ 
     try {
       const response = await axios.post(
-        `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${1}&MobileNumber=01126214650&Vote=${true}`,
+        `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${mobileNumber}&Vote=${!like}`,
         {
           headers: {
          'content-type': 'text/json'
           }
         }
       );
-  
+      setLike((prevState :Boolean) => !prevState )
       return response.data; // Return the response data
     } catch (error) {
       throw new Error('Error adding vote'); // Throw error to be caught by React Query
@@ -111,8 +118,8 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
     }
   };
 
-  var Liked = videodetails?.UsersVotes.find(vote=>vote?.UserId === 3)
-  
+ 
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("videos");
 //     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
 //  console.log(error)
   return (
@@ -167,18 +174,18 @@ const Video = ({ videodetails }: { videodetails: VideoData }) => {
       </video>
       </div>
       <div className='video-info'>
-      <span>{<AiOutlineHeart />}</span>{videodetails.VotesCount}
+      <span style={{cursor:"pointer"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
-        <span><BiShare /> </span>3k
+        {/* <span><BiShare /> </span>3k */}
         <span><IoIosPeople /> </span>10k
       
       </div>
         <div className='userName'>{videodetails?.Title}</div>
         <div className='videoname'>{ videodetails?.Description}</div>
-      <div className='like-vid' onClick={()=>setLike(!like)} >{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</div>
-      <div className='share-vid' onClick={handleShareClick}><BiShare /></div>
+      {/* <div className='like-vid' onClick={()=>setLike(!like)} >{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</div>
+      <div className='share-vid' onClick={handleShareClick}><BiShare /></div> */}
       <div className='video-time'> <span><IoIosTimer /></span>{videodetails?.DateIn}</div>
-      <div className='vote' onClick={()=>addVote( {videoId: videodetails.VideoId, vote: true})}>تصويت</div>
+      {/* <div className='vote' onClick={()=>addVote( {videoId: videodetails.VideoId, vote: true})}>تصويت</div> */}
       </div>
     </>
    

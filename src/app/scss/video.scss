@@ -24,7 +24,7 @@
       object-fit:fill;
       @media screen and (max-width: 500px){
         width: 100%;
-        height: auto;
+        // height: auto;
       
       }
     }
@@ -32,14 +32,14 @@
       display: inline-block;
       float: left;
       direction: ltr;
-      font-size: 16px;
+      font-size: 14px;
       margin-left: -7px;
       margin-top: 5px;
       color: #000000ce;
       span{
         display: inline-block;
-        margin: 0 0 0 10px;
-        font-size: 20px;
+        margin: 0 0 0 3px;
+        font-size: 18px;
         vertical-align: middle;
       }
    
@@ -47,14 +47,14 @@
     }
     .userName{
       color: #000;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 700;
       margin: 3px 0;
       margin-top: 5px;
     }
     .videoname{
       color: #656464;
-      font-size: 14px;
+      font-size: 12px;
       display: inline-block;
       font-weight: 600;
       @media screen and (max-width: 263px){
@@ -65,7 +65,7 @@
       
     }
     .video-time{
-      font-size: 14px;
+      font-size: 12px;
       color: #656464;
       display: inline-block;
       float: left;
@@ -219,8 +219,9 @@
         object-fit: cover;
         @media screen and (max-width: 500px){
           width: 100%;
-          height: auto;
+          // height: auto;
           min-width: 100%;
+          max-height: 100%;
         
         }
       }
@@ -381,6 +382,12 @@
           
         position: relative;
         border-radius: 8px;
+        margin: 30px auto;
+    /* border: solid 1px red; */
+    padding: 20px 11px;
+    background: #ffffff;
+    box-shadow: 0px 0px 9px #00000029;
+    border-radius: 12px;
         @media screen and (max-width: 1100px){
          
         // width: calc(90% / 2 );

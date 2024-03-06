@@ -25,7 +25,7 @@ interface Props {
    }
    const MyComponent: React.FC<Props> = ({itemsPerPage}) => {
   // const itemsPerPage = itemsPerPage; // Number of items to display per page
-  const [pageNum, setPageNum] = useState();
+  const [uprefetch, setUPRfetch] = useState(false)
   const [currentPage, setCurrentPage] = useState(0);
 
   const fetchData = async (page: number) => {
@@ -37,7 +37,7 @@ interface Props {
     return response.data;
   };
 
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videos", currentPage], () => fetchData(currentPage), {
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videos", currentPage,], () => fetchData(currentPage), {
     keepPreviousData: true, // Keep previous data while fetching new data
     staleTime: 0,
   });
@@ -49,7 +49,7 @@ interface Props {
   console.log(currentPage);
   const renderedVideos = data?.map((video: VideoData) => {
     console.log( video.UsersVotes)
-    return<span key={video.VideoId}>  <Video videodetails={video} /></span>
+    return<span key={video.VideoId}>  <Video videodetails={video}  /></span>
 });
 
 
