@@ -16,7 +16,7 @@ const Navbar = () => {
 { showSidebar &&  <div className="side-nav" style={{right: "0px"}} ref={ref}>      
       <a href="javascript:void(0);" className="close-btn" onClick={()=>setShowSidebar(false)}><span>×</span></a>     
       <ul className="list-unstyled" id="accordion" role="tablist" aria-multiselectable="true">          
-        <h3>القائمه</h3>  
+        <h3>القائمة</h3>  
         <li className="panel"><a href="https://ka2naktraho.com/Index">الرئيسية</a></li> 
       <li className="panel">    <Link href="/Sbha" onClick={()=>setShowSidebar(false)}> السبحة </Link></li>
       <li className="panel">    <Link href="/Zkah"  onClick={()=>setShowSidebar(false)}> الزكاة </Link></li>

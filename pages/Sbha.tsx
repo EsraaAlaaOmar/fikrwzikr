@@ -38,12 +38,11 @@ const Sbha = () => {
   // console.log(zikr)
   return (
     <>
- <SingleHeader pageName=''/>
+ <SingleHeader pageName='السبحة'/>
    
  <div className="sbha-body ">
     {/* <img src='/images/muslim-tasbih.png' /> */}
-    <h3>السبحة <img src='/images/muslim-tasbih.png' /></h3>
-
+    {/* <div className="pageIcon-top"> <h3>السبحة <img src='/images/sb7a.png' /></h3></div> */}
    <div className='select-div'> <select name="zkr" id="select-zekr" className="select-zekr" onChange={e=>setZikr(e.target.value)}>
       <option value="سبحان الله" >سبحان الله</option>
       <option value="الحمد لله">الحمد لله</option>

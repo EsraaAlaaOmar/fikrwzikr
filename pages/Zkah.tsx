@@ -36,11 +36,14 @@ const Zkah = () => {
 
 
   return (
-    <div style={{backgroundColor:"#f2f0ed54"}}>
+    <div style={{backgroundColor:"#f5f3f0"}}>
      <SingleHeader pageName='الزكاة'/>
-
+     {/* <div className="pageIcon-top"> <h3>الزكاة<img src='/images/zkah.png' /></h3></div> */}
+    
     <div className="row zakah-body">
+ 
     <div className="container ">
+    
         <h3>احسب زكاتك مع  كأنك تراه </h3>
         <div className="zkah-input col-sm-8">
             <div className="zakah-box " >

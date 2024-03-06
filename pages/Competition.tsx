@@ -62,7 +62,8 @@ const Competition = () => {
        فديوهاتي
         </button>
         </Link>
-          <div className='videos-grid '>
+        
+        <div className=" videos-page">
       
               {/* {renderedVideos} */}
            

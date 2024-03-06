@@ -424,13 +424,15 @@ p {
   background-size: cover;
   background-position: center;
   height: 80vh;
+  z-index: 999;
+  min-height: 50vh;
 }
 .single-header::after {
   content: "";
   background-image: url(/images/single-bg.jpg);
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* Change the opacity value as needed */
+  opacity: 0.2; /* Change the opacity value as needed */
   position: absolute;
   top: 0;
   left: 0;
@@ -989,7 +991,7 @@ p {
   vertical-align: text-top;
 }
 .menu ul li a {
-  font-size: 12px;
+  font-size: 14px;
   color: #E00800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1310,6 +1312,8 @@ p {
   font-size: 28px;
   max-width: 100%;
   margin: 20px 0 10px;
+  color: #E00800;
+  font-weight: bold;
 }
 /*
   #Category Content
