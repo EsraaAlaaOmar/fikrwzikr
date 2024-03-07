@@ -207,6 +207,7 @@
     top: 180px;
     left: 5%;
     border-radius: 8px;
+    
     @media screen and (max-width: 845px){
        width: 95%;
       // top: 5%;
@@ -286,6 +287,54 @@
    width: 90%;
     }
   }
+  .comp-terms{
+    border-radius: 10px;
+    padding: 40px 15px;
+    padding-bottom: 60px;
+    background-color: #f2f0ed;
+    color: #000;
+    font-size: 12px;
+    width: 60%;
+    left: 25%;
+    top: 120px;
+    margin:auto;
+    height: 80vh;
+    overflow-y: auto;
+    .terms-btn{
+      width:100px;
+      margin: 0 auto;
+      padding:5px;
+      text-align: center;
+      border: solid 1px #E00800;
+      cursor: pointer;
+      &:hover{
+        background-color: #E00800;
+        color: #fff;
+      }
+    }
+    .icon{
+      float: left;
+      color: #E00800;
+      font-size: 24px;
+      margin-top:-24px;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 600px){
+      width: 80%;
+      left: 10%;
+    
+    }
+    h3{
+      color: #E00800;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+}
+  }
+  .overlay_full_page{
+position: fixed;
+
+
   }
   .video-overlayer{
     background-color: #090909ba;

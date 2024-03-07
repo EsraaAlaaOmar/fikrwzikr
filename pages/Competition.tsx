@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Loader from '../components/competitioncomponents/Loader';
 import PaginationCom from '../components/reusable components/PaginationComp';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
+import CompetitonTerms from '../components/competitioncomponents/competitonTerms';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -41,7 +42,7 @@ const Competition = () => {
    
       <>
 
-
+{<CompetitonTerms />}
           <br style={{clear: "both"}}/>
       
           <div className='page-hierarchy'>

@@ -179,7 +179,7 @@ const Myvideos = () => {
     <div >
     
       </div>
-      {upload && <div className='overlay'>
+      {upload && <div className='overlay overlay_full_page'>
         <Upload hideUpload={ setUpload} />
       </div>}
    
