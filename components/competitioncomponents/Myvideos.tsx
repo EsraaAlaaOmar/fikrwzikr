@@ -121,17 +121,17 @@ const Myvideos = () => {
 
          </div>
          <div className=" videos-page   video-links-div">
-        <Link className='videos-link-div ' href='' style={{color:"#000"}} >
+        <Link className='videos-link-div ' href='/Competition' style={{color:"#000"}} >
           <button className="my-videos-link " >
       فديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+        <Link className='videos-link-div' href='' style={{color:"#000"}}>
           <button className="my-videos-link active" >
        فديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+        <Link className='videos-link-div' href='' style={{color:"#000"}}>
           <button className="my-videos-link"   onClick={()=>setUpload(true)}>
           اضافة فديو        </button>
         </Link>

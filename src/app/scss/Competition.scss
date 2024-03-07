@@ -80,7 +80,7 @@
       float: 1  21% !important;
       color: #000;
       
-      width:calc(50% - 30px) !important;
+      // width:calc(50% - 30px) !important;
     margin-bottom: 16px;
    
    text-align: right;
@@ -100,9 +100,9 @@
   
   }
   video{
-    width:100%;
+   width: 250px;
     max-width:100%;
-    height: 325px;
+    height: 150px;
   
     object-fit: cover
    }
