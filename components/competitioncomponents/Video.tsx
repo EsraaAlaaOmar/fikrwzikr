@@ -1,6 +1,6 @@
 import React, { useState,useEffect, useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
-import { IoIosPeople } from 'react-icons/io'
+import { PiEyeBold } from "react-icons/pi";
 import {BsPlay } from 'react-icons/bs'
 import { BiShare } from 'react-icons/bi'
 import { IoIosTimer } from 'react-icons/io'
@@ -177,7 +177,7 @@ const Video = ({ videodetails }: { videodetails: VideoData },Rfetch:()=>{}) => {
       <span style={{cursor:"pointer"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
-        <span><IoIosPeople /> </span>10k
+        <span><PiEyeBold  /> </span>10k
       
       </div>
         <div className='userName'>{videodetails?.Title}</div>
