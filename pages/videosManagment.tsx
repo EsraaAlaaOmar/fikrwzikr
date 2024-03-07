@@ -2,13 +2,13 @@ import React from 'react'
 
 const lvideosManagment = () => {
   return (
-    <><h2 className="admin-title"> إدارة الفديوهات</h2>
+    <><h2 className="admin-title"> إدارة الفيديوهات</h2>
     
     <table className="admin-table">
       <tr>
         <th></th>
         <th>رقم المستخدم </th>
-        <th>وصف الفديو </th>
+        <th>وصف الفيديو </th>
         <th>التاريخ  </th>
         <th>الاجراء </th>
        
@@ -35,14 +35,14 @@ const lvideosManagment = () => {
 
     <div id="flash-add" className="flash-msg">
       <div>
-        هل انت متأكد انك تريد اضافة هذا الفديو 
+        هل انت متأكد انك تريد اضافة هذا الفيديو 
       </div>
       <button>موافق</button>
       <button>إلغاء</button>
     </div>
     <div id="flash-remove" className="flash-msg">
       <div>
-        هل انت متأكد انك تريد حذف هذا الفديو 
+        هل انت متأكد انك تريد حذف هذا الفيديو 
       </div>
       <button >موافق</button>
       <button >إلغاء</button>

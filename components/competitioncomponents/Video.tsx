@@ -1,6 +1,6 @@
 import React, { useState,useEffect, useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
-import { PiEyeBold } from "react-icons/pi";
+import { IoIosPeople } from 'react-icons/io'
 import {BsPlay } from 'react-icons/bs'
 import { BiShare } from 'react-icons/bi'
 import { IoIosTimer } from 'react-icons/io'
@@ -31,7 +31,7 @@ interface VideoData {
 }
 
 // { videodetails }: { videodetails: VideoData } in()
-const Video = ({ videodetails }: { videodetails: VideoData },Rfetch:()=>{}) => {
+const Video = ({ videodetails }: { videodetails: VideoData },refetchVideos:any) => {
   //need to change user ID
   var userId =3;
   var mobileNumber= "01126214650"
@@ -99,27 +99,35 @@ const Video = ({ videodetails }: { videodetails: VideoData },Rfetch:()=>{}) => {
   //   }
   // };
   
-  const addVote = async ( videoId: number) => {
- 
-    try {
-      const response = await axios.post(
-        `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${mobileNumber}&Vote=${!like}`,
-        {
-          headers: {
-         'content-type': 'text/json'
-          }
+ const addVote = async (videoId: number) => {
+  try {
+    const response = await axios.post(
+      `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${mobileNumber}&Vote=${!like}`,
+      null, // Since there's no request body, pass null
+      {
+        headers: {
+          'content-type': 'application/json' // Correct content type
         }
-      );
-      setLike((prevState :Boolean) => !prevState )
-      return response.data; // Return the response data
-    } catch (error) {
-      throw new Error('Error adding vote'); // Throw error to be caught by React Query
-      console.log(error)
-    }
-  };
+      }
+    );
+
+    // Update the state
+    setLike((prevState:boolean) => !prevState);
+
+    // Trigger a refetch of the videos
+    await refetchVideos;
+
+    // Return the response data
+    return response.data;
+  } catch (error) {
+    console.error('Error adding vote:', error);
+    // Return a default value or handle the error as needed
+    return null;
+  }
+};
 
  
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("videos");
+
 //     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
 //  console.log(error)
   return (
@@ -177,7 +185,7 @@ const Video = ({ videodetails }: { videodetails: VideoData },Rfetch:()=>{}) => {
       <span style={{cursor:"pointer"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
-        <span><PiEyeBold  /> </span>10k
+        <span><IoIosPeople /> </span>10k
       
       </div>
         <div className='userName'>{videodetails?.Title}</div>

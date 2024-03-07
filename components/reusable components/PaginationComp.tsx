@@ -40,6 +40,7 @@ interface Props {
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videos", currentPage,], () => fetchData(currentPage), {
     keepPreviousData: true, // Keep previous data while fetching new data
     staleTime: 0,
+    
   });
 
   const handlePageChange = ({ selected }: { selected: number }) => {
@@ -49,7 +50,7 @@ interface Props {
   console.log(currentPage);
   const renderedVideos = data?.map((video: VideoData) => {
     console.log( video.UsersVotes)
-    return<span key={video.VideoId}>  <Video videodetails={video}  /></span>
+    return<span key={video.VideoId}>  <Video videodetails={video} refetchVideos={refetch} /></span>
 });
 
 

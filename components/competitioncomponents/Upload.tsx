@@ -156,16 +156,16 @@ interface UploadProps {
         <div className='right-section'>
             <div className='page-title'>اضافة فيديو
                <div className="upload-video-input">
-          <label className="upload-video-label" >عنوان الفديو </label>
-              <input className="upload-video-textarea" style={{ height: "70px" }} placeholder="أدخل عنوان الفديو " name='Title' value={Title} onChange={e=>onChange(e)} />
+          <label className="upload-video-label" >عنوان الفيديو </label>
+              <input className="upload-video-textarea" style={{ height: "70px" }} placeholder="أدخل عنوان الفيديو " name='Title' value={Title} onChange={e=>onChange(e)} />
       </div>
       <div className="upload-video-input">
-          <label className="upload-video-label">وصف الفديو </label>
-          <textarea  className="upload-video-textarea" placeholder="أدخل وصف الفديو " name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
+          <label className="upload-video-label">وصف الفيديو </label>
+          <textarea  className="upload-video-textarea" placeholder="أدخل وصف الفيديو " name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
       </div>
       <div className="upload-video-input">
-          <label className="upload-video-label" style={{fontSize:"14px"}}>غلاف الفديو(اختياري) </label>
-          <input type='file'  className="" placeholder="أدخل غلاف الفديو " name='posterFile'  onChange={e=>onChange(e)} style={{fontSize:"14px"}} />
+          <label className="upload-video-label" style={{fontSize:"14px"}}>غلاف الفيديو(اختياري) </label>
+          <input type='file'  className="" placeholder="أدخل غلاف الفيديو " name='posterFile'  onChange={e=>onChange(e)} style={{fontSize:"14px"}} />
       </div>
             </div>
           {mutation.isLoading ? <Loader /> : <div id="uploaded-data">
@@ -176,7 +176,7 @@ interface UploadProps {
 
            
 <div id="upload-msg">
-  شكرا لك .. سيتم مراجعة الفديو قبل النشر 
+  شكرا لك .. سيتم مراجعة الفيديو قبل النشر 
  
             </div>
             
@@ -191,8 +191,8 @@ interface UploadProps {
           <input id='video_input' type="file" accept="video/*" onChange={(e)=>video(e)} name='videoFile'  />
           {!showvideo&&  <button id="choose-to-upload" className="video-upload-button" onClick={() => buttonClick()}>اضافة فيديو + </button> }
        { showvideo&&    <div className="actions">
-         <button type='submit' className="video-action-upload-button" > نشر الفديو  </button> 
-         <button className="video-action-upload-button video-upload-delete" onClick={()=>setShowVideo(false)}> حذف الفديو</button>
+         <button type='submit' className="video-action-upload-button" > نشر الفيديو  </button> 
+         <button className="video-action-upload-button video-upload-delete" onClick={()=>setShowVideo(false)}> حذف الفيديو</button>
     
             </div>}
           </div>

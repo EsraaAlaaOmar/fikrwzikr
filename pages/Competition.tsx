@@ -60,7 +60,7 @@ const Competition = () => {
                         
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
                     </span>
-                    <span className='child'>فديوهات المسابقة  </span>
+                    <span className='child'>فيديوهات المسابقة  </span>
 
                     <br />
       
@@ -70,17 +70,17 @@ const Competition = () => {
         <div className=" videos-page   video-links-div">
         <Link className='videos-link-div ' href='' style={{color:"#000"}} >
           <button className="my-videos-link active" >
-      فديوهات المسابقة
+      فيديوهات المسابقة
         </button>
         </Link>
         <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
           <button className="my-videos-link" >
-       فديوهاتي
+       فيديوهاتي
         </button>
         </Link>
         <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
           <button className="my-videos-link" >
-اضافة فديو        </button>
+اضافة فيديو        </button>
         </Link>
               
            

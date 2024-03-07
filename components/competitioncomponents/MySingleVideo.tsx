@@ -59,7 +59,7 @@ console.log(data)
   return (
     <div className="col-md-4">
           <div className="upload-msg text-success">
-          تم نشر هذا الفديو 
+          تم نشر هذا الفيديو 
          
          </div>
        
@@ -76,7 +76,7 @@ console.log(data)
          </div>
     <div className="actions">
        
-        <button className="video-action-upload-button video-upload-delete" onClick={()=>deleteVideo()}> حذف الفديو</button>
+        <button className="video-action-upload-button video-upload-delete" onClick={()=>deleteVideo()}> حذف الفيديو</button>
     </div>
       </div>
   )

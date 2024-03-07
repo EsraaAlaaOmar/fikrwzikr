@@ -32,7 +32,7 @@ interface VideoData {
       const MSISDN = "MSISDN";
       const VideoId= videodetails.VideoId;
       const addVote = async () => {
-        setVote(true)
+        setVote(!vote)
        
         try {
           const response = await axios.post(`https://vodafone.alerting.services/LawMawhobApis/Talents/AddVote?VideoId=${VideoId}&MSISDN=${MSISDN}`, {}, {
