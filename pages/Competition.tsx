@@ -52,23 +52,35 @@ const Competition = () => {
                         
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
                     </span>
-                    <span className='child'>مسابقة رمضان </span>
+                    <span className='parent'>
+                <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
+                           مسابقة رمضان 
+                        </a>
+                        
+                    <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
+                    </span>
+                    <span className='child'>فديوهات المسابقة  </span>
 
                     <br />
       
     </div>
-        <Link className='my-videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+      <div className='video-links-div container'>
+        
+        <div className=" videos-page">
+        <Link className='videos-link-div ' href='' style={{color:"#000"}} >
+          <button className="my-videos-link active" >
+      فديوهات المسابقة
+        </button>
+        </Link>
+        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
           <button className="my-videos-link" >
        فديوهاتي
         </button>
         </Link>
-        
-        <div className=" videos-page">
-      
               {/* {renderedVideos} */}
            
         </div >
-   
+        </div>
 
 <PaginationCom itemsPerPage={12}/>
 
