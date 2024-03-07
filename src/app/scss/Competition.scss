@@ -86,16 +86,16 @@
    text-align: right;
     position: relative;
     @media screen and (max-width: 1500px){
-      width: calc(50% - 28px) !important;
+      // width: calc(50% - 28px) !important;
   
   }
   @media screen and (max-width: 835px){
-    width: 80% !important;
+    // width: 80% !important;
   
   }
   @media screen and (max-width: 660px){
   
-   width: 100% !important;
+  //  width: 100% !important;
    margin: auto;
   
   }
