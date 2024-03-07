@@ -53,9 +53,9 @@ const Competition = () => {
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
                     </span>
                     <span className='parent'>
-                <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
+                <Link href="/Competition" style={{color:"#000"}}>
                            مسابقة رمضان 
-                        </a>
+                      </Link>
                         
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>
                     </span>
@@ -77,7 +77,11 @@ const Competition = () => {
        فديوهاتي
         </button>
         </Link>
-              {/* {renderedVideos} */}
+        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+          <button className="my-videos-link" >
+اضافة فديو        </button>
+        </Link>
+              
            
         </div >
         </div>
