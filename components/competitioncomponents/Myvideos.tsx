@@ -120,10 +120,26 @@ const Myvideos = () => {
            <span className='child'>فديوهاتي</span>
 
          </div>
-         <button className="add-vid-button" onClick={()=>setUpload(true)}>
-        اضافة فيديو
+         <div className=" videos-page   video-links-div">
+        <Link className='videos-link-div ' href='' style={{color:"#000"}} >
+          <button className="my-videos-link " >
+      فديوهات المسابقة
         </button>
-         <div className='page-title'>فديوهاتي</div>
+        </Link>
+        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+          <button className="my-videos-link active" >
+       فديوهاتي
+        </button>
+        </Link>
+        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+          <button className="my-videos-link"   onClick={()=>setUpload(true)}>
+          اضافة فديو        </button>
+        </Link>
+              
+           
+        </div >
+       
+       
   
      
         
