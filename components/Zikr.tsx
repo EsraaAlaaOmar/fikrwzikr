@@ -10,7 +10,7 @@ const Zikr: React.FC<MyComponentProps> = ({ zikrName})  => {
     <div className="zkr-box">
         {/* <div className="zkr-name" id="zkr-name">
         {zikrName}
-      </div> */}.videos-link-div 
+      </div> */}
       
       <button className="zkr-button" id="sbha" onClick={() => setCounter(counter + 1)} style={{ outline:"none"}}>{ counter }</button>
        {counter !==0 && <div onClick={()=>setCounter(0)} className="sbha-reset">بداية العد  </div>}
