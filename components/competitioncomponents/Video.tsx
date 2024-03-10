@@ -30,9 +30,12 @@ interface VideoData {
   PosterUrl:string
 
 }
+interface VideoProps {
+  videodetails: VideoData;
+  refetchVideos: () => Promise<void>; // Define the type of refetchVideos prop
+}
 
-// { videodetails }: { videodetails: VideoData } in()
-const Video = ({ videodetails }: { videodetails: VideoData },refetchVideos:any) => {
+const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos }) =>  {
   //need to change user ID
   var userId =3;
   var mobileNumber= "01126214650"
