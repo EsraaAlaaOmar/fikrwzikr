@@ -1,4 +1,4 @@
-import React,{useState,useRef} from 'react'
+import React,{useState,useRef, ReactNode} from 'react'
 import Link from 'next/link'
 import { useMutation  } from 'react-query';
 import Loader from '../components/competitioncomponents/Loader';
@@ -19,8 +19,8 @@ const AddVideoComp=()=>{
       Title: '',
       Description: '',
       MobileNumber: '01126214650',
-      videoFile: '',
-      posterFile:"",
+      videoFile: null,
+      posterFile:null,
       
     }
   )
@@ -103,25 +103,49 @@ const AddVideoComp=()=>{
   console.log(mutation)
   function video(e:any) {
     setShowVideo(true)
-      var fileInput = document.getElementById('video_input') as any;
-     var fileUrl = URL.createObjectURL(fileInput?.files[0]);
-     const videoselector = document.querySelector("video")
-     if(videoselector){videoselector.src = fileUrl}
-      const uploaded_data = document.getElementById('uploaded-data')
-      if(uploaded_data){uploaded_data.style.display='block'}
-      const choose_to_upload =   document.getElementById('choose-to-upload')
-      if(choose_to_upload){choose_to_upload.style.display='none'}
-
+    //   var fileInput = document.getElementById('video_input') as any;
+    //  var fileUrl = URL.createObjectURL(
+    //   formData.videoFile
+    //   // fileInput?.files[0]
+    //   );
+    //  const videoselector = document.querySelector("video")
+    //  if(videoselector){videoselector.src = fileUrl}
+    //   const uploaded_data = document.getElementById('uploaded-data')
+    //   if(uploaded_data){uploaded_data.style.display='block'}
+    //   const choose_to_upload =   document.getElementById('choose-to-upload')
+    //   if(choose_to_upload){choose_to_upload.style.display='none'}
+  // var srcComp=()=>{  if (formData.videoFile && formData.posterFile) { 
+  //     var fileUrl = URL.createObjectURL(formData.videoFile);
+      
+  //     // Render the <source> element with the created object URL
+  //     return (
+  //       <source id='source' src={fileUrl} type="video/mp4" />
+  //     )}
+  //   else{
+  //     return<></>
+  //   }
+  //   }
  onChange(e)
   
  
     }
 
-
+    var srcComp=(): ReactNode=>{  if (formData.videoFile) { 
+      var fileUrl = URL.createObjectURL(formData.videoFile);
+      
+      // Render the <source> element with the created object URL
+      return (
+        <source id='source' src={fileUrl} type="video/mp4" />
+      )}
+    else{
+      return<></>
+    }
+    }
+    
     function buttonClick(){
    
       const video_input =   document.getElementById('video_input')
-      if(video_input){video_input.click()}
+      video_input&&video_input.click()
     
     }
 
@@ -211,11 +235,11 @@ const AddVideoComp=()=>{
         </div>
         <div className='left-section'>
        { showvideo && <video width="320" height="240" style={{margin:'auto'}} autoPlay controls>
-              <source id='source' src="movie.mp4" type="video/mp4" />
+            {srcComp()}
           
               Your browser does not support the video tag.
             </video>}
-          <input id='video_input' type="file" accept="video/*" onChange={(e)=>video(e)} name='videoFile'  />
+          <input id='video_input' type="file" accept="video/*" name='videoFile'  />
           {!showvideo&&  <button id="choose-to-upload" className="video-upload-button" onClick={() => buttonClick()}>اضافة فيديو + </button> }
        { showvideo&&    <div className="actions">
          <button type='submit' className="video-action-upload-button" > نشر الفيديو  </button> 
