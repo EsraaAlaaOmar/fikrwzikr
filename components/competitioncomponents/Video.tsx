@@ -1,6 +1,6 @@
 import React, { useState,useEffect, useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
-import { IoIosPeople } from 'react-icons/io'
+import { PiEyeBold } from "react-icons/pi";
 import {BsPlay } from 'react-icons/bs'
 import { BiShare } from 'react-icons/bi'
 import { IoIosTimer } from 'react-icons/io'
@@ -32,7 +32,7 @@ interface VideoData {
 }
 interface VideoProps {
   videodetails: VideoData;
-  refetchVideos: () => Promise<void>; // Define the type of refetchVideos prop
+  refetchVideos:any // Define the type of refetchVideos prop
 }
 
 const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos }) =>  {
@@ -119,7 +119,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos }) =>  {
     setLike((prevState:boolean) => !prevState);
 
     // Trigger a refetch of the videos
-    await refetchVideos;
+    await refetchVideos();
 
     // Return the response data
     return response.data;
@@ -189,7 +189,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos }) =>  {
       <span style={{cursor:"pointer"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
-        <span><IoIosPeople /> </span>10k
+        <span><PiEyeBold /> </span>10k
       
       </div>
         <div className='userName'>{videodetails?.Title}</div>
