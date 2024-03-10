@@ -197,96 +197,7 @@
       color: #fff;
       
     }
-  
-  .white-background{
-    text-align: right;
-    background-color: #fff;
-    width: 90%;
-  
-    position: absolute;
-    top: 180px;
-    left: 5%;
-    border-radius: 8px;
-    
-    @media screen and (max-width: 845px){
-       width: 95%;
-      // top: 5%;
-      left: 2.5%;
-    }
-    @media screen and (max-width: 600px){
-      width: 80%;
-    //  top: 5%;
-     left: 10%;
-   }
-    .left-section{
-      display: inline-block;
-      padding: 10px;
-      float: left;
-      direction: ltr;
-      @media screen and (max-width: 800px){
-     
-      display: block;
-      width: 100%;
-      float: right;
-    
-    }
-    
-      .video-upload-button{
-        height: 288px;
-        margin: 10px auto;
-        padding: 0px 100px;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        color: #E00800;
-        border: 1px dashed #E00800;
-        font-size: 24px;
-        font-weight: 700;
-        max-width: 85% ;
-        @media screen and (max-width: 630px){
-     
-          padding: 0px 50px;
-      
-      }
-  
-      }
-      // 344.44*288
-      .actions{
-        margin: 10px auto;
-        text-align: center;
-    
-        .video-action-upload-button{
-          background: #17A952;
-          color: #fff;
-          border: none;
-          padding:10px 20px;
-          margin: 2px;
-          margin-bottom: 10px;
-          border-radius: 8px;
-          font-weight: 700;
-        }
-        .video-upload-delete{
-          background-color: #E7270C;
-        
-        }
-      }
-    }
-    .right-section{
-      display: inline-block;
-      padding: 20px;
-        @media screen and (max-width: 800px){
-     
-      display: block;
-      width: 100%;
-    
-     
-    
-    }
-    }
-    .upload-video-input , .upload-video-textarea {
-   width: 90%;
-    }
-  }
+ 
   .comp-terms{
     border-radius: 10px;
     padding: 40px 15px;
@@ -361,4 +272,110 @@ position: fixed;
   
       // transform: translateY(-15%);
    }
+  }
+  .white-background{
+    text-align: right;
+    background-color: #fff;
+    width: 90%;
+  
+    position: absolute;
+    top: 180px;
+    left: 5%;
+    border-radius: 8px;
+    
+    @media screen and (max-width: 845px){
+       width: 95%;
+      // top: 5%;
+      left: 2.5%;
+    }
+    @media screen and (max-width: 600px){
+      width: 80%;
+    //  top: 5%;
+     left: 10%;
+   }
+    .left-section{
+      display: inline-block;
+      padding: 10px;
+     float: left;
+      direction: ltr;
+      @media screen and (max-width: 800px){
+     
+      display: block;
+      width: 100%;
+      float: none;
+    
+    
+    }
+    
+      .video-upload-button{
+        height: 288px;
+        margin: 10px auto;
+        padding: 0px 100px;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: #E00800;
+        border: 1px dashed #E00800;
+        font-size: 24px;
+        font-weight: 700;
+        max-width: 85% ;
+        @media screen and (max-width: 630px){
+     
+          padding: 0px 50px;
+      
+      }
+  
+      }
+      // 344.44*288
+      .actions{
+        margin: 10px auto;
+        text-align: center;
+    
+        .video-action-upload-button{
+          background: #17A952;
+          color: #fff;
+          border: none;
+          padding:10px 20px;
+          margin: 2px;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          font-weight: 700;
+        }
+        .video-upload-delete{
+          background-color: #E7270C;
+        
+        }
+      }
+    }
+    .right-section{
+      display: inline-block;
+      padding: 20px;
+        @media screen and (max-width: 800px){
+     
+      display: block;
+      width: 100%;
+    
+     
+    
+    }
+    }
+    .upload-video-input , .upload-video-textarea {
+   width: 90%;
+    }
+  }
+ .upload-white-bg{
+position: inherit;
+width: 97%;
+// margin: auto;
+margin-bottom: 50px;
+input{
+  border-radius: 7px;
+  width: 100%;
+}
+.upload-video-textarea {
+  height:auto !important;
+  border-radius: 12px;
+  width: 100%;
+}
+
   }
