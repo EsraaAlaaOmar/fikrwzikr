@@ -4,7 +4,7 @@ import { useMutation  } from 'react-query';
 import Loader from '../components/competitioncomponents/Loader';
 import { useRouter } from 'next/router';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
-import CompetitonTerms from '../components/competitioncomponents/competitonTerms';
+import CompetitonTerms from '../components/competitioncomponents/CompetitonTerms';
 const axios = require("axios");
 
 
