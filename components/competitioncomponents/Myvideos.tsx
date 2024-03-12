@@ -132,7 +132,7 @@ const Myvideos = () => {
         </button>
         </Link>
         <Link className='videos-link-div' href='/AddVideo' style={{color:"#000"}}>
-          <button className="my-videos-link"   onClick={()=>setUpload(true)}>
+          <button className="my-videos-link"  >
           اضافة فيديو        </button>
         </Link>
               
