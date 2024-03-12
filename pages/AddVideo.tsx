@@ -169,7 +169,7 @@ const AddVideoComp=()=>{
         </Link>
         <Link className='videos-link-div ' href='/AddVideo' style={{color:"#000"}}>
           <button className="my-videos-link active" >
-اضافة فيديو        </button>
+اضافة فيديو        </button> 
         </Link>
               
            
