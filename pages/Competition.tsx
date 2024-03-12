@@ -76,12 +76,12 @@ const Competition = () => {
       فيديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href={`/Myvideos?MSISDN${Msdn}`} style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/Myvideos?MSISDN=${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div' href={`/AddVideo?MSISDN${Msdn}`} style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/AddVideo?MSISDN=${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
 اضافة فيديو        </button>
         </Link>

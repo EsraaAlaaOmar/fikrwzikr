@@ -103,7 +103,7 @@ interface Props {
 
          </div>
          <div className=" videos-page   video-links-div">
-        <Link className='videos-link-div ' href={`/Competition?MSISDN${Msdn}`}style={{color:"#000"}} >
+        <Link className='videos-link-div ' href={`/Competition?MSISDN=${Msdn}`}style={{color:"#000"}} >
           <button className="my-videos-link " >
       فيديوهات المسابقة
         </button>
@@ -113,7 +113,7 @@ interface Props {
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div' href={`/AddVideo?MSISDN${Msdn}`}style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/AddVideo?MSISDN=${Msdn}`}style={{color:"#000"}}>
           <button className="my-videos-link"  >
           اضافة فيديو        </button>
         </Link>

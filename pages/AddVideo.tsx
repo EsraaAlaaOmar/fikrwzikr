@@ -173,12 +173,12 @@ const AddVideoComp=()=>{
       فيديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href={`/Myvideos?MSISDN${Msdn}`} style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/Myvideos?MSISDN=${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div ' href={`/Competition?MSISDN${Msdn}`}style={{color:"#000"}} >
+        <Link className='videos-link-div ' href={`/Competition?MSISDN=${Msdn}`}style={{color:"#000"}} >
           <button className="my-videos-link active" >
 اضافة فيديو        </button> 
         </Link>
