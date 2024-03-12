@@ -85,7 +85,7 @@ const handleCheckboxChange = (event:any) => {
           <div className="content">
            <div className="row">
            <Col xs={6} md={7} >
-                <h4> 1 رمضان 1441 هجريا</h4>
+                <h4> 2 رمضان 1441 هجريا</h4>
                 <p>مواقيت الصلاة حسب مدينة القاهرة</p>  
             </Col>
             <Col xs={3} md={2} className="col-md-2 col-xs-3 text-center"><h4>فرض</h4></Col>
@@ -96,7 +96,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الفجر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">3:08 صباحا</li>     
+              <li className="col-md-3 col-xs-12">4:42 صباحا</li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
@@ -118,7 +118,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الظهر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">11:54 صباحا</li>     
+              <li className="col-md-3 col-xs-12">12:05  مساء</li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
@@ -140,7 +140,8 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">العصر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">3:30 مساء</li>     
+              <li className="col-md-3 col-xs-12">	
+3:29 مساء</li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -162,7 +163,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">المغرب</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">6:54 مساء</li>     
+              <li className="col-md-3 col-xs-12">6:02  مساء</li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -184,7 +185,8 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">العشاء</li>
               <li className="col-md-6 hidden-xs">-</li>  
-              <li className="col-md-3 col-xs-12">8:27 مساء</li>     
+              <li className="col-md-3 col-xs-12">	
+7:18 مساء</li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
