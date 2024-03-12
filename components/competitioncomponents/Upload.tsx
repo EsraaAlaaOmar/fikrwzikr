@@ -186,7 +186,7 @@ interface UploadProps {
        { showvideo && <video width="320" height="240" style={{margin:'auto'}} autoPlay controls>
               <source id='source' src="movie.mp4" type="video/mp4" />
           
-              Your browser does not support the video tag .
+              Your browser does not support the video tag.
             </video>}
           <input id='video_input' type="file" accept="video/*" onChange={(e)=>video(e)} name='videoFile'  />
           {!showvideo&&  <button id="choose-to-upload" className="video-upload-button" onClick={() => buttonClick()}>اضافة فيديو + </button> }
