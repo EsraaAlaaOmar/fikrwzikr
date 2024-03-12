@@ -175,6 +175,7 @@ const AddVideoComp=()=>{
            
         </div >
         </div>
+        {addVideoMutation.isLoading ? <Loader /> :
         <form onSubmit={(e) => addVideo(e)} className='container'>
         <div className='right-section'>
             <div className='page-title'>
@@ -191,7 +192,7 @@ const AddVideoComp=()=>{
           <input type='file'  className="" placeholder="أدخل غلاف الفيديو " name='posterFile'  onChange={e=>onChange(e)} style={{fontSize:"14px"}} />
       </div>
             </div>
-          {addVideoMutation.isLoading ? <Loader /> : <div id="uploaded-data">
+ <div id="uploaded-data">
             
           
        
@@ -203,7 +204,7 @@ const AddVideoComp=()=>{
  
             </div>
             
-        </div>}
+        </div>
         </div>
         <div className='left-section'>
        { showvideo && <video width="320" height="240" style={{margin:'auto'}} autoPlay controls>
@@ -221,7 +222,7 @@ const AddVideoComp=()=>{
           </div>
 
        
-        </form>
+        </form>}
       </div>
   )
 }
