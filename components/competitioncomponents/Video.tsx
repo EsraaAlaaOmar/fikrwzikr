@@ -33,12 +33,13 @@ interface VideoData {
 interface VideoProps {
   videodetails: VideoData;
   refetchVideos:any // Define the type of refetchVideos prop
+  Msdn:String
 }
 
-const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos }) =>  {
+const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn }) =>  {
   //need to change user ID
   var userId =3;
-  var mobileNumber= "01126214650"
+  
   var Liked = videodetails?.UsersVotes.find((vote) => {
     return vote?.UserId === userId && vote?.Liked === true;
   });
@@ -106,7 +107,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos }) =>  {
  const addVote = async (videoId: number) => {
   try {
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${mobileNumber}&Vote=${!like}`,
+      `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!like}`,
       null, // Since there's no request body, pass null
       {
         headers: {

@@ -28,14 +28,18 @@ interface VideoData {
 }
 
 const Competition = () => {
- 
-  // useEffect(() => {
-  //   alert(`شروط وأحكام المسابقة
-  //  //localhost:3000/
-  //  ` );
+ const [Msdn,setMsdn]=useState('')
+  useEffect(() => {
+    // Accessing query parameters
+    const queryParams = new URLSearchParams(window.location.search);
     
+    // Reading specific query parameters
+    const param1Value = queryParams.get('MSISDN');
+    param1Value && setMsdn(param1Value)
     
-  // }, []);
+   
+
+  }, []);
   
   return (
   
@@ -72,12 +76,12 @@ const Competition = () => {
       فيديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/Myvideos?MSISDN${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div' href='/AddVideo' style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/AddVideo?MSISDN${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
 اضافة فيديو        </button>
         </Link>
@@ -86,7 +90,7 @@ const Competition = () => {
         </div >
         </div>
 
-<PaginationCom itemsPerPage={12}/>
+<PaginationCom itemsPerPage={12} Msdn={Msdn}/>
 
     </>
   )

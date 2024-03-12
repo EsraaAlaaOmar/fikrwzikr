@@ -1,4 +1,4 @@
-import React,{useState,useRef, ReactNode} from 'react'
+import React,{useState,useRef, ReactNode, useEffect} from 'react'
 import Link from 'next/link'
 import { useMutation  } from 'react-query';
 import Loader from '../components/competitioncomponents/Loader';
@@ -12,14 +12,25 @@ const axios = require("axios");
 const AddVideoComp=()=>{
 
 
+  const [Msdn,setMsdn]=useState('')
+  useEffect(() => {
+    // Accessing query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // Reading specific query parameters
+    const param1Value = queryParams.get('MSISDN');
+    param1Value && setMsdn(param1Value)
+    
+   
 
+  }, []);
 
   const router = useRouter();
   const [formData, setFormData] = useState(
     {
       Title: '',
       Description: '',
-      MobileNumber: '01126214650',
+      MobileNumber: Msdn,
       videoFile:null ,
       posterFile:null,
       
@@ -162,12 +173,12 @@ const AddVideoComp=()=>{
       فيديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href='/Myvideos' style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/Myvideos?MSISDN${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div ' href='/AddVideo' style={{color:"#000"}}>
+        <Link className='videos-link-div ' href={`/Competition?MSISDN${Msdn}`}style={{color:"#000"}} >
           <button className="my-videos-link active" >
 اضافة فيديو        </button> 
         </Link>

@@ -21,38 +21,20 @@ interface VideoData {
   Votes:[];
   Url:string
 }
-const Myvideos = () => {
-  // const [data, setData] = useState<VideoData[] | null>(null);
+interface Props {
+
+  Msdn:string
+  }
+  const Myvideos: React.FC<Props> = ({Msdn}) => {
+
+
    const [upload,setUpload] = useState(false)
-  // const fetchData = async () => {
-    
 
-  
-  //   try {
-  //       const Msisdn ="Msisdn"
-  //       const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=01126214650`,{},{ headers: {
-          
-  //       'Content-Type': 'application/json'
-  //       }});
-      
-  //       if (response.status === 200) {
-  //         // Handle successful upload
-  //         console.log(response)
-  //         return response.data
-  //         // setData(response)
-  //       } else {
-  //         // Handle upload error
-  //       }
-  //     } catch (error) {
-  //       // Handle network error or any other error
-  //     }
-
-  // };
 
 
   const fetchVideos = async () => {
     const response = await axios.post(
-      'https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=01126214650',
+      `https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=${Msdn}`,
       {},
       {
     
@@ -121,7 +103,7 @@ const Myvideos = () => {
 
          </div>
          <div className=" videos-page   video-links-div">
-        <Link className='videos-link-div ' href='/Competition' style={{color:"#000"}} >
+        <Link className='videos-link-div ' href={`/Competition?MSISDN${Msdn}`}style={{color:"#000"}} >
           <button className="my-videos-link " >
       فيديوهات المسابقة
         </button>
@@ -131,7 +113,7 @@ const Myvideos = () => {
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div' href='/AddVideo' style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/AddVideo?MSISDN${Msdn}`}style={{color:"#000"}}>
           <button className="my-videos-link"  >
           اضافة فيديو        </button>
         </Link>
