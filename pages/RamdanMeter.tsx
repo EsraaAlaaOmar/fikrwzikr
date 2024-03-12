@@ -18,18 +18,11 @@ const RamdanMeter = () => {
           'content-type': 'text/json'
         }
       });
-      return response.data.description;
+      return response.data;
     };
  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
-//  const dataArray =data&& Object.values(data);
-
-  const arr = data&&JSON.parse(data);
-  console.log(arr?._FurdDVView
-    )
-    var _FurdDVView=arr?._FurdDVView.slice(0, 5);
-    var  _SunahDVView=arr?._SunahDVView.slice(0, 5);
-
   
+ console.log(data?.description._FurdDVView)
   return (
     <>
 <div className="progress-container">
@@ -48,7 +41,7 @@ const RamdanMeter = () => {
 </span>
   </div>}
 
- {showfrood && <Frood  hide={setShowFrood} froodData={_FurdDVView} />}
+ {showfrood && <Frood  hide={setShowFrood} />}
   
 </div>
 
