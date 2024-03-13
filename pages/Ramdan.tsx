@@ -85,7 +85,7 @@ const handleCheckboxChange = (event:any) => {
           <div className="content">
            <div className="row">
            <Col xs={6} md={7} >
-                <h4> 2 رمضان 1441 هجريا</h4>
+                <h4> 3 رمضان 1441 هجريا</h4>
                 <p>مواقيت الصلاة حسب مدينة القاهرة</p>  
             </Col>
             <Col xs={3} md={2} className="col-md-2 col-xs-3 text-center"><h4>فرض</h4></Col>
