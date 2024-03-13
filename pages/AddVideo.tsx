@@ -66,7 +66,7 @@ const AddVideoComp=()=>{
   const reqdata = new FormData();
   reqdata.append("Title", formData.Title);
   reqdata.append("Description", formData.Description);
-  reqdata.append("MobileNumber", formData.MobileNumber);
+  reqdata.append("MobileNumber", Msdn);
   if (formData.videoFile !== null) {
     reqdata.append("videoFile", formData.videoFile);
   }
@@ -178,7 +178,7 @@ const AddVideoComp=()=>{
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div ' href={`/Competition?MSISDN=${Msdn}`}style={{color:"#000"}} >
+        <Link className='videos-link-div ' href={`/AddVideo?MSISDN=${Msdn}`}style={{color:"#000"}} >
           <button className="my-videos-link active" >
 اضافة فيديو        </button> 
         </Link>

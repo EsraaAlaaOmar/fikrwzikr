@@ -1,4 +1,4 @@
-import React,{useState,useRef} from 'react'
+import React,{useState,useRef,useEffect} from 'react'
 
 import { BsListUl } from "react-icons/bs";
 import { useOnClickOutside } from 'usehooks-ts'
@@ -7,6 +7,18 @@ import { LuUser } from "react-icons/lu";
 import Link from 'next/link';
 
 const Navbar = () => {
+  const [Msdn,setMsdn]=useState('')
+  useEffect(() => {
+    // Accessing query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // Reading specific query parameters
+    const param1Value = queryParams.get('MSISDN');
+    param1Value && setMsdn(param1Value)
+    
+   
+
+  }, []);
   const [showSidebar, setShowSidebar] = useState(false)
   
   const ref = useRef(null)
@@ -17,7 +29,7 @@ const Navbar = () => {
       <a href="javascript:void(0);" className="close-btn" onClick={()=>setShowSidebar(false)}><span>×</span></a>     
       <ul className="list-unstyled" id="accordion" role="tablist" aria-multiselectable="true">          
         <h3>القائمة</h3>  
-        <li className="panel"><a href="https://ka2naktraho.com/Index">الرئيسية</a></li> 
+        <li className="panel"><a href={`https://ka2naktraho.com/Index?MSISDN=${Msdn}`}>الرئيسية</a></li> 
         <li className="panel">    <Link href="/Competition"  onClick={()=>setShowSidebar(false)}> مسابقة رمضان </Link></li>
         <li className="panel">    <Link href="/Ramdan"  onClick={()=>setShowSidebar(false)}>  رمضان رحلة التقرب الي الله </Link></li>
         <li className="panel">    <Link href="/Zkah"  onClick={()=>setShowSidebar(false)}> الزكاة </Link></li>

@@ -71,7 +71,7 @@ const Competition = () => {
       <div className='video-links-div container'>
         
         <div className=" videos-page   video-links-div">
-        <Link className='videos-link-div ' href='' style={{color:"#000"}} >
+        <Link className='videos-link-div ' href={`/Competition?MSISDN=${Msdn}`}  style={{color:"#000"}} >
           <button className="my-videos-link active" >
       فيديوهات المسابقة
         </button>

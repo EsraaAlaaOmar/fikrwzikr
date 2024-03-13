@@ -23,10 +23,22 @@ interface VideoData {
 }
 interface Props {
 
-  Msdn:string
   }
-  const Myvideos: React.FC<Props> = ({Msdn}) => {
-
+  const Myvideos: React.FC<Props> = () => {
+    
+    const [Msdn, setMsdn] = useState<string>();
+    useEffect(() => {
+      // Accessing query parameters
+      const queryParams = new URLSearchParams(window.location.search);
+      
+      // Reading specific query parameters
+      const param1Value = queryParams.get('MSISDN');
+      param1Value && setMsdn(param1Value)
+      
+     
+  
+    }, []);
+console.log(Msdn)
 
    const [upload,setUpload] = useState(false)
 
@@ -66,7 +78,10 @@ interface Props {
       return  deleteItem(vidId)
     })
   }
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("myvideos", fetchVideos)
+  const queryKey = Msdn ? ["myvideos", Msdn] : ["myvideos"];
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
+    queryKey,
+    fetchVideos)
   
   // start pending videos 
   var pendingVideos =data?.filter((video:any)=>video?.Status === 0) 
@@ -108,7 +123,7 @@ interface Props {
       فيديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href='' style={{color:"#000"}}>
+        <Link className='videos-link-div' href={`/Myvideos?MSISDN=${Msdn}`}style={{color:"#000"}}>
           <button className="my-videos-link active" >
        فيديوهاتي
         </button>
@@ -125,7 +140,7 @@ interface Props {
   
      
         
-  
+ {isLoading? <Loader />  :<>
     
      <div className='section-title'>
      قيد  المراجعة
@@ -149,7 +164,7 @@ interface Props {
 
     </div>
     
-
+    </>}
       <div className='section-title'>
       الفيديوهات المرفوضة
       </div> 
