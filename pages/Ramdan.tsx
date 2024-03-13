@@ -1,12 +1,26 @@
 import axios from 'axios';
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Col } from 'react-bootstrap';
 import SingleHeader from '../components/reusable components/SingleHeader';
+import { useQuery } from 'react-query';
 
 interface CheckboxState {
   [key: string]: boolean;
 }
 const Ramdan = () => {
+   
+  const [Msdn,setMsdn]=useState('')
+  useEffect(() => {
+    // Accessing query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // Reading specific query parameters
+    const param1Value = queryParams.get('MSISDN');
+    param1Value && setMsdn(param1Value)
+    
+   console.log(Msdn)
+
+  }, []);
   const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
     checkbox_a: false,
     checkbox_aa: false,
@@ -33,7 +47,7 @@ const Ramdan = () => {
 ];
 
 const requestData = {
-  "mobileNumber": "01126214650",
+  "mobileNumber": Msdn,
   _ActiviteView: checkboxKeys.map((checkboxKey:string, index) => ({
       activitId: index+1, // You can adjust this according to your requirements
       status: checkboxValues[checkboxKey]
@@ -48,6 +62,39 @@ const handleCheckboxChange = (event:any) => {
       [id]: checked,
     }));
   };
+ 
+  const fetchPrayersTime = async () => {
+    const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetTodayPrayers?MobileNumber=${Msdn}`, {
+      headers: {
+        'content-type': 'text/json'
+      }
+    });
+    return response.data.TodayPrayers;
+  };
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery('prayers',fetchPrayersTime);
+  console.log(data&&data[0].PrayerTime);
+//calculate imsak time 
+const timeArray =data&&data[0].PrayerTime.substring(0, 5).split(':');
+let hours = timeArray&&parseInt(timeArray[0]);
+let minutes = timeArray&&parseInt(timeArray[1]);
+
+// Subtract 20 minutes
+minutes -= 20;
+if (minutes < 0) {
+    minutes += 60;
+    hours -= 1;
+}
+if (hours < 0) {
+    hours += 24;
+}
+
+// Format the hours and minutes
+const formattedHours = (hours < 10 ? '0' : '') + hours;
+const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
+
+
+
+
   const addProfile = async (event:any) => {
     
  
@@ -70,7 +117,7 @@ const handleCheckboxChange = (event:any) => {
       }
      
     }
- 
+var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
 
   return (
     <div className="wrapper">
@@ -85,7 +132,7 @@ const handleCheckboxChange = (event:any) => {
           <div className="content">
            <div className="row">
            <Col xs={6} md={7} >
-                <h4> 3 رمضان 1441 هجريا</h4>
+                <h4>{date}</h4>
                 <p>مواقيت الصلاة حسب مدينة القاهرة</p>  
             </Col>
             <Col xs={3} md={2} className="col-md-2 col-xs-3 text-center"><h4>فرض</h4></Col>
@@ -96,7 +143,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الفجر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">4:42 صباحا</li>     
+              <li className="col-md-3 col-xs-12">{data&&data[0].PrayerTime.substring(0, 5)} صباحا</li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
@@ -118,7 +165,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الظهر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">12:05  مساء</li>     
+              <li className="col-md-3 col-xs-12">{data&&data[2].PrayerTime.substring(0, 5)}  مساء</li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
@@ -141,7 +188,7 @@ const handleCheckboxChange = (event:any) => {
               <li className="col-md-3 col-xs-12">العصر</li>
               <li className="col-md-6 hidden-xs">-</li>   
               <li className="col-md-3 col-xs-12">	
-3:29 مساء</li>     
+              {data&&data[3].PrayerTime.substring(0, 5)}  مساء</li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -163,7 +210,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">المغرب</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">6:02  مساء</li>     
+              <li className="col-md-3 col-xs-12">{data&&data[4].PrayerTime.substring(0, 5)}  مساء</li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -186,7 +233,7 @@ const handleCheckboxChange = (event:any) => {
               <li className="col-md-3 col-xs-12">العشاء</li>
               <li className="col-md-6 hidden-xs">-</li>  
               <li className="col-md-3 col-xs-12">	
-7:18 مساء</li>     
+              {data&&data[5].PrayerTime.substring(0, 5)}  مساء</li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -208,7 +255,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">موعد الامساك</li>
               <li className="col-md-6 hidden-xs">-</li>  
-              <li className="col-md-3 col-xs-12">2:50 صباحا</li>     
+              <li className="col-md-3 col-xs-12">{`${formattedHours}:${formattedMinutes}`} صباحا</li>     
              </ul>   
             </div>                 
            </div>  
@@ -217,7 +264,7 @@ const handleCheckboxChange = (event:any) => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">موعد الافطار</li>
               <li className="col-md-6 hidden-xs">-</li>  
-              <li className="col-md-3 col-xs-12">6:54 مساء</li>     
+              <li className="col-md-3 col-xs-12">{data&&data[4].PrayerTime.substring(0, 5)} مساء</li>     
              </ul>   
             </div>                 
            </div>                
