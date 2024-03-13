@@ -3,6 +3,7 @@ import React,{useEffect, useState} from 'react'
 import { Col } from 'react-bootstrap';
 import SingleHeader from '../components/reusable components/SingleHeader';
 import { useQuery } from 'react-query';
+import Loader from '../components/competitioncomponents/Loader';
 
 interface CheckboxState {
   [key: string]: boolean;
@@ -123,7 +124,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
     <div className="wrapper">
       <SingleHeader pageName='30 يوم
 رحلة التقرب إلي الله'/>
-          <section className="single-content ramdan-content">
+        {isLoading? <Loader /> :  <section className="single-content ramdan-content">
      <div className="container">
       <div className="row">
         <div className="col-md-12">
@@ -354,7 +355,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
         </div>    
       </div>       
      </div>  
-    </section>
+    </section>}
 
     </div>
   )
