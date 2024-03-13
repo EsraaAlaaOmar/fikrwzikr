@@ -85,7 +85,7 @@ const AddVideoComp=()=>{
     {
       onSuccess: () => {
 
-        router.push('/Myvideos');
+        router.push(`/Myvideos?MSISDN=${Msdn}`);
       },
       onError: (error) => {
         
