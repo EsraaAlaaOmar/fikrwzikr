@@ -19,7 +19,8 @@ interface VideoData {
   VideoUrl: string;
   VideoId: number;
   Votes:[];
-  Url:string
+  Url:string;
+  PosterUrl:string;
 }
 interface Props {
 

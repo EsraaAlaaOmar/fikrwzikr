@@ -24,7 +24,8 @@ interface VideoData {
   VideoUrl: string;
   VideoId: number;
   Votes:[];
-  Url:string
+  Url:string;
+  PosterUrl:string;
 }
 
 
@@ -94,7 +95,7 @@ const handleClickInside = () => {
         className="competetion-video"
         width="320"
             height="240"
-            poster="https://i.ytimg.com/vi/aPYOyxX8KeI/maxresdefault.jpg"
+            poster={videodetails.PosterUrl}
         // controls="false"
         muted
         >

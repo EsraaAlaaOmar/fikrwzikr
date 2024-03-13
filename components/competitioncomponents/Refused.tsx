@@ -22,7 +22,8 @@ interface VideoData {
   VideoUrl: string;
   VideoId: number;
   Votes:[];
-  Url:string
+  Url:string;
+  PosterUrl:string;
 }
 
 
@@ -82,7 +83,7 @@ const handleClickInside = () => {
         width="320"
         height="240"
             // controls="false"
-            poster="https://i.ytimg.com/vi/aPYOyxX8KeI/maxresdefault.jpg"
+            poster={videodetails.PosterUrl}
         muted
         >
     
