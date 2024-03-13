@@ -3,8 +3,24 @@ import { GiCheckMark } from "react-icons/gi";
 
 interface FroodProps {
     hide: (arg0: boolean) => void; // Specify the type of hide function
+    froodData:[any]
   }
-  const Frood: React.FC<FroodProps> = ({hide}) => {
+  const Frood: React.FC<FroodProps> = ({hide,froodData}) => {
+
+  var renderedRows = froodData?.map((fard)=>{
+    const parts = fard.HDATE.split(' ');
+    const day = parts[2];
+const month = parts[1];
+    return(   <tr>
+        <td>{ day } {month}</td>
+    <td>{fard.FAGRFU ? <GiCheckMark />: "✘" }</td>
+    <td>{fard.DUHRFU ? <GiCheckMark />: "✘" }</td>
+    <td>{fard.ASRFU ? <GiCheckMark />: "✘" }</td>
+    <td>{fard.MAGFUIR ? <GiCheckMark />: "✘" }</td>
+    <td>{fard.ISHAFUIR ? <GiCheckMark />: "✘" }</td>
+    
+</tr>)
+  })
   return (
  <>
     <div id="prodress-salah-les" className="progress-less"  onClick={()=>hide(false)}  >
@@ -23,46 +39,15 @@ interface FroodProps {
 
     </tr>
     <tr>
-        <td>1 رمضان</td>
-        <td>{<GiCheckMark />}</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
+    <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
     </tr>
-    <tr>
-        <td>2 رمضان</td>
-        <td>{<GiCheckMark />}</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-    </tr>
-    <tr>
-        <td>3 رمضان</td>
-        <td>{<GiCheckMark />}</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-    </tr>
-    <tr>
-        <td>4 رمضان</td>
-        <td>{<GiCheckMark />}</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-    </tr>
-    <tr>
-        <td>5 رمضان</td>
-        <td>{<GiCheckMark />}</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-        <td>{<GiCheckMark />}</td>
-        <td>✘</td>
-    </tr>
+    {renderedRows}
     </tbody>
     </table>
  </>

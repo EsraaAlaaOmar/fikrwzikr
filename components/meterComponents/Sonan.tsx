@@ -1,10 +1,25 @@
 import React from 'react'
 import { GiCheckMark } from "react-icons/gi";
 
-interface SonanProps {
+interface sunanDataProps {
   hide: (arg0: boolean) => void; // Specify the type of hide function
+  sunanData:[any]
 }
-const Sonan: React.FC<SonanProps> = ({hide}) => {
+const Sonan: React.FC<sunanDataProps> = ({hide,sunanData}) => {
+  var renderedRows = sunanData?.map((sona)=>{
+    const parts = sona.HDATE.split(' ');
+    const day = parts[2];
+const month = parts[1];
+    return(   <tr>
+        <td>{ day } {month}</td>
+        <td>{sona.FAGRSO ? <GiCheckMark />: "✘" }</td>
+        <td>{sona.DUHRSO ? <GiCheckMark />: "✘" }</td>
+        <td className="table-void"></td>
+        <td>{sona.MAGSON ? <GiCheckMark />: "✘" }</td>
+        <td>{sona.ISHASON ? <GiCheckMark />: "✘" }</td>
+        
+    </tr>)
+      })
   return (
    <>
        <div id="prodress-sonan-les" className="progress-less"  onClick={()=>hide(false)}  >
@@ -23,48 +38,15 @@ const Sonan: React.FC<SonanProps> = ({hide}) => {
 
     </tr>
     <tr>
-      <td>1 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td className="table-void"></td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td  rowSpan={30} style={{fontWeight:"bold", fontSize:"18px"}}>65%</td>
+    <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>65%</td>
     </tr>
-    <tr>
-      <td>2 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td className="table-void"></td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
-    <tr>
-      <td>3 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-     
-      <td>✘</td>
-      <td className="table-void"></td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
-    <tr>
-      <td>4 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td className="table-void"></td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
-    <tr>
-      <td>5 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td className="table-void"></td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
- 
+ {renderedRows}
     </tbody>
   </table>
    </>
