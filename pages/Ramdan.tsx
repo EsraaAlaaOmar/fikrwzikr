@@ -128,9 +128,7 @@ const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
      
     }
 var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
-useEffect(() => {
-  console.log(checkboxValues);
-}, [checkboxValues]);
+
   return (
     <div className="wrapper">
       <SingleHeader pageName='30 يوم
