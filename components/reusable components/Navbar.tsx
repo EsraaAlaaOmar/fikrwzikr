@@ -7,7 +7,7 @@ import { LuUser } from "react-icons/lu";
 import Link from 'next/link';
 
 const Navbar = () => {
-  const [Msdn,setMsdn]=useState('')
+  const [Msdn,setMsdn]=useState<string>()
   useEffect(() => {
     // Accessing query parameters
     const queryParams = new URLSearchParams(window.location.search);
@@ -195,10 +195,16 @@ const Navbar = () => {
             </a>                
         </li>
         <li>
-            <a href="https://ka2naktraho.com/SignIn">
+           { !Msdn || Msdn=='NA'? 
+              <a href="https://ka2naktraho.com/SignIn">
+              <span className='react-icon'>  <LuUser /> </span>
+                  تسجيل دخول
+              </a>:
+           <span className='signed'>
             <span className='react-icon'>  <LuUser /> </span>
-                تسجيل دخول
-            </a>
+           مرحبا {Msdn}</span>
+            
+          }
         </li>       
     </ul> 
          </div>  
