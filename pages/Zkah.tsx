@@ -20,14 +20,15 @@ const Zkah = () => {
   const [arbah, seTArbah] = useState<number>(0)
   const [gold18, seTGold18] = useState<number>(0)
   const [gold21, seTGold21] = useState<number>(0)
+  const [gold18Price, seTGold18Price] = useState<number>(0)
+  const [gold21Price, seTGold21Price] = useState<number>(0)
   const[akarat, seTAkarat] = useState<number>(0)
-   const gold18Price= 2588;
-   const gold21Price = 3020;
+
   var  outputMall = 0 
    outputMall =!isNaN(mall) ? Math.ceil( mall*0.025) : 0
    var outputSum =(!isNaN(Ashoom)?Ashoom:0) +( !isNaN(sndat) ? sndat : 0) +( !isNaN(arbah)? arbah :0)
    var outputAsoolwmomtlkat = Math.ceil(outputSum* 0.025)
-   var outoutGoldSum =  (!isNaN(gold18)?gold18 * gold18Price :0) + ( !isNaN(gold21) ? gold21 * gold21Price : 0) 
+   var outoutGoldSum =  (!isNaN(gold18)?gold18:0) * (!isNaN(gold18Price)? gold18Price :0) + ( !isNaN(gold21) ? gold21:0) *  (!isNaN(gold21Price)? gold21Price : 0) 
    var outputGold=Math.ceil((outoutGoldSum)*.025)
    var outputAkarat = !isNaN(mall) ? Math.ceil(akarat*0.025) :0
 //
@@ -106,30 +107,30 @@ const Zkah = () => {
             </div>
 
             <div className="zakah-box " >
-              <div className="input-title">زكاة الذهب ( ذهب الزينة ليس عليه زكاة )</div>
+              <div className="input-title">زكاة الذهب </div>
             <div className="zakah-row">
               <div className=" box-input">
-                <div className="title">وزن الذهب الذي تملكة من عيار 18 بالجرام</div>
+                <div className="title">وزن الذهب الذي تملكة لغير الوينة  عيار 18 بالجرام</div>
                 <input className="input-field" type="number" min="0" placeholder="القيمة هنا" id="input-eighteen" onChange={(e:any)=>seTGold18(parseFloat(e.target.value))}/>
                  
              </div>
              <div className="box-unit ">
                   
-قيمة الذهب اليوم <br/>
-3107 جنية مصري
+قيمة الذهب عيار 18 اليوم <br/>
+<input className="input-field gold-price" type='number' min="0" onChange={(e:any)=>seTGold18Price(parseFloat(e.target.value))}  />
              </div>
             </div>
 
             <div className="zakah-row">
               <div className=" box-input">
-                <div className="title">وزن الذهب الذي تملكة من عيار 21 بالجرام</div>
+                <div className="title">وزن الذهب الذي تملكة لغير الزينة عيار 21 بالجرام</div>
                 <input className="input-field" type="number" min="0" placeholder="القيمة هنا" id="input-twentyone" onChange={(e:any)=>seTGold21(parseFloat(e.target.value))}/>
                  
              </div>
              <div className="box-unit ">
                   
-قيمة الذهب اليوم <br/>
-3625 جنية مصري
+قيمة الذهب عيار 21 اليوم <br/>
+<input className="input-field gold-price" type='number' min="0" onChange={(e:any)=>seTGold21Price(parseFloat(e.target.value))} />
              </div>
             </div>
            
