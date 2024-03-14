@@ -24,16 +24,20 @@ const RamdanMeter = () => {
     const[showfrood,setShowFrood] = useState(false)
     const[showsonan,setShowSonan] = useState(false)
     const[showquran,setShowQuran] = useState(false)
-    var MobileNumbr = '01126214650';
+ 
     const fetchData = async () => {
-      const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${"01126214650"}`, {
+      const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${Msdn}`, {
         headers: {
           'content-type': 'text/json'
         }
       });
       return response.data.description;
     };
- const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
+    const queryKey = Msdn ? ["profile", Msdn] : ["myvideos"];
+    const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
+      queryKey,
+      fetchData)
+//  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
   
  const arr = data&&JSON.parse(data);
  
