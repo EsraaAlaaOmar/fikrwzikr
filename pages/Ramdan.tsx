@@ -54,14 +54,21 @@ const requestData = {
       status: checkboxValues[checkboxKey]
   }))
 };
+console.log(checkboxValues)
+
 console.log(requestData)  
 const handleCheckboxChange = (event:any) => {
+  
+  console.log('Checkbox changed');
+  console.log
     const { id, checked } = event.target;
-    addProfile(event)
+   
     setCheckboxValues((prevValues) => ({
       ...prevValues,
       [id]: checked,
     }));
+    addProfile(event)
+   
   };
  
   const fetchPrayersTime = async () => {
@@ -72,8 +79,10 @@ const handleCheckboxChange = (event:any) => {
     });
     return response.data.TodayPrayers;
   };
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery('prayers',fetchPrayersTime);
-  console.log(data&&data[0].PrayerTime);
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery('prayers', fetchPrayersTime, {
+    enabled: !!Msdn // Only fetch data when Msdn is not an empty string
+  });
+
 //calculate imsak time 
 const timeArray =data&&data[0].PrayerTime.substring(0, 5).split(':');
 let hours = timeArray&&parseInt(timeArray[0]);
@@ -119,7 +128,9 @@ const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
      
     }
 var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
-
+useEffect(() => {
+  console.log(checkboxValues);
+}, [checkboxValues]);
   return (
     <div className="wrapper">
       <SingleHeader pageName='30 يوم
@@ -149,14 +160,14 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </Col>
             <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-aa" />
-                <label htmlFor="checkbox-aa"></label>
+                <input type="checkbox" id="checkbox_aa"  checked={checkboxValues.checkbox_aa}  onChange={(e)=>handleCheckboxChange(e)} />
+                <label htmlFor="checkbox_aa"></label>
               </div>                
             </Col>  
             <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-a" />
-                <label htmlFor="checkbox-a"></label>
+                <input type="checkbox" id="checkbox_a" checked={checkboxValues.checkbox_a}  onChange={(e)=>handleCheckboxChange(e)} />
+                <label htmlFor="checkbox_a"></label>
                 <span className="suna">ركعتين قبل</span>  
               </div>                
             </Col>                 
@@ -171,14 +182,14 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </Col>
             <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-bb" />
-                <label htmlFor="checkbox-bb"></label>
+                <input type="checkbox" id="checkbox_bb" checked={checkboxValues.checkbox_bb} onChange={(e)=>handleCheckboxChange(e)}/>
+                <label htmlFor="checkbox_bb"></label>
               </div>                
             </Col>  
             <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-b" />
-                <label htmlFor="checkbox-b"></label>
+                <input type="checkbox" id="checkbox_b" checked={checkboxValues.checkbox_b}  onChange={(e)=>handleCheckboxChange(e)}/>
+                <label htmlFor="checkbox_b"></label>
                 <span className="suna"> ركعتين قبل <br/> 4 بعد</span>  
               </div>                
             </Col>                 
@@ -194,8 +205,8 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </Col>
                <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-cc" />
-                <label htmlFor="checkbox-cc"></label>
+                <input type="checkbox" id="checkbox_cc" checked={checkboxValues.checkbox_cc} onChange={(e)=>handleCheckboxChange(e)} />
+                <label htmlFor="checkbox_cc"></label>
               </div>                
             </Col>  
                <Col xs={3} md={2}>
@@ -216,14 +227,14 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </Col>
                <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-dd" />
-                <label htmlFor="checkbox-dd"></label>
+                <input type="checkbox" id="checkbox_dd" checked={checkboxValues.checkbox_dd} onChange={(e)=>handleCheckboxChange(e)} />
+                <label htmlFor="checkbox_dd"></label>
               </div>                
             </Col>  
                <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-d" />
-                <label htmlFor="checkbox-d"></label>
+                <input type="checkbox" id="checkbox_d" checked={checkboxValues.checkbox_d} onChange={(e)=>handleCheckboxChange(e)} />
+                <label htmlFor="checkbox_d"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
             </Col>                 
@@ -239,14 +250,14 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </Col>
                <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-ee" />
-                <label htmlFor="checkbox-ee"></label>
+                <input type="checkbox" id="checkbox_ee" checked={checkboxValues.checkbox_ee} onChange={(e)=>handleCheckboxChange(e)} />
+                <label htmlFor="checkbox_ee"></label>
               </div>                
             </Col>  
                <Col xs={3} md={2}>
               <div className="round">
-                <input type="checkbox" id="checkbox-e" />
-                <label htmlFor="checkbox-e"></label>
+                <input type="checkbox" id="checkbox_e" checked={checkboxValues.checkbox_e} onChange={(e)=>handleCheckboxChange(e)}/>
+                <label htmlFor="checkbox_e"></label>
                 <span className="suna">ركعتين بعد</span>  
               </div>                
             </Col>                 
@@ -299,7 +310,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </div>
             <div className="col-xs-3">
               <div className="round">
-              <input type="checkbox" id="checkbox_f" checked={checkboxValues.checkbox_f} onChange={handleCheckboxChange} />
+              <input type="checkbox" id="checkbox_f" checked={checkboxValues.checkbox_f} onChange={(e)=>handleCheckboxChange(e)} />
                 <label htmlFor="checkbox_f"></label>
                 
               </div>                
@@ -312,7 +323,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </div>
             <div className="col-xs-3">
               <div className="round">
-              <input type="checkbox" id="checkbox_g" checked={checkboxValues.checkbox_g} onChange={handleCheckboxChange} />
+              <input type="checkbox" id="checkbox_g" checked={checkboxValues.checkbox_g} onChange={(e)=>handleCheckboxChange(e)} />
                 <label htmlFor="checkbox_g"></label>
               </div>                
             </div>   
@@ -323,7 +334,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </div>
             <div className="col-xs-3">
               <div className="round">
-              <input type="checkbox" id="checkbox_h" checked={checkboxValues.checkbox_h} onChange={handleCheckboxChange} />
+              <input type="checkbox" id="checkbox_h" checked={checkboxValues.checkbox_h} onChange={(e)=>handleCheckboxChange(e)} />
                 <label htmlFor="checkbox_h"></label>
               </div>                
             </div>   
@@ -334,7 +345,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </div>
             <div className="col-xs-3">
               <div className="round">
-              <input type="checkbox" id="checkbox_i" checked={checkboxValues.checkbox_i} onChange={handleCheckboxChange} />
+              <input type="checkbox" id="checkbox_i" checked={checkboxValues.checkbox_i} onChange={(e)=>handleCheckboxChange(e)} />
                 <label htmlFor="checkbox_i"></label>
               </div>                
             </div>   
@@ -345,7 +356,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
             </div>
             <div className="col-xs-3">
               <div className="round">
-              <input type="checkbox" id="checkbox_j" checked={checkboxValues.checkbox_j} onChange={handleCheckboxChange} />
+              <input type="checkbox" id="checkbox_j" checked={checkboxValues.checkbox_j} onChange={(e)=>handleCheckboxChange(e)} />
                 <label htmlFor="checkbox_j"></label>
               </div>                
             </div>   
