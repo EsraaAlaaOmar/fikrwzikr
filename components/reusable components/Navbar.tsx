@@ -195,7 +195,7 @@ const Navbar = () => {
             </a>                
         </li>
         <li>
-           { !Msdn || Msdn=='NA'? 
+           { !Msdn || Msdn=='NA' || Msdn=='undefined'? 
               <a href="https://ka2naktraho.com/SignIn">
               <span className='react-icon'>  <LuUser /> </span>
                   تسجيل دخول
