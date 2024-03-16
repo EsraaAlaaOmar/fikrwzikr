@@ -22,6 +22,7 @@ const Ramdan = () => {
    console.log(Msdn)
 
   }, []);
+  const[addProfileCondition , setAddProfileConsition] =useState(false)
   const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
     checkbox_a: false,
     checkbox_aa: false,
@@ -57,7 +58,32 @@ const requestData = {
 console.log(checkboxValues)
 
 console.log(requestData)  
-const handleCheckboxChange = (event:any) => {
+
+const addProfile = async () => {
+    
+ 
+  // event.preventDefault(); 
+  setAddProfileConsition(false)
+    try {
+      const response = await axios.post("https://vf.alerting.services/fekrwzekrApis/Users/AddProfile",requestData ,{ headers: {
+   
+        'content-type': 'text/json'
+      }});
+    
+      if (response.status === 200) {
+     
+          // router.push('/myvideos');
+     
+      } else {
+        // Handle upload error
+      }
+    } catch (error) {
+      // Handle network error or any other error
+    }
+   
+  }
+
+const handleCheckboxChange = async (event:any) => {
   
   console.log('Checkbox changed');
   console.log
@@ -67,10 +93,10 @@ const handleCheckboxChange = (event:any) => {
       ...prevValues,
       [id]: checked,
     }));
-    addProfile(event)
+    setAddProfileConsition(true)
    
   };
- 
+{addProfileCondition&& addProfile()}
   const fetchPrayersTime = async () => {
     const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetTodayPrayers?MobileNumber=${Msdn}`, {
       headers: {
@@ -105,28 +131,7 @@ const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
 
 
 
-  const addProfile = async (event:any) => {
-    
  
-    event.preventDefault(); 
-      try {
-        const response = await axios.post("https://vf.alerting.services/fekrwzekrApis/Users/AddProfile",requestData ,{ headers: {
-     
-          'content-type': 'text/json'
-        }});
-      
-        if (response.status === 200) {
-       
-            // router.push('/myvideos');
-       
-        } else {
-          // Handle upload error
-        }
-      } catch (error) {
-        // Handle network error or any other error
-      }
-     
-    }
 var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
 
   return (
