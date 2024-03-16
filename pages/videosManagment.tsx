@@ -1,54 +1,59 @@
-import React from 'react'
-
+import React ,{useState, useEffect}from 'react'
+import VideoManagment from '../components/competitioncomponents/VideoManagment'
+import axios from 'axios';
+import { useQuery } from 'react-query';
+import { Pagination } from 'react-bootstrap';
+import Loader from '../components/competitioncomponents/Loader';
 const lvideosManagment = () => {
+  const[currentPage,setCurrentPage]=useState(1)
+
+var pageSize=10;
+
+  const fetchVideos = async () => {
+    const response = await axios.post(
+      `https://vf.alerting.services/fekrwzekrApis/Users/GetAllPendingVideos?Page=${currentPage}&PageSize=${pageSize}`,
+      {},
+      {
+    
+      }
+    );
+    return response.data.description;
+   
+
+  };
+
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
+    ["pending", currentPage],
+    fetchVideos)
+    const arr = data&&JSON.parse(data);
+    console.log(data)
+    const renderedvideo = data? arr.map((video: any) => {
+      return <VideoManagment details={video} refetchVideos={refetch}  />
+    }):<></>;
   return (
     <><h2 className="admin-title"> إدارة الفيديوهات</h2>
     
-    <table className="admin-table">
-      <tr>
-        <th></th>
-        <th>رقم المستخدم </th>
-        <th>وصف الفيديو </th>
-        <th>التاريخ  </th>
-        <th>الاجراء </th>
-       
-      </tr>
-      <tr>
-        <th>1</th>
-        <td>011211311411</td>
-        <td className="td-describtion">اية الكرسي  ▶ </td>
-        <th>2023‑2‑18  </th>
-        <td><button>اضافة </button> <button>رفض</button></td>
-      </tr>
-      <tr>
-        <th>2</th>
-        <td>010987654310</td>
-        <td className="td-describtion">اية الدين  ▶</td>
-        <th>2023‑2‑18  </th>
-        <td><button>اضافة </button> <button>رفض</button></td>
-        
-      </tr>
-    </table>
+ {isLoading? <Loader /> :   
+  arr?.length>0 ? <table className="admin-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>عنوان الفديو</th>
+      <th>وصف الفيديو</th>
+      <th>التاريخ</th>
+      <th>الاجراء</th>
+    </tr>
+  </thead>
+  <tbody>
+   {renderedvideo}
+  </tbody>
+</table> : <div className="text-center" style={{height:"200px"}}>لا يوجد فيديوهات</div>}
 
 
 
-
-    <div id="flash-add" className="flash-msg">
-      <div>
-        هل انت متأكد انك تريد اضافة هذا الفيديو 
-      </div>
-      <button>موافق</button>
-      <button>إلغاء</button>
-    </div>
-    <div id="flash-remove" className="flash-msg">
-      <div>
-        هل انت متأكد انك تريد حذف هذا الفيديو 
-      </div>
-      <button >موافق</button>
-      <button >إلغاء</button>
-    </div>
- 
   
+ 
+  <div className="overlay">
     <div id="player-box"  className="videoplayer">
       <div className="video-player-close" >ⓧ</div>
         <video id ="videoplayer" width="100%" height="240"  controls>
@@ -75,7 +80,14 @@ const lvideosManagment = () => {
   
         </div>
         </div>
-        
+        </div>
+        <div className="pagination-butons">
+        <Pagination>
+        <li className="page-item" onClick={()=>{currentPage>1&&setCurrentPage(currentPage-1)}}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
+        <li className="page-item"><a className="page-link" style={{color: '#000'}} >{currentPage }</a></li>
+        <li className="page-item"  onClick={()=>arr?.length==pageSize&&setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
+       </Pagination>
+       </div>
         </>
   )
 }
