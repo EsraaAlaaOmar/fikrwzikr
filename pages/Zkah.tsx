@@ -1,11 +1,24 @@
 import axios, { Axios } from 'axios';
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import SingleHeader from '../components/reusable components/SingleHeader';
 
 const Zkah = () => {
+  const [Msdn,setMsdn]=useState('')
+  useEffect(() => {
+    // Accessing query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // Reading specific query parameters
+    const param1Value = queryParams.get('MSISDN');
+    param1Value && setMsdn(param1Value)
+    
+   
+
+  }, []);
+  
   const AddZakaa = async () => {
     const response = await axios.post(
-      'https://vf.alerting.services/fekrwzekrApis/Users/AddZakaa?MobileNumber=01126214650',
+      `https://vf.alerting.services/fekrwzekrApis/Users/AddZakaa?MobileNumber=${Msdn}`,
       {},
       {
     
@@ -184,7 +197,7 @@ const Zkah = () => {
             <span className="result" id="output-total">{outputMall+outputAkarat+outputAsoolwmomtlkat+outputGold}ج.م</span>
            </div>
        <br/>
-           <input type="checkbox" id="done" name="done" value="Bike" onChange={()=>AddZakaa()}/>
+           <input type="checkbox" id="done" name="done"  onChange={()=>AddZakaa()}/>
            <label htmlFor="done" className="done">لقد اديت الزكاة</label><br/>
           
         </div>
