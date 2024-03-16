@@ -59,17 +59,18 @@ interface Props {
     <div>
     
       {isLoading ? <Loader /> : (
-        <>
+       data.length>0 ? <>
          <div className='videos-grid container'>   {renderedVideos}</div>
         <div className="pagination-butons">
         <Pagination>
-        <li className="page-item" onClick={()=>setCurrentPage(currentPage-1)}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
+        <li className="page-item" onClick={()=>currentPage>0&&setCurrentPage(currentPage-1)}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
         <li className="page-item"><a className="page-link" style={{color: '#000'}} >{currentPage + 1}</a></li>
-        <li className="page-item"  onClick={()=>setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
+        <li className="page-item"  onClick={()=>   data.length==itemsPerPage &&setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
        </Pagination>
-        </div>
+        </div> 
        
         </>
+         : <div className="text-center" style={{height:"200px"}}>لا يوجد فيديوهات</div>
       )}
     </div>
   );
