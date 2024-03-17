@@ -51,7 +51,7 @@ const Zkah = () => {
 
   return (
     <div style={{backgroundColor:"#f5f3f0"}}>
-     <SingleHeader pageName='الزكاة'/>
+     <SingleHeader pageName=' حساب الزكاة'/>
      {/* <div className="pageIcon-top"> <h3>الزكاة<img src='/images/zkah.png' /></h3></div> */}
     
     <div className="row zakah-body">

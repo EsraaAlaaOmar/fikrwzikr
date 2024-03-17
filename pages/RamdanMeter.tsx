@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useQuery } from 'react-query'
 import SingleHeader from '../components/reusable components/SingleHeader'
 import { BsArrowUpLeft } from "react-icons/bs";
+import Loader from '../components/competitioncomponents/Loader'
 
 const RamdanMeter = () => {
   const [Msdn,setMsdn]=useState('')
@@ -51,6 +52,7 @@ const RamdanMeter = () => {
 <div className="progress-container">
 <SingleHeader pageName='تفاصيل عبادتك'/>
  <h2 className="ramadan-meter-title">تفاصيل  عباداتك خلال رمضان</h2>
+ {isLoading? <Loader /> : <>
   {/* <!-- salah --> */}
 <div className="progress-category">
  <div className="progress-title">
@@ -120,7 +122,7 @@ const RamdanMeter = () => {
  
 </div>
 
-
+</>}
 {/* <!-- sbha --> */}
 
 

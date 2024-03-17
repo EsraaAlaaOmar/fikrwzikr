@@ -39,7 +39,7 @@ const Footer = () => {
         <li className="col-xs-6" ><a href="Index"> الرئيسية</a></li>
         <li className="col-xs-5"><Link href={`/Competition?MSISDN=${Msdn}`}> مسابقة رمضان </Link></li>
         <li className="col-xs-6"><Link href={!Msdn || Msdn=='NA' || Msdn=='undefined'?'https://ka2naktraho.com/SignIn':`/Ramdan?MSISDN=${Msdn}`} >  رمضان رحلة التقرب الي الله </Link></li>
-        <li className="col-xs-5"> <Link href={`/Zkah?MSISDN=${Msdn}`}> الزكاة </Link></li>
+        <li className="col-xs-5"> <Link href={`/Zkah?MSISDN=${Msdn}`}> حساب الزكاة </Link></li>
         <li className="col-xs-6"><Link href={!Msdn || Msdn=='NA' || Msdn=='undefined'?'https://ka2naktraho.com/SignIn':`/RamdanMeter?MSISDN=${Msdn}`}  > مقياس العبادات </Link></li>
         <li className="col-xs-5"><Link href={`/Sbha?MSISDN=${Msdn}`} > السبحة </Link></li>
 
