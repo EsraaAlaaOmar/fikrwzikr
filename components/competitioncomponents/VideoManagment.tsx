@@ -16,7 +16,6 @@ interface VideoData {
   interface VideoProps {
     details: VideoData;
     refetchVideos:any // Define the type of refetchVideos prop
- 
   }
   
   const VideoManagment: React.FC<VideoProps> =({details})=>{
