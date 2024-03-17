@@ -9,6 +9,7 @@ import { useOnClickOutside } from 'usehooks-ts'
 import Head from 'next/head';
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import { useRouter } from 'next/router';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -39,7 +40,7 @@ interface VideoProps {
 const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn }) =>  {
   //need to change user ID
   var userId =3;
-  
+  const router = useRouter();
   var Liked = videodetails?.UsersVotes.find((vote) => {
     return vote?.UserId === userId && vote?.Liked === true;
   });
@@ -78,33 +79,9 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn }) =>  {
       href: 'https://example.com', // URL you want to share
     });
   };
-  // const addVote = async (event: any) => {
-  //   console.log('vote');
-  //   event.preventDefault();
-  
-  //   try {
-  //     const response = await axios.post(
-  //       `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${12}&Vote=${true}`,
-  //       null, // Since there's no request body, pass null or an empty object
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json' // Correcting content type
-  //         }
-  //       }
-  //     );
-  
-  //     if (response.status === 200) {
-  //       // Success handling
-  //       // router.push('/myvideos');
-  //     } else {
-  //       // Handle error when status code is not 200
-  //     }
-  //   } catch (error) {
-  //     // Handle network error or any other error
-  //   }
-  // };
-  
+ 
  const addVote = async (videoId: number) => {
+  !Msdn || Msdn=='NA' || Msdn=='undefined' &&  router.push(`https://ka2naktraho.com/SignIn`);
   try {
     const response = await axios.post(
       `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!like}`,
@@ -172,7 +149,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn }) =>  {
       <div className='video-box'>
      
         <div className='rel'>
-          <span className='play-icon' onClick={()=>setPlay(true)}><BsPlay /></span>
+          <span className='play-icon' onClick={()=>{ !Msdn || Msdn=='NA' || Msdn=='undefined' ?  router.push(`https://ka2naktraho.com/SignIn`) :setPlay(true)}}><BsPlay /></span>
           <video
         className="competetion-video"
            

@@ -4,9 +4,24 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { Pagination } from 'react-bootstrap';
 import Loader from '../components/competitioncomponents/Loader';
+interface VideoData {    
+  DateIn: string;
+  Deleted: Boolean;
+  Description: string;
+  NViews: number;
+  TalentId: number;
+  Title: string;
+  VideoUrl: string;
+  VideoId: number;
+  VotesCount:number;
+  UsersVotes:[any];
+  PosterUrl:string
+  UserId:string
+}
 const lvideosManagment = () => {
   const[currentPage,setCurrentPage]=useState(1)
-
+  const [playerVideo, setPlayerVideo] = useState<VideoData >();
+  const[showVideo,setShowVideo] = useState(false)
 var pageSize=10;
 
   const fetchVideos = async () => {
@@ -28,7 +43,7 @@ var pageSize=10;
     const arr = data&&JSON.parse(data);
     console.log(data)
     const renderedvideo = data? arr.map((video: any) => {
-      return <VideoManagment details={video} refetchVideos={refetch}  />
+      return <VideoManagment details={video} refetchVideos={refetch} setPlayerVideo={setPlayerVideo}  setShowVideo={setShowVideo} />
     }):<></>;
   return (
     <><h2 className="admin-title"> إدارة الفيديوهات</h2>
@@ -53,18 +68,18 @@ var pageSize=10;
 
   
  
-  <div className="overlay">
+  {showVideo&&<div className="">
     <div id="player-box"  className="videoplayer">
-      <div className="video-player-close" >ⓧ</div>
+      <div className="video-player-close" onClick={()=>setShowVideo(false)} >ⓧ</div>
         <video id ="videoplayer" width="100%" height="240"  controls>
-          <source  src="movie.mp4" type="video/mp4"/>
+          <source  src= {playerVideo?.VideoUrl} type="video/mp4"/>
       
           Your browser does not support the video tag.
   
           
         </video>
         <div className="videoplayer-description">
-          <span id="videoplayer-description"> ما تيسر  من سورة البقرة </span>
+          <span id="videoplayer-description"> {playerVideo?.Title}</span>
           <button  className="video-decision" >
             رفض
          </button>
@@ -74,13 +89,13 @@ var pageSize=10;
           
   
           <div >
-           01234123567
+          {playerVideo?.Description}
           </div> 
         
   
         </div>
         </div>
-        </div>
+  </div>}
         <div className="pagination-butons">
         <Pagination>
         <li className="page-item" onClick={()=>{currentPage>1&&setCurrentPage(currentPage-1)}}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>

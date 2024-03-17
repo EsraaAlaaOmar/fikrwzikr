@@ -1,10 +1,23 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { FaFacebookF, FaTwitter } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
 import { Col, Container, Row } from 'react-bootstrap';
+import Link from 'next/link';
 
 
 const Footer = () => {
+  const [Msdn,setMsdn]=useState<string>()
+  useEffect(() => {
+    // Accessing query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // Reading specific query parameters
+    const param1Value = queryParams.get('MSISDN');
+    param1Value && setMsdn(param1Value)
+    
+   
+
+  }, []);
   return (
     <div>
     <footer>
@@ -24,16 +37,22 @@ const Footer = () => {
        <ul >
         <Col xs={6} />
         <li className="col-xs-6" ><a href="Index"> الرئيسية</a></li>
-        <li className="col-xs-5"><a href="Category?id=1">القرآن الكريم</a></li>
-        <li className="col-xs-6" ><a href="Category?id=18">الأدعية والابتهالات الدينية</a></li>
-        <li className="col-xs-5"><a href="Category?id=26">الرقائق الإيمانية</a></li>
-        <li className="col-xs-6" ><a href="Category?id=33">الحديث الشريف</a></li>
-        <li className="col-xs-5"><a href="Category?id=39">أفكار وأذكار</a></li>
-        <li className="col-xs-6" ><a href="Category?id=44">اكتشف نفسك</a></li>
-        <li className="col-xs-5"><a href="Category?id=49">كأنك تراه - ﷺ</a></li>
-        <li className="col-xs-6" ><a href="Category?id=55">كأنك معه - ﷺ</a></li>
-        <li className="col-xs-5"><a href="Category?id=60">إنشاد</a></li>
-        <li className="col-xs-6" ><a href="Category?id=68">خواطر الأحباب</a></li> 
+        <li className="col-xs-5"><Link href={`/Competition?MSISDN=${Msdn}`}> مسابقة رمضان </Link></li>
+        <li className="col-xs-6"><Link href={!Msdn || Msdn=='NA' || Msdn=='undefined'?'https://ka2naktraho.com/SignIn':`/Ramdan?MSISDN=${Msdn}`} >  رمضان رحلة التقرب الي الله </Link></li>
+        <li className="col-xs-5"> <Link href={`/Zkah?MSISDN=${Msdn}`}> الزكاة </Link></li>
+        <li className="col-xs-6"><Link href={!Msdn || Msdn=='NA' || Msdn=='undefined'?'https://ka2naktraho.com/SignIn':`/RamdanMeter?MSISDN=${Msdn}`}  > مقياس العبادات </Link></li>
+        <li className="col-xs-5"><Link href={`/Sbha?MSISDN=${Msdn}`} > السبحة </Link></li>
+
+        <li className="col-xs-6"><a href="Category?id=1">القرآن الكريم</a></li>
+        <li className="col-xs-5" ><a href="Category?id=18">الأدعية والابتهالات الدينية</a></li>
+        <li className="col-xs-6"><a href="Category?id=26">الرقائق الإيمانية</a></li>
+        <li className="col-xs-5" ><a href="Category?id=33">الحديث الشريف</a></li>
+        <li className="col-xs-6"><a href="Category?id=39">أفكار وأذكار</a></li>
+        <li className="col-xs-5" ><a href="Category?id=44">اكتشف نفسك</a></li>
+        <li className="col-xs-6"><a href="Category?id=49">كأنك تراه - ﷺ</a></li>
+        <li className="col-xs-5" ><a href="Category?id=55">كأنك معه - ﷺ</a></li>
+        <li className="col-xs-6"><a href="Category?id=60">إنشاد</a></li>
+        <li className="col-xs-5" ><a href="Category?id=68">خواطر الأحباب</a></li> 
        </ul> 
        </Row>
       </Col>
