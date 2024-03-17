@@ -41,8 +41,9 @@ const RamdanMeter = () => {
   
  const arr = data&&JSON.parse(data);
  
-   var _FurdDVView=arr?._FurdDVView.slice(0, 5);
-   var  _SunahDVView=arr?._SunahDVView.slice(0, 5);
+   var _FurdDVView=arr?._FurdDVView;
+   var  _SunahDVView=arr?._SunahDVView;
+   var _QuranVIEW=arr?._QuranVIEW;
 
  console.log(arr)
  return (
@@ -97,7 +98,7 @@ const RamdanMeter = () => {
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
- {showquran && <Quraan  hide={setShowQuran} />}
+ {showquran && <Quraan  hide={setShowQuran}    qurandata={_QuranVIEW} />}
 
  
 </div>

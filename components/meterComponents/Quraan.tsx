@@ -2,8 +2,26 @@ import React from 'react'
 import { GiCheckMark } from "react-icons/gi";
 interface QuraanProps {
   hide: (arg0: boolean) => void; // Specify the type of hide function
+  qurandata:[any]
+  
 }
-const Quraan: React.FC<QuraanProps> = ({hide}) => {
+
+const Quraan: React.FC<QuraanProps> = ({hide,qurandata}) => {
+
+  var renderedRows = qurandata?.map((quran)=>{
+    const parts = quran.HDATE.split(' ');
+    const day = parts[2];
+const month = parts[1];
+    return(   <tr>
+        <td>{ day } {month}</td>
+        <td>{quran.FAGRSO ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.DUHRSO ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.ASRFU ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.MAGSON ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.ISHASON ? <GiCheckMark />: "✘" }</td>
+        
+    </tr>)
+      })
   return (
    <>
        <div id="prodress-quran-les" className="progress-less"  onClick={()=>hide(false)}  >
@@ -22,46 +40,15 @@ const Quraan: React.FC<QuraanProps> = ({hide}) => {
 
     </tr>
     <tr>
-      <td>1 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
+    <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>65%</td>
     </tr>
-    <tr>
-      <td>2 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
-    <tr>
-      <td>3 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
-    <tr>
-      <td>4 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
-    <tr>
-      <td>5 رمضان</td>
-      <td>{<GiCheckMark />}</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-      <td>{<GiCheckMark />}</td>
-      <td>✘</td>
-    </tr>
+    {renderedRows}
     </tbody>
   </table>
    </>
