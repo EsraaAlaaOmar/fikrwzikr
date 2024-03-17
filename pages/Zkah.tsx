@@ -1,9 +1,10 @@
 import axios, { Axios } from 'axios';
 import React, { useState ,useEffect} from 'react'
 import SingleHeader from '../components/reusable components/SingleHeader';
-
+import { useRouter } from 'next/router';
 const Zkah = () => {
   const [Msdn,setMsdn]=useState('')
+  const router = useRouter();
   useEffect(() => {
     // Accessing query parameters
     const queryParams = new URLSearchParams(window.location.search);
@@ -50,16 +51,16 @@ const Zkah = () => {
 
 
   return (
-    <div style={{backgroundColor:"#f5f3f0"}}>
+    <div style={{backgroundColor:"#f5f3f0"}} >
      <SingleHeader pageName=' حساب الزكاة'/>
      {/* <div className="pageIcon-top"> <h3>الزكاة<img src='/images/zkah.png' /></h3></div> */}
     
-    <div className="row zakah-body">
+    <div className="row zakah-body" onClick={()=>{!Msdn || Msdn=='NA' || Msdn=='undefined' &&  router.push(`https://ka2naktraho.com/SignIn`)}} >
  
     <div className="container ">
     
         <h3>احسب زكاتك مع  كأنك تراه </h3>
-        <div className="zkah-input col-sm-8">
+        <div className="zkah-input col-sm-8" >
             <div className="zakah-box " >
               <div className="input-title">زكاة المال</div>
             <div className="zakah-row">
