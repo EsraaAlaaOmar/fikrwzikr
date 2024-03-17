@@ -22,9 +22,10 @@ interface VideoData {
 }
 interface Props {
    itemsPerPage: number;
-   Msdn:string
+   Msdn:string;
+   userId:string;
    }
-   const MyComponent: React.FC<Props> = ({itemsPerPage,Msdn}) => {
+   const MyComponent: React.FC<Props> = ({itemsPerPage,Msdn,userId}) => {
   // const itemsPerPage = itemsPerPage; // Number of items to display per page
   const [uprefetch, setUPRfetch] = useState(false)
   const [currentPage, setCurrentPage] = useState(0);
@@ -51,7 +52,7 @@ interface Props {
   console.log(currentPage);
   const renderedVideos = data?.map((video: VideoData) => {
     console.log( video.UsersVotes)
-    return<span key={video.VideoId}>  <Video videodetails={video} refetchVideos={refetch} Msdn={Msdn} /></span>
+    return<span key={video.VideoId}>  <Video videodetails={video} refetchVideos={refetch} Msdn={Msdn} userId={userId}/></span>
 });
 
 

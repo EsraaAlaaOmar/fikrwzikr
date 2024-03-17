@@ -27,6 +27,7 @@ interface VideoData {
   Votes:[]
 }
 
+
 const Competition = () => {
  const [Msdn,setMsdn]=useState('')
   useEffect(() => {
@@ -40,7 +41,21 @@ const Competition = () => {
    
 
   }, []);
-  
+  const fetchVideos = async () => {
+    const response = await axios.post(
+      `https://vf.alerting.services/fekrwzekrApis/Users/GetUserID?MobileNumber=${Msdn}`,
+      {},
+      {
+    
+      }
+    );
+    return response.data.UserID;
+  };
+   const queryKey = Msdn ? ["myvideos", Msdn] : ["myvideos"];
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
+    queryKey,
+    fetchVideos)
+    console.log(data)
   return (
   
    
@@ -90,7 +105,7 @@ const Competition = () => {
         </div >
         </div>
 
-<PaginationCom itemsPerPage={12} Msdn={Msdn}/>
+<PaginationCom itemsPerPage={12} Msdn={Msdn} userId={data}/>
 
     </>
   )

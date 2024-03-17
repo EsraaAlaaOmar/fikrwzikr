@@ -35,11 +35,12 @@ interface VideoProps {
   videodetails: VideoData;
   refetchVideos:any // Define the type of refetchVideos prop
   Msdn:String
+  userId:string
 }
 
-const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn }) =>  {
+const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }) =>  {
   //need to change user ID
-  var userId =3;
+ 
   const router = useRouter();
   var Liked = videodetails?.UsersVotes.find((vote) => {
     return vote?.UserId === userId && vote?.Liked === true;
@@ -164,7 +165,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn }) =>  {
       </video>
       </div>
       <div className='video-info'>
-      <span style={{cursor:"pointer"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
+      <span style={{cursor:"pointer", color:"#e00800"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
         <span><PiEyeBold /> </span>10k
