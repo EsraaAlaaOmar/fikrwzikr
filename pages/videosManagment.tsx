@@ -92,7 +92,7 @@ var pageSize=10;
         </video>
         <div className="videoplayer-description">
           <span id="videoplayer-description"> {playerVideo?.Title}</span>
-          <button  className="video-decision" onClick={()=>ApproveorRejectVideo(playerVideo?.VideoId,0)} >
+          <button  className="video-decision" onClick={()=>ApproveorRejectVideo(playerVideo?.VideoId,2)} >
             رفض
          </button>
           <button  className="video-decision" onClick={()=>ApproveorRejectVideo(playerVideo?.VideoId,1)} >

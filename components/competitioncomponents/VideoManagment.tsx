@@ -40,7 +40,7 @@ interface VideoData {
     <td  className="td-describtion" onClick={()=>{setPlayerVideo(details); setShowVideo(true);}} >{details.Title} ▶</td>
     <td >{details.Description}</td>
     <td>{details.DateIn}</td>
-    <td><button onClick={()=>ApproveorRejectVideo(details.VideoId,1)}  >اضافة</button> <button onClick={()=>ApproveorRejectVideo(details.VideoId,0)}>رفض</button></td>
+    <td><button onClick={()=>ApproveorRejectVideo(details.VideoId,1)}  >اضافة</button> <button onClick={()=>ApproveorRejectVideo(details.VideoId,2)}>رفض</button></td>
   </tr>
   )
 }
