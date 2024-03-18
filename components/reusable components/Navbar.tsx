@@ -31,9 +31,9 @@ const Navbar = () => {
         <h3>القائمة</h3>  
         <li className="panel"><a href={`https://ka2naktraho.com/Index?MSISDN=${Msdn}`}>الرئيسية</a></li> 
         <li className="panel">    <Link href={`/Competition?MSISDN=${Msdn}`}  onClick={()=>setShowSidebar(false)}> مسابقة رمضان </Link></li>
-        <li className="panel">    <Link href={!Msdn || Msdn=='NA' || Msdn=='undefined'?'https://ka2naktraho.com/SignIn':`/Ramdan?MSISDN=${Msdn}`}  onClick={()=>setShowSidebar(false)}>  رمضان رحلة التقرب الي الله </Link></li>
+        <li className="panel">    <Link href={`/Ramdan?MSISDN=${Msdn}`}  onClick={()=>setShowSidebar(false)}>  رمضان رحلة التقرب الي الله </Link></li>
         <li className="panel">    <Link href={`/Zkah?MSISDN=${Msdn}`} onClick={()=>setShowSidebar(false)}>  حساب الزكاة  </Link></li>
-      <li className="panel">    <Link href={!Msdn || Msdn=='NA' || Msdn=='undefined'?'https://ka2naktraho.com/SignIn':`/RamdanMeter?MSISDN=${Msdn}`}  onClick={()=>setShowSidebar(false)}> مقياس العبادات </Link></li>
+      <li className="panel">    <Link href={`/RamdanMeter?MSISDN=${Msdn}`}  onClick={()=>setShowSidebar(false)}> مقياس العبادات </Link></li>
       <li className="panel">    <Link href={`/Sbha?MSISDN=${Msdn}`} onClick={()=>setShowSidebar(false)}> السبحة </Link></li>
 
      
