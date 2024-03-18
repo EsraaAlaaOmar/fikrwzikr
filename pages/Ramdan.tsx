@@ -180,7 +180,7 @@ var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الظهر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">{data&&data[2].PrayerTime.substring(0, 5)}  مساء</li>     
+              <li className="col-md-3 col-xs-12">{data&&data[2].PrayerTime.substring(0, 5)}  ظهرا</li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
