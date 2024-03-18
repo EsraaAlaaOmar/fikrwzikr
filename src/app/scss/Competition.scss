@@ -260,11 +260,36 @@ position: fixed;
    bottom: 0;
    z-index: 9999999999999;
    .details{
-    padding: 10vh 2vw;
+    padding: 20px;
+    width: 100vw;
+    position:absolute;
+    top: 75vh;
+    background-color: #000;
+    .vote-btn{
+      float: left;
+      padding:3px 12px;
+      border: solid 1px #E00800;
+      cursor: pointer;
+      margin-left: 20px;
+      &:hover{
+        background-color:#E00800 ;
+      }
+    }
+
+   }
+   .close-btn{
+    position: absolute;
+    top: 0;
+    color: #E00800;
+    top: 15vh;
+    left: 22px;
+    font-size: 27px;
+    cursor: pointer;
+    
    }
    video{
-   position: absolute;
-   height: 70vh;
+   position: relative;
+   height: 65vh;
    width: 100%;
    top: 15%;
    

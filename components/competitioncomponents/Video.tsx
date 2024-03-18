@@ -49,20 +49,20 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
   const [play, setPlay] = useState(false)
   const [like, setLike] = useState(Liked)
   
-  const ref = useRef(null)
+  // const ref = useRef(null)
 
-  const handleClickOutside = () => {
-    // Your custom logic here
-    setPlay(false)
+  // const handleClickOutside = () => {
+  //   // Your custom logic here
+  //   setPlay(false)
     
-  }
+  // }
 
-  const handleClickInside = () => {
-    // Your custom logic here
-    console.log('clicked inside')
-  }
+  // const handleClickInside = () => {
+  //   // Your custom logic here
+  //   console.log('clicked inside')
+  // }
 
-  useOnClickOutside(ref, handleClickOutside)
+  // useOnClickOutside(ref, handleClickOutside)
   useEffect(() => {
     if (typeof window !== 'undefined') {
       (window as any).FB?.init({
@@ -82,7 +82,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
   };
  
  const addVote = async (videoId: number) => {
-  !Msdn || Msdn=='NA' || Msdn=='undefined' &&  router.push(`https://ka2naktraho.com/SignIn`);
+ 
   try {
     const response = await axios.post(
       `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!like}`,
@@ -107,9 +107,9 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
     // Return a default value or handle the error as needed
     return null;
   }
-};
+};    
 
- 
+ const addVoteRedirect =(videoId: number)=>  !Msdn || Msdn=='NA' || Msdn=='undefined' ?  router.push(`https://ka2naktraho.com/SignIn`) :addVote(videoId);
 
 //     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
 //  console.log(error)
@@ -131,13 +131,9 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
       <Text color="#fff">{videodetails?.Title}</Text> */}
          {play && <div className='video-overlayer'>
            
-        <div className='details'>
-       
-      {videodetails?.Title}
-        </div>
+           
           <video
-           ref={ref}
-           onClick={handleClickInside}
+          
            src={videodetails?.VideoUrl}
              controls
           autoPlay
@@ -146,6 +142,12 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
           <source  type="video/mp4" />
           Your bro
         </video>
+        <span className='close-btn' onClick={()=>setPlay(false)}>×</span>
+        <div className='details'>
+       
+       {videodetails?.Title}
+      {Liked ?<div className='vote-btn'onClick={()=>addVoteRedirect(videodetails.VideoId)}>إلغاء التصويت</div> :<div className='vote-btn'onClick={()=>addVoteRedirect(videodetails.VideoId)}>تصويت</div>}
+         </div>
           </div>}
       <div className='video-box'>
      
@@ -165,7 +167,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
       </video>
       </div>
       <div className='video-info'>
-      <span style={{cursor:"pointer", color:"#e00800"}} onClick={()=>addVote( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
+      <span style={{cursor:"pointer", color:"#e00800"}} onClick={()=>addVoteRedirect( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
         <span><PiEyeBold /> </span>10k
