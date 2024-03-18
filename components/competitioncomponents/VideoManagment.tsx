@@ -21,7 +21,7 @@ interface VideoData {
     setShowVideo: (arg0: boolean) => void;
   }
   
-  const VideoManagment: React.FC<VideoProps> =({details, setPlayerVideo,setShowVideo})=>{
+  const VideoManagment: React.FC<VideoProps> =({details, setPlayerVideo,setShowVideo,refetchVideos})=>{
     const ApproveorRejectVideo = async (VideoId:number,status:number) => {
 
       await axios.post(
@@ -32,6 +32,7 @@ interface VideoData {
       
         }
       );
+      refetchVideos()
     
     };
   return (

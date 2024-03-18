@@ -52,6 +52,7 @@ var pageSize=10;
       
         }
       );
+      refetch()
     
     };
     const renderedvideo = data? arr.map((video: any) => {
