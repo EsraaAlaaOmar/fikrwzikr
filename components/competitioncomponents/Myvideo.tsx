@@ -69,24 +69,26 @@ const handleClickInside = () => {
           <Text  as="span" position='absolute' top='calc( 50% - 15px )' left =' calc(50% - 15px )' p="3px 4px" bgColor="#fe7701" color="#fff" fontSize="30px" borderRadius="50%" >     <BsFillPlayFill /></Text>
       </Box>
       <Text color="#fff">{videodetails?.Title}</Text> */}
-        {play && <div className='video-overlayer'>
+          {play && <div className='video-overlayer'>
            
-           <div className='details'>
-          
-           {videodetails.Title}
-           </div>
+           
            <video
-           ref={ref2}
-          
-           src={videodetails.VideoUrl}
-             controls
-          autoPlay
-          >
-      
-          <source  type={videodetails.VideoUrl} />
+           
+            src={videodetails?.VideoUrl}
+              controls
+           autoPlay
+           >
+       
+           <source  type="video/mp4" />
+           Your bro
+         </video>
+         <span className='close-btn' onClick={()=>setPlay(false)}>×</span>
+         <div className='details'>
         
-           </video>
-             </div>}
+        {videodetails?.Title}
+     
+          </div>
+           </div>}
            
       <div className='video-box myvedio-box'>
         <div className='rel'>
@@ -122,9 +124,9 @@ const handleClickInside = () => {
         <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
       
        {showList && <div className='list'  ref={ref}  onClick={handleClickInside}>
-          <div><span><BiShare /></span>مشاركة </div>
-          <div><span><FiEdit /> </span>تعديل </div>
-          <div><span><BiBasket /></span>مسح</div>
+          {/* <div><span><BiShare /></span>مشاركة </div>
+          <div><span><FiEdit /> </span>تعديل </div> */}
+          <div><span><BiBasket /></span>حذف</div>
         </div>}
      
       </div>

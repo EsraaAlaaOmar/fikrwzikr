@@ -146,7 +146,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
         <div className='details'>
        
        {videodetails?.Title}
-      {Liked ?<div className='vote-btn'onClick={()=>addVoteRedirect(videodetails.VideoId)}>إلغاء التصويت</div> :<div className='vote-btn'onClick={()=>addVoteRedirect(videodetails.VideoId)}>تصويت</div>}
+      {Liked ?<div className='vote-btn'onClick={()=>addVoteRedirect(videodetails.VideoId)}><AiFillHeart /></div> :<div className='vote-btn'onClick={()=>addVoteRedirect(videodetails.VideoId)}><AiOutlineHeart/></div>}
          </div>
           </div>}
       <div className='video-box'>

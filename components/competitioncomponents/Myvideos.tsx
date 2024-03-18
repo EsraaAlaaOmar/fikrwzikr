@@ -142,6 +142,17 @@ console.log(Msdn)
      
         
  {isLoading? <Loader />  :<>
+ <div className='section-title'>
+    الفيديوهات المقبولة
+      </div> 
+      <div className='videos-grid videos-page'>
+      {/* {isLoading? <Loader />  : renderedVideos} */}
+      {/* <Myvideo />
+      <Myvideo /> */}
+      {renderedaccepted}
+   
+
+    </div>
     
      <div className='section-title'>
      قيد  المراجعة
@@ -154,19 +165,6 @@ console.log(Msdn)
 
     </div>
     <div className='section-title'>
-    الفيديوهات المقبولة
-      </div> 
-      <div className='videos-grid videos-page'>
-      {/* {isLoading? <Loader />  : renderedVideos} */}
-      {/* <Myvideo />
-      <Myvideo /> */}
-      {renderedaccepted}
-   
-
-    </div>
-    
-    </>}
-      <div className='section-title'>
       الفيديوهات المرفوضة
       </div> 
       <div className='videos-grid videos-page'>
@@ -177,6 +175,8 @@ console.log(Msdn)
     <div >
     
       </div>
+    </>}
+
       {upload && <div className='overlay overlay_full_page'>
         <Upload hideUpload={ setUpload} />
       </div>}

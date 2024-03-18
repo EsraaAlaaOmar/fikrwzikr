@@ -268,12 +268,9 @@ position: fixed;
     .vote-btn{
       float: left;
       padding:3px 12px;
-      border: solid 1px #E00800;
+      color: #E00800;
       cursor: pointer;
-      margin-left: 20px;
-      &:hover{
-        background-color:#E00800 ;
-      }
+      font-size:20px;
     }
 
    }
