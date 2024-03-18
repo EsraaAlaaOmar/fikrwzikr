@@ -3,9 +3,10 @@ import { GiCheckMark } from "react-icons/gi";
 
 interface FroodProps {
     hide: (arg0: boolean) => void; // Specify the type of hide function
-    froodData:[any]
+    froodData:[any];
+    precentage:number;
   }
-  const Frood: React.FC<FroodProps> = ({hide,froodData}) => {
+  const Frood: React.FC<FroodProps> = ({hide,froodData,precentage}) => {
 
   var renderedRows = froodData?.map((fard)=>{
     const parts = fard.HDATE.split(' ');
@@ -45,7 +46,7 @@ const month = parts[1];
         <td></td>
         <td></td>
         <td></td>
-        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>75%</td>
+        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>{precentage}%</td>
     </tr>
     {renderedRows}
     </tbody>

@@ -7,8 +7,9 @@ import { useQuery } from 'react-query'
 import SingleHeader from '../components/reusable components/SingleHeader'
 import { BsArrowUpLeft } from "react-icons/bs";
 import Loader from '../components/competitioncomponents/Loader'
-
+import { useRouter } from 'next/router';
 const RamdanMeter = () => {
+  const router = useRouter();
   const [Msdn,setMsdn]=useState('')
   useEffect(() => {
     // Accessing query parameters
@@ -43,8 +44,11 @@ const RamdanMeter = () => {
  const arr = data&&JSON.parse(data);
  
    var _FurdDVView=arr?._FurdDVView;
+   var _FurdRatio=arr?._FurdRatio;
    var  _SunahDVView=arr?._SunahDVView;
+   var  _SunahRatio=arr?._SunahRatio;
    var _QuranVIEW=arr?._QuranVIEW;
+   var _QuranRatio=arr?._QuranRatio;
 
  console.log(arr)
  return (
@@ -61,12 +65,12 @@ const RamdanMeter = () => {
  <div className="progress">
  <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
- {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>setShowFrood(true)} >
+ {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowFrood(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
 
-{showfrood && <Frood  hide={setShowFrood} froodData={_FurdDVView} />}
+{showfrood && <Frood  hide={setShowFrood} froodData={_FurdDVView} precentage={_FurdRatio} />}
  
 </div>
 
@@ -78,11 +82,11 @@ const RamdanMeter = () => {
  <div className="progress">
    <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
- {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>setShowSonan(true)} >
+ {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowSonan(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
-{showsonan && <Sonan sunanData={_SunahDVView}  hide={setShowSonan}  />}
+{showsonan && <Sonan sunanData={_SunahDVView}  hide={setShowSonan} precentage={_SunahRatio} />}
  
 </div>
 
@@ -96,11 +100,11 @@ const RamdanMeter = () => {
  <div className="progress">
    <div className="progress-bar" role="progressbar" style={{width: "50%"}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
-{!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>setShowQuran(true)}>
+{!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowQuran(true)}>
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
- {showquran && <Quraan  hide={setShowQuran}    qurandata={_QuranVIEW} />}
+ {showquran && <Quraan  hide={setShowQuran}    qurandata={_QuranVIEW} precentage={_QuranRatio} />}
 
  
 </div>

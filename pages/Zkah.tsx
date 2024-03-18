@@ -4,6 +4,7 @@ import SingleHeader from '../components/reusable components/SingleHeader';
 import { useRouter } from 'next/router';
 const Zkah = () => {
   const [Msdn,setMsdn]=useState('')
+  const[zkah,setZkah] = useState(false)
   const router = useRouter();
   useEffect(() => {
     // Accessing query parameters
@@ -17,9 +18,12 @@ const Zkah = () => {
 
   }, []);
   
-  const AddZakaa = async () => {
+  const AddZakaa = async (e:any) => {
+    console.log(e.target.value)
+    setZkah(!zkah)
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/AddZakaa?MobileNumber=${Msdn}`,
+      `https://vf.alerting.services/fekrwzekrApis/Users/AddZakaa?MobileNumber=${Msdn}&status=${e.target.checked}
+      `,
       {},
       {
     
@@ -198,7 +202,7 @@ const Zkah = () => {
             <span className="result" id="output-total">{outputMall+outputAkarat+outputAsoolwmomtlkat+outputGold}ج.م</span>
            </div>
        <br/>
-           <input type="checkbox" id="done" name="done"  onChange={()=>AddZakaa()}/>
+           <input type="checkbox" id="done" checked={zkah} name="done"  onChange={(e)=>AddZakaa(e)}/>
            <label htmlFor="done" className="done">لقد اديت الزكاة</label><br/>
           
         </div>

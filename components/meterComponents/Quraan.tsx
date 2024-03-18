@@ -3,10 +3,10 @@ import { GiCheckMark } from "react-icons/gi";
 interface QuraanProps {
   hide: (arg0: boolean) => void; // Specify the type of hide function
   qurandata:[any]
-  
+  precentage:number;
 }
 
-const Quraan: React.FC<QuraanProps> = ({hide,qurandata}) => {
+const Quraan: React.FC<QuraanProps> = ({hide,qurandata,precentage}) => {
 
   var renderedRows = qurandata?.map((quran)=>{
     const parts = quran.HDATE.split(' ');
@@ -46,7 +46,7 @@ const month = parts[1];
         <td></td>
         <td></td>
         <td></td>
-        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>65%</td>
+        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>{precentage}%</td>
     </tr>
     {renderedRows}
     </tbody>

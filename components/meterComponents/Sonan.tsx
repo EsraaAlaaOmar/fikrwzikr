@@ -4,8 +4,9 @@ import { GiCheckMark } from "react-icons/gi";
 interface sunanDataProps {
   hide: (arg0: boolean) => void; // Specify the type of hide function
   sunanData:[any]
+  precentage:number;
 }
-const Sonan: React.FC<sunanDataProps> = ({hide,sunanData}) => {
+const Sonan: React.FC<sunanDataProps> = ({hide,sunanData,precentage}) => {
   var renderedRows = sunanData?.map((sona)=>{
     const parts = sona.HDATE.split(' ');
     const day = parts[2];
@@ -44,7 +45,7 @@ const month = parts[1];
         <td></td>
         <td></td>
         <td></td>
-        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>65%</td>
+        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>{precentage}%</td>
     </tr>
  {renderedRows}
     </tbody>
