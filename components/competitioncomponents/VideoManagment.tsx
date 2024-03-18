@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Dispatch, SetStateAction } from 'react'
 interface VideoData {    
     DateIn: string;
@@ -21,14 +22,25 @@ interface VideoData {
   }
   
   const VideoManagment: React.FC<VideoProps> =({details, setPlayerVideo,setShowVideo})=>{
+    const ApproveorRejectVideo = async (VideoId:number,status:number) => {
 
+      await axios.post(
+        `https://vf.alerting.services/fekrwzekrApis/Users/ApproveorRejectVideo?VideoID=${VideoId}&Status=${status}
+        `,
+        {},
+        {
+      
+        }
+      );
+    
+    };
   return (
     <tr>
     <td>{details.UserId}</td>
     <td  className="td-describtion" onClick={()=>{setPlayerVideo(details); setShowVideo(true);}} >{details.Title} ▶</td>
     <td >{details.Description}</td>
     <td>{details.DateIn}</td>
-    <td><button>اضافة</button> <button>رفض</button></td>
+    <td><button onClick={()=>ApproveorRejectVideo(details.VideoId,1)}  >اضافة</button> <button onClick={()=>ApproveorRejectVideo(details.VideoId,0)}>رفض</button></td>
   </tr>
   )
 }

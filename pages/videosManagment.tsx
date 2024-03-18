@@ -42,6 +42,18 @@ var pageSize=10;
     fetchVideos)
     const arr = data&&JSON.parse(data);
     console.log(data)
+    const ApproveorRejectVideo = async (VideoId:any,status:number) => {
+
+      await axios.post(
+        `https://vf.alerting.services/fekrwzekrApis/Users/ApproveorRejectVideo?VideoID=${VideoId}&Status=${status}
+        `,
+        {},
+        {
+      
+        }
+      );
+    
+    };
     const renderedvideo = data? arr.map((video: any) => {
       return <VideoManagment details={video} refetchVideos={refetch} setPlayerVideo={setPlayerVideo}  setShowVideo={setShowVideo} />
     }):<></>;
@@ -80,10 +92,10 @@ var pageSize=10;
         </video>
         <div className="videoplayer-description">
           <span id="videoplayer-description"> {playerVideo?.Title}</span>
-          <button  className="video-decision" >
+          <button  className="video-decision" onClick={()=>ApproveorRejectVideo(playerVideo?.VideoId,0)} >
             رفض
          </button>
-          <button  className="video-decision" >
+          <button  className="video-decision" onClick={()=>ApproveorRejectVideo(playerVideo?.VideoId,1)} >
             إضافة
           </button>
           
