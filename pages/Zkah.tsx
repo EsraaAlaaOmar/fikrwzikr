@@ -55,9 +55,9 @@ const Zkah = () => {
      <SingleHeader pageName=' حساب الزكاة'/>
      {/* <div className="pageIcon-top"> <h3>الزكاة<img src='/images/zkah.png' /></h3></div> */}
     
-    <div className="row zakah-body" onClick={()=>{!Msdn || Msdn=='NA' || Msdn=='undefined' &&  router.push(`https://ka2naktraho.com/SignIn`)}} >
+    <div className="row zakah-body"  >
  
-    <div className="container ">
+    <div className="container " onClick={()=>{!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) : ''}}>
     
         <h3>احسب زكاتك مع  كأنك تراه </h3>
         <div className="zkah-input col-sm-8" >
