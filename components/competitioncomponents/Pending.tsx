@@ -25,13 +25,14 @@ interface VideoData {
   VideoId: number;
   Votes:[];
   PosterUrl:string
+  VideoUrl:string
 }
 
 
   
 const Myvideo = ({ videodetails }: { videodetails: VideoData }) => {
   const [showList, setShowList] = useState(false)
-  
+  const [play, setPlay] = useState(false)
   
 const ref = useRef(null)
 
@@ -55,11 +56,30 @@ const handleClickInside = () => {
           <Text  as="span" position='absolute' top='calc( 50% - 15px )' left =' calc(50% - 15px )' p="3px 4px" bgColor="#fe7701" color="#fff" fontSize="30px" borderRadius="50%" >     <BsFillPlayFill /></Text>
       </Box>
       <Text color="#fff">{videodetails?.Title}</Text> */}
-          <div className='video-box'>
+       {play && <div className='video-overlayer'>
+           
+           
+           <video
+           
+            src={videodetails?.VideoUrl}
+              controls
+           autoPlay
+           >
+       
+           <source  type="video/mp4" />
+           Your bro
+         </video>
+         <span className='close-btn' onClick={()=>setPlay(false)}>×</span>
+         <div className='details'>
+        
+        {videodetails?.Title}
+          </div>
+           </div>}
+          <div className='video-box' >
              
          <div className='rel'>
-            <div className='overlay'>
-             <div className='overlay-text'> قيد المراجعة..  </div>      
+            <div className='overlay' onClick={()=>setPlay(true)}>
+             <div className='overlay-text' > قيد المراجعة..  </div>      
              </div>
         
           <video

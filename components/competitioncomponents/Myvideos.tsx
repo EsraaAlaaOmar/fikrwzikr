@@ -96,7 +96,7 @@ console.log(Msdn)
     const renderedaccepted =
    ( acceptedVideos?.length === 0)?<>ليس لديك اي فيديوهات </>
      :
-     acceptedVideos?.map((video:VideoData)=><Myvideo key={video.VideoId} videodetails={video}  />)
+     acceptedVideos?.map((video:VideoData)=><Myvideo key={video.VideoId} videodetails={video} refetch={refetch} />)
      // end pending videos 
        // start pending videos 
   var refusedVideos =data?.filter((video:any)=>video.Status === 2) 

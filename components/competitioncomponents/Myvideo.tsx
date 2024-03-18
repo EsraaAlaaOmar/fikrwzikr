@@ -1,7 +1,7 @@
 import React , {useState,useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
 
-
+import { PiEyeBold } from "react-icons/pi";
 import { IoIosPeople, IoIosTimer } from 'react-icons/io'
 import {BsPlay } from 'react-icons/bs'
 import { BiShare , BiBasket} from 'react-icons/bi'
@@ -9,6 +9,8 @@ import { FiEdit } from 'react-icons/fi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { FiMoreVertical } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
+import axios from 'axios';
+import { useQuery } from 'react-query';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -30,7 +32,7 @@ interface VideoData {
 
 
   
-const Myvideo = ({ videodetails }: { videodetails: VideoData }) => {
+const Myvideo = ({ videodetails,refetch }: { videodetails: VideoData ,refetch:any}) => {
   const [showList, setShowList] = useState(false)
   
   const [play, setPlay] = useState(false)
@@ -55,10 +57,23 @@ const handleClickOutside = () => {
 
 }
 
+const DeleteVideo = async (VideoId:number) => {
+
+  await axios.post(
+    `https://vf.alerting.services/fekrwzekrApis/Users/DeleteVideo?VideoId=${VideoId}
+    `,
+    {},
+    {
+  
+    }
+  );
+  refetch()
+};
 const handleClickInside = () => {
   // Your custom logic here
   console.log('clicked inside')
 }
+
 
   useOnClickOutside(ref, handleClickOutside)
   
@@ -110,8 +125,8 @@ const handleClickInside = () => {
       <div className='video-info'>
       
         <span><AiOutlineHeart /></span>100
-        <span><BiShare /> </span>3k
-        <span><IoIosPeople /> </span>10k
+       
+        <span><PiEyeBold /> </span>10k
       
       </div>
   
@@ -126,7 +141,7 @@ const handleClickInside = () => {
        {showList && <div className='list'  ref={ref}  onClick={handleClickInside}>
           {/* <div><span><BiShare /></span>مشاركة </div>
           <div><span><FiEdit /> </span>تعديل </div> */}
-          <div><span><BiBasket /></span>حذف</div>
+          <div onClick={() => DeleteVideo(videodetails.VideoId)} ><span ><BiBasket /></span>حذف</div>
         </div>}
      
       </div>

@@ -96,7 +96,7 @@ const handleClickInside = () => {
       <div className='videoname'>{videodetails.Description} </div>
       <div className='like-vid'><AiOutlineHeart /></div>
   
-        <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
+        {/* <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div> */}
     
       
      
