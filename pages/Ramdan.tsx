@@ -4,12 +4,13 @@ import { Col } from 'react-bootstrap';
 import SingleHeader from '../components/reusable components/SingleHeader';
 import { useQuery } from 'react-query';
 import Loader from '../components/competitioncomponents/Loader';
-
+import { useRouter } from 'next/router';
 interface CheckboxState {
   [key: string]: boolean;
 }
+
 const Ramdan = () => {
-   
+  const router = useRouter();
   const [Msdn,setMsdn]=useState('')
   useEffect(() => {
     // Accessing query parameters
@@ -84,9 +85,8 @@ const addProfile = async () => {
   }
 
 const handleCheckboxChange = async (event:any) => {
+  !Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ):""
   
-  console.log('Checkbox changed');
-  console.log
     const { id, checked } = event.target;
    
     setCheckboxValues((prevValues) => ({

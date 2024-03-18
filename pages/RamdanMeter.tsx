@@ -49,6 +49,7 @@ const RamdanMeter = () => {
    var  _SunahRatio=arr?._SunahRatio;
    var _QuranVIEW=arr?._QuranVIEW;
    var _QuranRatio=arr?._QuranRatio;
+   var _Zakaa=arr?._Zakaa;
 
  console.log(arr)
  return (
@@ -63,7 +64,7 @@ const RamdanMeter = () => {
     الصلاة
  </div>
  <div className="progress">
- <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
+ <div className="progress-bar" role="progressbar" style={{width:`${_FurdRatio}%`}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
  {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowFrood(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
@@ -80,7 +81,7 @@ const RamdanMeter = () => {
    السنن
  </div>
  <div className="progress">
-   <div className="progress-bar" role="progressbar" style={{width: "65%"}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
+   <div className="progress-bar" role="progressbar" style={{width: `${_SunahRatio} %`}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
  {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowSonan(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
@@ -98,7 +99,7 @@ const RamdanMeter = () => {
    القرآن
  </div>
  <div className="progress">
-   <div className="progress-bar" role="progressbar" style={{width: "50%"}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
+   <div className="progress-bar" role="progressbar" style={{width: `${_QuranRatio}%`}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
 {!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowQuran(true)}>
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
@@ -117,11 +118,13 @@ const RamdanMeter = () => {
    الزكاة
  </div>
  <div className="progress">
-   <div className="progress-bar" role="progressbar" style={{width: "100%"}} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100}></div>
+   <div className="progress-bar" role="progressbar" style={{width: _Zakaa?"100%":"0%"}} aria-valuenow={100} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
- <div className="progress-more" >
+ { _Zakaa ?<div className="progress-more" >
    لقد قمت بأداء الزكاة
- </div>
+ </div>: <div className="progress-more" >
+   لم تقم بأداء الزكاة
+ </div>}
 
  
 </div>
