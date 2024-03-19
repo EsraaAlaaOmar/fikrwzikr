@@ -170,7 +170,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
       <span style={{cursor:"pointer", color:"#e00800"}} onClick={()=>addVoteRedirect( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
-        <span><PiEyeBold /> </span>10k
+        {/* <span><PiEyeBold /> </span>10k */}
       
       </div>
         <div className='userName'>{videodetails?.Title}</div>
