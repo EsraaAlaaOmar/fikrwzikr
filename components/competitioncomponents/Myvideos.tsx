@@ -29,15 +29,23 @@ interface Props {
   const Myvideos: React.FC<Props> = () => {
     
     const [Msdn, setMsdn] = useState<string>();
+    const [pendingVideo,setPendingVideo] = useState<any>(null);
     useEffect(() => {
-      // Accessing query parameters
       const queryParams = new URLSearchParams(window.location.search);
       
-      // Reading specific query parameters
       const param1Value = queryParams.get('MSISDN');
-      param1Value && setMsdn(param1Value)
+      const param2Value = queryParams.get('title');
       
-     
+      param1Value && setMsdn(param1Value);
+      param2Value && setPendingVideo(param2Value);
+  
+      // Delay the URL modification to ensure it happens after the page has rendered
+      setTimeout(() => {
+          queryParams.delete('title');
+  
+          const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
+          history.replaceState(null, '', newUrl);
+      }, 1000);
   
     }, []);
 console.log(Msdn)
@@ -108,7 +116,9 @@ console.log(Msdn)
    // end pending videos 
    return (
       <div className='page container'>
+     
         <br/>
+        {pendingVideo&&<div className='pending-msg'>تم اضافة فديو بعنوان {pendingVideo} والفديو قيد المراجعة </div>}
         <div className='page-hierarchy'>
              <span className='parent'>
              <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
@@ -119,6 +129,7 @@ console.log(Msdn)
            <span className='child'>فيديوهاتي</span>
 
          </div>
+       
          <div className=" videos-page   video-links-div">
         <Link className='videos-link-div ' href={`/Competition?MSISDN=${Msdn}`}style={{color:"#000"}} >
           <button className="my-videos-link " >
@@ -143,6 +154,7 @@ console.log(Msdn)
      
         
  {isLoading? <Loader />  :<>
+ 
  <div className='section-title'>
     الفيديوهات المقبولة
       </div> 
