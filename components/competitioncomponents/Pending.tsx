@@ -9,6 +9,7 @@ import { FiEdit } from 'react-icons/fi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { FiMoreVertical } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
+import axios from 'axios';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -30,7 +31,7 @@ interface VideoData {
 
 
   
-const Myvideo = ({ videodetails }: { videodetails: VideoData }) => {
+const Myvideo = ({ videodetails,refetch }: { videodetails: VideoData,refetch:any }) => {
   const [showList, setShowList] = useState(false)
   const [play, setPlay] = useState(false)
   
@@ -48,7 +49,18 @@ const handleClickInside = () => {
 }
 
   useOnClickOutside(ref, handleClickOutside)
-  
+  const DeleteVideo = async (VideoId:number) => {
+
+    await axios.post(
+      `https://vf.alerting.services/fekrwzekrApis/Users/DeleteVideo?VideoId=${VideoId}
+      `,
+      {},
+      {
+    
+      }
+    );
+    refetch()
+  };
   return (
     <>
       {/* <Box bgColor='#ffff' w='100%' h="130px" textAlign='center' position='relative' bgImage={`url(${videodetails?.Url})`}  bgRepeat="no-repeat" bgSize="cover" borderRadius="10px">
@@ -99,12 +111,13 @@ const handleClickInside = () => {
       <div className='userName'> {videodetails.Title}</div>
       <div className='videoname'>{videodetails.Description} </div>
       
- 
-       {showList && <div className='list'  ref={ref}  onClick={handleClickInside}>
-          <div><span><BiShare /></span>مشاركة </div>
-          <div><span><FiEdit /> </span>تعديل </div>
-          <div><span><BiBasket /></span>مسح</div>
-        </div>}
+      <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
+      
+      {showList && <div className='list'  ref={ref}  onClick={handleClickInside}>
+         {/* <div><span><BiShare /></span>مشاركة </div>
+         <div><span><FiEdit /> </span>تعديل </div> */}
+         <div onClick={() => DeleteVideo(videodetails.VideoId)} ><span ><BiBasket /></span>حذف</div>
+       </div>}
      
       </div>
     </>

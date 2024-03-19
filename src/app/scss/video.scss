@@ -51,12 +51,22 @@
       font-weight: 700;
       margin: 3px 0;
       margin-top: 5px;
+      max-width: 120px;
+      overflow: hidden;
     }
     .videoname{
       color: #656464;
       font-size: 12px;
       display: inline-block;
       font-weight: 300;
+      max-width: 101px;
+      overflow: hidden;
+      &:hover{
+        width: auto;
+        background: #fff;
+        z-index: 9999999;
+
+      }
       @media screen and (max-width: 263px){
         font-size: 10px;
         vertical-align: super;
@@ -249,12 +259,22 @@
         font-weight: 700;
         margin: 3px 0;
         margin-top: 5px;
+        max-width: 101px;
+        overflow: hidden;
       }
       .videoname{
         color: #656464;
         font-size: 14px;
         display: inline-block;
         font-weight: 300;
+        max-width: 101px;
+        overflow: hidden;
+        &:hover{
+          width: auto;
+          background: #fff;
+          z-index: 9999999;
+
+        }
         @media screen and (max-width: 263px){
           font-size: 10px;
           vertical-align: super;
@@ -301,6 +321,7 @@
         font-size: 16px;
         padding: 15px 17px ;
         border-radius: 8px;
+        z-index: 999999;
       
         div{
           cursor: pointer;

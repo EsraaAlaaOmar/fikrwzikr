@@ -21,6 +21,7 @@ interface VideoData {
   Votes:[];
   Url:string;
   PosterUrl:string;
+  VotesCount:number;
 }
 interface Props {
 
@@ -89,7 +90,7 @@ console.log(Msdn)
   const renderedPending =
  ( pendingVideos?.length === 0)?<>ليس لديك اي فيديوهات </>
    :
-   pendingVideos?.map((video:VideoData)=><Pending key={video.VideoId} videodetails={video}  />)
+   pendingVideos?.map((video:VideoData)=><Pending key={video.VideoId} videodetails={video}  refetch={refetch}  />)
    // end pending videos 
     // start accepted videos 
     var acceptedVideos =data?.filter((video:any)=>video.Status === 1) 
@@ -103,7 +104,7 @@ console.log(Msdn)
   const renderedrefused =
  ( refusedVideos?.length === 0)?<>ليس لديك اي فيديوهات </>
    :
-   refusedVideos?.map((video:VideoData)=> <Refused  key={video.VideoId} videodetails={video}  />)
+   refusedVideos?.map((video:VideoData)=> <Refused  key={video.VideoId} videodetails={video} refetch={refetch}   />)
    // end pending videos 
    return (
       <div className='page container'>

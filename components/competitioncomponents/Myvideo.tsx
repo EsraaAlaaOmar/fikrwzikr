@@ -28,6 +28,7 @@ interface VideoData {
   Votes:[];
   Url:string;
   PosterUrl:string;
+  VotesCount:number;
 }
 
 
@@ -124,9 +125,9 @@ const handleClickInside = () => {
    
       <div className='video-info'>
       
-        <span><AiOutlineHeart /></span>100
+        <span><AiOutlineHeart /></span>{videodetails?.VotesCount}
        
-        <span><PiEyeBold /> </span>10k
+        {/* <span><PiEyeBold /> </span>10k */}
       
       </div>
   

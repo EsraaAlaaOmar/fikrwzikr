@@ -7,6 +7,7 @@ import { FiEdit } from 'react-icons/fi'
 import { AiOutlineHeart, AiOutlineCloseCircle } from 'react-icons/ai'
 import { FiMoreVertical } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
+import axios from 'axios';
 interface VideoData {
   // Define the properties of the video data you are expecting
   // id: number;
@@ -28,7 +29,7 @@ interface VideoData {
 
 
   
-const Myvideo =({ videodetails }: { videodetails: VideoData }) => {
+const Myvideo =({ videodetails,refetch }: { videodetails: VideoData,refetch:any }) => {
   const [showList, setShowList] = useState(false)
   const [play, setPlay] = useState(false)
   
@@ -52,6 +53,18 @@ const handleClickInside = () => {
     
   }
   useOnClickOutside(ref2, handleClickOutside2)
+  const DeleteVideo = async (VideoId:number) => {
+
+    await axios.post(
+      `https://vf.alerting.services/fekrwzekrApis/Users/DeleteVideo?VideoId=${VideoId}
+      `,
+      {},
+      {
+    
+      }
+    );
+    refetch()
+  };
   return (
     <>
      {play && <div className='video-overlayer'>
@@ -95,11 +108,13 @@ const handleClickInside = () => {
       <div className='userName'>{videodetails.Title}</div>
       <div className='videoname'>{videodetails.Description} </div>
       <div className='like-vid'><AiOutlineHeart /></div>
-  
-        {/* <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div> */}
-    
+      <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
       
-     
+      {showList && <div className='list'  ref={ref}  onClick={handleClickInside}>
+         {/* <div><span><BiShare /></span>مشاركة </div>
+         <div><span><FiEdit /> </span>تعديل </div> */}
+         <div onClick={() => DeleteVideo(videodetails.VideoId)} ><span ><BiBasket /></span>حذف</div>
+       </div>}
       </div>
     </>
    
