@@ -292,6 +292,8 @@ position: fixed;
    top: 15%;
    
    border-radius: 8px;
+   object-fit: contain;
+   background-color: #000;
   
       // transform: translateY(-15%);
    }

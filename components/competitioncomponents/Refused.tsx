@@ -69,22 +69,23 @@ const handleClickInside = () => {
     <>
      {play && <div className='video-overlayer'>
            
-           <div className='details'>
-          
-           {videodetails.Title}
-           </div>
-           <video
-           ref={ref2}
            
-           src={videodetails.VideoUrl}
-             controls
-          autoPlay
-          >
-      
-          <source  type={videodetails.VideoUrl} />
+           <video
+           
+            src={videodetails?.VideoUrl}
+              controls
+           autoPlay
+           >
+       
+           <source  type="video/mp4" />
+           Your bro
+         </video>
+         <span className='close-btn' onClick={()=>setPlay(false)}>×</span>
+         <div className='details'>
         
-           </video>
-             </div>}
+        {videodetails?.Title}
+          </div>
+           </div>}
           <div className='video-box'>
               <div className='refuse-msg'>
                   <span><AiOutlineCloseCircle /></span>تم رفض الفيديو بسبب عدم مراعاة الشروط والأحكام
