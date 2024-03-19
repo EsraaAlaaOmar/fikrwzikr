@@ -157,7 +157,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
         className="competetion-video"
            
             src={videodetails?.VideoUrl}
-            poster={videodetails.PosterUrl ?videodetails.PosterUrl:"https://i.ytimg.com/vi/aPYOyxX8KeI/maxresdefault.jpg"}
+            poster={videodetails.PosterUrl ?videodetails.PosterUrl:"/images/menu-logo.png"}
         // controls="false"
         muted
         >

@@ -109,7 +109,7 @@ const addProfile = async () => {
   }
 
 const handleCheckboxChange = async (event:any) => {
-  !Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ):""
+  
   
     const { id, checked } = event.target;
    
@@ -117,7 +117,7 @@ const handleCheckboxChange = async (event:any) => {
       ...prevValues,
       [id]: checked,
     }));
-    setAddProfileConsition(true)
+    !Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ):setAddProfileConsition(true)
    
   };
 {addProfileCondition&& addProfile()}
