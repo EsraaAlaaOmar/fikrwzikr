@@ -14,11 +14,11 @@ const Quraan: React.FC<QuraanProps> = ({hide,qurandata,precentage}) => {
 const month = parts[1];
     return(   <tr>
         <td>{ day } {month}</td>
-        <td>{quran.FAGRSO ? <GiCheckMark />: "✘" }</td>
-        <td>{quran.DUHRSO ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.FAGRFU? <GiCheckMark />: "✘" }</td>
+        <td>{quran.DUHRFU? <GiCheckMark />: "✘" }</td>
         <td>{quran.ASRFU ? <GiCheckMark />: "✘" }</td>
-        <td>{quran.MAGSON ? <GiCheckMark />: "✘" }</td>
-        <td>{quran.ISHASON ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.MAGFUIR ? <GiCheckMark />: "✘" }</td>
+        <td>{quran.ISHAFUIR ? <GiCheckMark />: "✘" }</td>
         
     </tr>)
       })

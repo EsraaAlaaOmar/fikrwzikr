@@ -24,17 +24,41 @@ const Ramdan = () => {
 
   }, []);
   const[addProfileCondition , setAddProfileConsition] =useState(false)
+
+  const fetchData = async () => {
+    const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${Msdn}`, {
+      headers: {
+        'content-type': 'text/json'
+      }
+    });
+    return response.data.description;
+  };
+  const queryKey = Msdn ? ["profile", Msdn] : ["myvideos"];
+  const {  data:pofileData,isLoading:profileLoading} = useQuery(
+    queryKey,
+    fetchData)
+    const arr = pofileData&&JSON.parse(pofileData);
+ 
+    var _FurdDVView=arr?._FurdDVView;
+    var _FurdRatio=arr?._FurdRatio;
+    var  _SunahDVView=arr?._SunahDVView;
+    var  _SunahRatio=arr?._SunahRatio;
+    var _QuranVIEW=arr?._QuranVIEW;
+    var _QuranRatio=arr?._QuranRatio;
+    var _Zakaa=arr?._Zakaa;
+    var thisDay =arr&&_FurdDVView.length 
+    console.log( _FurdDVView&&_FurdDVView[parseInt(thisDay) - 1].FAGRFU ?true:false)
   const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
     checkbox_a: false,
-    checkbox_aa: false,
+    checkbox_aa:false,
     checkbox_b: false, 
-    checkbox_bb: false,
+    checkbox_bb:false,
     checkbox_c: false,
-    checkbox_cc: false,
+    checkbox_cc:false,
     checkbox_d: false,
-    checkbox_dd: false,
+    checkbox_dd:false,
     checkbox_e: false,
-    checkbox_ee: false,
+    checkbox_ee:false,
   
   
     checkbox_f: false,
@@ -105,7 +129,7 @@ const handleCheckboxChange = async (event:any) => {
     });
     return response.data.TodayPrayers;
   };
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery('prayers', fetchPrayersTime, {
+  const { isLoading, data } = useQuery('prayers', fetchPrayersTime, {
     enabled: !!Msdn // Only fetch data when Msdn is not an empty string
   });
 
@@ -134,11 +158,47 @@ const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
  
 var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
 
+
+useEffect(() => {
+  if (!pofileData) return; // Return if data is not available yet
+
+  const arr = JSON.parse(pofileData);
+  const _FurdDVView = arr?._FurdDVView;
+  const _SunahDVView = arr?._SunahDVView;
+  const _QuranVIEW = arr?._QuranVIEW;
+  
+
+  if (_FurdDVView) {
+    const thisDay = _FurdDVView.length;
+    setCheckboxValues((prevValues)=>({
+ 
+      ...prevValues,
+      checkbox_aa: _FurdDVView[parseInt(thisDay) - 1]?.FAGRFU || false,
+      checkbox_bb: _FurdDVView[parseInt(thisDay) - 1]?.DUHRFU || false,
+      checkbox_cc: _FurdDVView[parseInt(thisDay) - 1]?.ASRFU || false,
+      checkbox_dd: _FurdDVView[parseInt(thisDay) - 1]?.MAGFUIR || false,
+      checkbox_ee: _FurdDVView[parseInt(thisDay) - 1]?.ISHAFUIR || false,
+      // Update other checkbox states as needed
+      checkbox_a: _SunahDVView[parseInt(thisDay) - 1]?.FAGRSO || false,
+      checkbox_b: _SunahDVView[parseInt(thisDay) - 1]?.DUHRSO || false,
+      checkbox_c: _SunahDVView[parseInt(thisDay) - 1]?.ASRSO || false,
+      checkbox_d: _SunahDVView[parseInt(thisDay) - 1]?.MAGSON      || false,
+      checkbox_e: _SunahDVView[parseInt(thisDay) - 1]?.ISHASON || false,
+
+      checkbox_f:  _QuranVIEW[parseInt(thisDay) - 1]?.FAGRFU || false,
+      checkbox_g:  _QuranVIEW[parseInt(thisDay) - 1]?.DUHRFU || false,
+      checkbox_h:  _QuranVIEW[parseInt(thisDay) - 1]?.ASRFU || false,
+      checkbox_i:  _QuranVIEW[parseInt(thisDay) - 1]?.MAGFUIR || false,
+      checkbox_j:  _QuranVIEW[parseInt(thisDay) - 1]?.ISHAFUIR || false,
+
+    }));
+  }
+}, [pofileData]);
   return (
     <div className="wrapper">
       <SingleHeader pageName='30 يوم
 رحلة التقرب إلي الله'/>
-        {isLoading? <Loader /> :  <section className="single-content ramdan-content">
+        {isLoading||profileLoading? <Loader /> :  <section className="single-content ramdan-content">
      <div className="container">
       <div className="row">
         <div className="col-md-12">
