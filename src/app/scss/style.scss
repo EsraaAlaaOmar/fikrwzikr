@@ -2329,6 +2329,12 @@ td {
   width: 99vw;
   z-index: 10;
   // display: none;
+  height: 65vh;
+  video{
+    height: 62vh;
+    object-fit: contain;
+    background-color:#000;
+  }
 }
 .video-player-close {
   position: absolute;
