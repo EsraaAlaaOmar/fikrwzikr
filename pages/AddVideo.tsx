@@ -48,7 +48,25 @@ const AddVideoComp=()=>{
     if (e.target.name === 'videoFile'&&e.target.files&& e.target.files.length > 0) {
       // Set the videoFile property to the selected file
       
+    
+       const file = e.target.files[0];
+  const video = document.createElement('video');
+  video.preload = 'metadata';
+  video.onloadedmetadata = () => {
+    window.URL.revokeObjectURL(video.src);
+    if (video.duration > 60) {
+      // Alert the user that the video duration exceeds the limit
+      alert('عفوا .. لا يجب ان تتجاوز مدة الفديو 1دقيقة (60 ثانية)');
+      setFormData({ ...formData, videoFile:null});
+      setShowVideo(false);
+      e.target.value = '';
+    } else {
+      // Proceed with uploading the video
       setFormData({ ...formData, videoFile: e.target.files[0] });
+    }
+  };
+  video.src = URL.createObjectURL(file);
+
 
     } 
     else if ( e.target.name === 'posterFile'&&e.target.files&&e.target.files.length > 0) {
@@ -193,11 +211,11 @@ const AddVideoComp=()=>{
             <div className='page-title'>
                <div className="upload-video-input">
           <label className="upload-video-label" >عنوان الفيديو </label>
-              <input className="upload-video-textarea"  placeholder="أدخل عنوان الفيديو " name='Title' value={Title} onChange={e=>onChange(e)} />
+              <input required className="upload-video-textarea"  placeholder="أدخل عنوان الفيديو " maxLength={20} name='Title' value={Title} onChange={e=>onChange(e)} />
       </div>
       <div className="upload-video-input">
           <label className="upload-video-label">وصف الفيديو </label>
-          <textarea  className="upload-video-textarea" placeholder="أدخل وصف الفيديو " name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
+          <textarea required className="upload-video-textarea" placeholder="أدخل وصف الفيديو " maxLength={20} name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
       </div>
       <div className="upload-video-input">
           <label className="upload-video-label" style={{fontSize:"14px"}}>غلاف الفيديو(اختياري) </label>
@@ -224,11 +242,11 @@ const AddVideoComp=()=>{
           
               Your browser does not support the video tag.
             </video>}
-          <input id='video_input' type="file" accept="video/*" name='videoFile'onChange={(e)=>video(e)}  />
+          <input required id='video_input' type="file" accept="video/*" name='videoFile'onChange={(e)=>video(e)}  />
           {!showvideo&&  <button id="choose-to-upload" className="video-upload-button" onClick={() => buttonClick()}>اضافة فيديو + </button> }
        { showvideo&&    <div className="actions">
          <button type='submit' className="video-action-upload-button" > نشر الفيديو  </button> 
-         <button className="video-action-upload-button video-upload-delete" onClick={()=>setShowVideo(false)}> حذف الفيديو</button>
+         <button className="video-action-upload-button video-upload-delete" onClick={()=>{setShowVideo(false); setFormData({ ...formData, videoFile:null}); }}> حذف الفيديو</button>
     
             </div>}
           </div>
