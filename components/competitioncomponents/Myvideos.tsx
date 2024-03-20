@@ -38,16 +38,22 @@ interface Props {
       
       param1Value && setMsdn(param1Value);
       param2Value && setPendingVideo(param2Value);
-  
+
+     
       // Delay the URL modification to ensure it happens after the page has rendered
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
           queryParams.delete('title');
-  
+         
           const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
           history.replaceState(null, '', newUrl);
-      }, 1000);
+          setPendingVideo(null)
+      }, 500);
+      return () => {
+        clearTimeout(timeoutId); // Cleanup the timeout
+      };
   
     }, []);
+    pendingVideo&&alert(`تم اضافة فيديو بعنوان ${pendingVideo}`)
 console.log(Msdn)
 
    const [upload,setUpload] = useState(false)
@@ -118,7 +124,7 @@ console.log(Msdn)
       <div className='page container'>
      
         <br/>
-        {pendingVideo&&<div className='pending-msg'>تم اضافة فيديو بعنوان {pendingVideo} والفديو قيد المراجعة </div>}
+        {/* {pendingVideo&&<div className='pending-msg'>تم اضافة فيديو بعنوان {pendingVideo} والفديو قيد المراجعة </div>} */}
         <div className='page-hierarchy'>
              <span className='parent'>
              <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
