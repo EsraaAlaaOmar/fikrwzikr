@@ -1,6 +1,6 @@
 import React,{useState,useRef, ReactNode, useEffect} from 'react'
 import Link from 'next/link'
-import { useMutation  } from 'react-query';
+import { useMutation, useQuery  } from 'react-query';
 import Loader from '../components/competitioncomponents/Loader';
 import { useRouter } from 'next/router';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
@@ -56,7 +56,7 @@ const AddVideoComp=()=>{
     window.URL.revokeObjectURL(video.src);
     if (video.duration > 60) {
       // Alert the user that the video duration exceeds the limit
-      alert('عفوا .. لا يجب ان تتجاوز مدة الفديو 1دقيقة (60 ثانية)');
+      alert('عفوا .. لا يجب ان تتجاوز مدة الفيديو 1دقيقة (60 ثانية)');
       setFormData({ ...formData, videoFile:null});
       setShowVideo(false);
       e.target.value = '';
@@ -157,8 +157,21 @@ const AddVideoComp=()=>{
   }
   
  
+  const fetchVideos = async () => {
+    const response = await axios.post(
+      `https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=${Msdn}`,
+      {},
+      {
+    
+      }
+    );
+    return response.data;
+  };
 
-
+  const queryKey = Msdn ? ["myvideos", Msdn] : ["myvideos"];
+  const {  data } = useQuery(
+    queryKey,
+    fetchVideos)
 
   return (
         <div className="white-background upload-white-bg">
@@ -204,18 +217,18 @@ const AddVideoComp=()=>{
            
         </div >
         </div>
-       
+       {data?.length>= 10 ?<div className="videos-limit">عفوا لقد تجاوزت العدد المسموح به للمستخدم الواحد وهو 10 فيديوهات</div>:
         <form onSubmit={(e) => addVideo(e)} className='container'>
         {addVideoMutation.isLoading &&<div className="overlay"><div className="overlay-text">   <img  alt='loading'  src="/images/Rolling-2.gif"/> </div> </div>}
         <div className='right-section'>
             <div className='page-title'>
                <div className="upload-video-input">
           <label className="upload-video-label" >عنوان الفيديو </label>
-              <input required className="upload-video-textarea"  placeholder="أدخل عنوان الفيديو " maxLength={20} name='Title' value={Title} onChange={e=>onChange(e)} />
+              <input required className="upload-video-textarea"  placeholder="أدخل عنوان الفيديو " maxLength={25} name='Title' value={Title} onChange={e=>onChange(e)} />
       </div>
       <div className="upload-video-input">
           <label className="upload-video-label">وصف الفيديو </label>
-          <textarea required className="upload-video-textarea" placeholder="أدخل وصف الفيديو " maxLength={20} name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
+          <textarea required className="upload-video-textarea" placeholder="أدخل وصف الفيديو " maxLength={35} name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
       </div>
       <div className="upload-video-input">
           <label className="upload-video-label" style={{fontSize:"14px"}}>غلاف الفيديو(اختياري) </label>
@@ -253,6 +266,7 @@ const AddVideoComp=()=>{
 
        
         </form>
+}
       </div>
   )
 }

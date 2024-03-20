@@ -124,7 +124,7 @@ console.log(Msdn)
       <div className='page container'>
      
         <br/>
-        {/* {pendingVideo&&<div className='pending-msg'>تم اضافة فيديو بعنوان {pendingVideo} والفديو قيد المراجعة </div>} */}
+        {/* {pendingVideo&&<div className='pending-msg'>تم اضافة فيديو بعنوان {pendingVideo} والفيديو قيد المراجعة </div>} */}
         <div className='page-hierarchy'>
              <span className='parent'>
              <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
