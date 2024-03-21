@@ -12,8 +12,10 @@ const Zikr: React.FC<MyComponentProps> = ({ zikrName})  => {
         {zikrName}
       </div> */}
       
-      <button className="zkr-button" id="sbha" onClick={() => setCounter(counter + 1)} style={{ outline:"none"}}>{ counter }</button>
-       {counter !==0 && <div onClick={()=>setCounter(0)} className="sbha-reset">بداية العد  </div>}
+      <button className="zkr-button" id="sbha" onClick={() =>counter !==33 && setCounter(counter + 1)} style={{ outline:"none"}}>{ counter }</button>
+       {counter !==33 && counter !==0 && <div onClick={()=>setCounter(0)} className="sbha-reset">بداية العد  </div>}
+       {counter ==33 && <div onClick={()=>setCounter(0)} className="sbha-reset"> لقد اكملت التسبيحة  .. اضغط لبدأ تسبيحة جديدة  </div>}
+       
     </div>
 
   )
