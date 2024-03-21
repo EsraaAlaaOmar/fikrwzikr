@@ -77,10 +77,10 @@ const handleClickInside = () => {
 
 
   useOnClickOutside(ref, handleClickOutside)
-  const dateString = videodetails.DateIn;
+  
 
 // Parse the date string into a Date object
-const date = new Date(dateString);
+const date = new Date(videodetails.DateIn);
 
 // Define options for formatting the date
 const options:any = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric',  hour12: true, timeZone: 'UTC' };

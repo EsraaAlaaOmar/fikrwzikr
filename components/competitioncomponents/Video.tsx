@@ -113,6 +113,14 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
 
 //     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
 //  console.log(error)
+// Parse the date string into a Date object
+const date = new Date(videodetails.DateIn);
+
+// Define options for formatting the date
+const options:any = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric',  hour12: true, timeZone: 'UTC' };
+
+// Convert the date to a string in Arabic
+const formattedDate = date.toLocaleString('ar-EG', options);
   return (
     <>
        <Head>
@@ -177,7 +185,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
         <div className='videoname'>{ videodetails?.Description}</div>
       {/* <div className='like-vid' onClick={()=>setLike(!like)} >{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</div>
       <div className='share-vid' onClick={handleShareClick}><BiShare /></div> */}
-      <div className='video-time'> <span><IoIosTimer /></span>{videodetails?.DateIn}</div>
+      <div className='video-time'> <span><IoIosTimer /></span>{formattedDate}</div>
       {/* <div className='vote' onClick={()=>addVote( {videoId: videodetails.VideoId, vote: true})}>تصويت</div> */}
       </div>
     </>
