@@ -185,7 +185,7 @@ const formattedDate = date.toLocaleString('ar-EG', options);
         <div className='videoname'>{ videodetails?.Description}</div>
       {/* <div className='like-vid' onClick={()=>setLike(!like)} >{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</div>
       <div className='share-vid' onClick={handleShareClick}><BiShare /></div> */}
-      <div className='video-time'> <span><IoIosTimer /></span>{formattedDate}</div>
+      <div className='video-time'> <span><IoIosTimer /> </span> {formattedDate}</div>
       {/* <div className='vote' onClick={()=>addVote( {videoId: videodetails.VideoId, vote: true})}>تصويت</div> */}
       </div>
     </>
