@@ -133,7 +133,7 @@ const handleClickInside = () => {
   
       <div className='userName'>{videodetails.Title}</div>
      <div></div>
-     <div className='video-time'> <span><IoIosTimer /></span> 2023-09-10 .. 15:53:48.3</div>
+     <div className='video-time'> <span><IoIosTimer /></span> {videodetails?.DateIn}</div>
       <div className='videoname'> {videodetails.Description}</div>
       <div className='like-vid'></div>
   
