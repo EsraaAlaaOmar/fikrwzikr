@@ -63,7 +63,7 @@ paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
 
   return (
-    <div id='pagination'>
+    <div >
     
       {isLoading ? <Loader /> : (
        data.length>0 ? <>

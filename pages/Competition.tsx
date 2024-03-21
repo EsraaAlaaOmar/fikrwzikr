@@ -59,9 +59,9 @@ const Competition = () => {
   return (
   
    
-      <>
+      <div id='pagination' >
 
-          <br style={{clear: "both"}}/>
+          <br style={{clear: "both"}}  />
       
           <div className='page-hierarchy'>
                 <span className='parent'>
@@ -107,7 +107,7 @@ const Competition = () => {
 
 <PaginationCom itemsPerPage={12} Msdn={Msdn} userId={data}/>
 
-    </>
+    </div>
   )
 }
 
