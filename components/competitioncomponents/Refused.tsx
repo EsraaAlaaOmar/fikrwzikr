@@ -1,6 +1,6 @@
 import React , {useState,useRef} from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
-import Image from 'next/image';
+import { IoIosTimer } from 'react-icons/io'
 import {BsPlay } from 'react-icons/bs'
 import { BiShare , BiBasket} from 'react-icons/bi'
 import { FiEdit } from 'react-icons/fi'
@@ -65,6 +65,14 @@ const handleClickInside = () => {
     );
     refetch()
   };
+  // Parse the date string into a Date object
+const date = new Date(videodetails.DateIn);
+
+// Define options for formatting the date
+const options:any = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric',  hour12: true, timeZone: 'UTC' };
+
+// Convert the date to a string in Arabic
+const formattedDate = date.toLocaleString('ar-EG', options);
   return (
     <>
      {play && <div className='video-overlayer'>
@@ -106,8 +114,11 @@ const handleClickInside = () => {
       </video>
       </div>
    
-      <div className='userName'>{videodetails.Title}</div>
-      <div className='videoname'>{videodetails.Description} </div>
+       <div className='userName'>{videodetails.Title}</div>
+     <div></div>
+     <div className='video-time'> <span><IoIosTimer /></span> {formattedDate}</div>
+      <div className='videoname'> {videodetails.Description}</div>
+      <div className='like-vid'></div>
       <div className='like-vid'><AiOutlineHeart /></div>
       <div className='share-vid' onClick={() => setShowList(true)}><FiMoreVertical /></div>
       
