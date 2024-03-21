@@ -83,10 +83,11 @@ const handleClickInside = () => {
 const date = new Date(dateString);
 
 // Define options for formatting the date
-const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false, timeZone: 'UTC' };
+const options:any = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false, timeZone: 'UTC' };
 
 // Convert the date to a string in Arabic
 const formattedDate = date.toLocaleString('ar-EG', options);
+
   return (
     <>
       {/* <Box bgColor='#fff' w='100%' h="130px" textAlign='center' position='relative' bgImage={`url(${videodetails?.Url})`}  bgRepeat="no-repeat" bgSize="cover" borderRadius="10px">
