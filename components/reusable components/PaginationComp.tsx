@@ -31,6 +31,12 @@ interface Props {
   const [currentPage, setCurrentPage] = useState(0);
 
   const fetchData = async (page: number) => {
+    // Assuming you have a reference to the pagination element
+const paginationElement = document.getElementById('pagination');
+
+// Scroll to the pagination element
+paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
     const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=${page + 1}&PageSize=${itemsPerPage}`, {
       headers: {
         'content-type': 'text/json'
@@ -57,11 +63,11 @@ interface Props {
 
 
   return (
-    <div>
+    <div id='pagination'>
     
       {isLoading ? <Loader /> : (
        data.length>0 ? <>
-         <div className='videos-grid container'>   {renderedVideos}</div>
+         <div className='videos-grid container' >   {renderedVideos}</div>
         <div className="pagination-butons">
         <Pagination>
         <li className="page-item" onClick={()=>currentPage>0&&setCurrentPage(currentPage-1)}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
