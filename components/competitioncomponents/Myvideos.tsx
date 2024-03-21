@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react'
+import React, {useEffect,useRef,useState} from 'react'
 import Link from 'next/link'
 import { useQuery, useMutation , useQueryClient } from 'react-query';
 import Pending from './Pending';
@@ -7,6 +7,8 @@ import Myvideo from './Myvideo';
 import Refused from './Refused';
 import {MdOutlineKeyboardArrowLeft} from'react-icons/md'
 import Upload from './Upload';
+import { useOnClickOutside } from 'usehooks-ts'
+import { IoClose } from "react-icons/io5";
 const axios = require("axios");
 
 interface VideoData {
@@ -30,12 +32,13 @@ interface Props {
     
     const [Msdn, setMsdn] = useState<string>();
     const [pendingVideo,setPendingVideo] = useState<any>(null);
+    const[showPendingMsg,setShowPendingMsg] =useState(true)
     useEffect(() => {
       const queryParams = new URLSearchParams(window.location.search);
       
       const param1Value = queryParams.get('MSISDN');
       const param2Value = queryParams.get('title');
-      
+  
       param1Value && setMsdn(param1Value);
       param2Value && setPendingVideo(param2Value);
 
@@ -46,15 +49,14 @@ interface Props {
          
           const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
           history.replaceState(null, '', newUrl);
-          setPendingVideo(null)
+        
       }, 500);
       return () => {
         clearTimeout(timeoutId); // Cleanup the timeout
       };
   
     }, []);
-    pendingVideo&&alert(`تم اضافة فيديو بعنوان ${pendingVideo}`)
-console.log(Msdn)
+ 
 
    const [upload,setUpload] = useState(false)
 
@@ -119,10 +121,31 @@ console.log(Msdn)
  ( refusedVideos?.length === 0)?<>ليس لديك اي فيديوهات </>
    :
    refusedVideos?.map((video:VideoData)=> <Refused  key={video.VideoId} videodetails={video} refetch={refetch}   />)
-   // end pending videos 
+   // end pending videos
+   //ref for alert 
+   const ref = useRef(null)
+
+   const handleClickOutside = () => {
+     console.log('clicked outside')
+     setShowPendingMsg(false)
+ 
+   }
+
+ 
+   useOnClickOutside(ref, handleClickOutside) 
    return (
       <div className='page container'>
-     
+        { showPendingMsg&&pendingVideo&&     <div className='overlay overlay_full_page'  >
+            
+            <div className="white-background comp-terms " ref={ref}>
+            <span className="icon" onClick={()=>setShowPendingMsg(false)}><IoClose /></span>
+            <h3>تنبيه  </h3>
+           <div style={{ fontSize:"20px",textAlign:"center", marginBottom:"20px" }}> تم اضافة فيديو بعنوان  {pendingVideo} والفيديو قيد المراجعة </div>
+            <div className="terms-btn" onClick={()=>setShowPendingMsg(false)}>OK</div>
+            </div>
+           
+
+      </div>}
         <br/>
         {/* {pendingVideo&&<div className='pending-msg'>تم اضافة فيديو بعنوان {pendingVideo} والفيديو قيد المراجعة </div>} */}
         <div className='page-hierarchy'>
