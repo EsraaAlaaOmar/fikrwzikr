@@ -31,11 +31,6 @@ interface Props {
   const [currentPage, setCurrentPage] = useState(0);
 
   const fetchData = async (page: number) => {
-    // Assuming you have a reference to the pagination element
-const paginationElement = document.getElementById('pagination');
-
-// Scroll to the pagination element
-paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=${page + 1}&PageSize=${itemsPerPage}`, {
       headers: {
@@ -61,7 +56,14 @@ paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     return<span key={video.VideoId}>  <Video videodetails={video} refetchVideos={refetch} Msdn={Msdn} userId={userId}/></span>
 });
 
+const scrolToTop=()=>{
+      // Assuming you have a reference to the pagination element
+const paginationElement = document.getElementById('pagination');
 
+// Scroll to the pagination element
+paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+}
   return (
     <div >
     
@@ -70,9 +72,9 @@ paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
          <div className='videos-grid container' >   {renderedVideos}</div>
         <div className="pagination-butons">
         <Pagination>
-        <li className="page-item" onClick={()=>currentPage>0&&setCurrentPage(currentPage-1)}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
+        <li className="page-item" onClick={()=>{currentPage>0&&setCurrentPage(currentPage-1);scrolToTop()}}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
         <li className="page-item"><a className="page-link" style={{color: '#000'}} >{currentPage + 1}</a></li>
-        <li className="page-item"  onClick={()=>   data.length==itemsPerPage &&setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
+        <li className="page-item"  onClick={()=> {  data.length==itemsPerPage &&setCurrentPage(currentPage+1);scrolToTop()}}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
        </Pagination>
         </div> 
        

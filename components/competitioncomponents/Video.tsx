@@ -47,7 +47,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
   });
   {console.log(Liked)}
   const [play, setPlay] = useState(false)
-  const [like, setLike] = useState(Liked)
+
   
   // const ref = useRef(null)
 
@@ -85,7 +85,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
  
   try {
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!like}`,
+      `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!Liked}`,
       null, // Since there's no request body, pass null
       {
         headers: {
@@ -95,7 +95,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
     );
 
     // Update the state
-    setLike((prevState:boolean) => !prevState);
+   
 
     // Trigger a refetch of the videos
     await refetchVideos();
