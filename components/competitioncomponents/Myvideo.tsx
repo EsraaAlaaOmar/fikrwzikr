@@ -83,7 +83,7 @@ const handleClickInside = () => {
 const date = new Date(dateString);
 
 // Define options for formatting the date
-const options:any = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false, timeZone: 'UTC' };
+const options:any = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric',  hour12: true, timeZone: 'UTC' };
 
 // Convert the date to a string in Arabic
 const formattedDate = date.toLocaleString('ar-EG', options);
