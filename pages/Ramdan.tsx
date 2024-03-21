@@ -134,7 +134,7 @@ const handleCheckboxChange = async (event:any) => {
   });
 
 //calculate imsak time 
-const timeArray =data&&data[0].PrayerTime.substring(0, 5).split(':');
+const timeArray =data&&data[0].PrayerTime.split(':');
 let hours = timeArray&&parseInt(timeArray[0]);
 let minutes = timeArray&&parseInt(timeArray[1]);
 
@@ -153,9 +153,27 @@ const formattedHours = (hours < 10 ? '0' : '') + hours;
 const formattedMinutes = (minutes < 10 ? '0' : '') + minutes;
 
 
+const getTime = (timeString: string) => {
+  const [hours, minutes] = timeString.split(':').map(Number);
+  const date = new Date();
+  date.setUTCHours(hours, minutes, 0, 0);
 
+  const options: Intl.DateTimeFormatOptions = {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+      timeZone: 'UTC'
+  };
 
- 
+  let formattedTime = date.toLocaleString('ar-EG', options);
+
+  // Remove the Arabic indicators for AM (ص) and PM (م)
+  formattedTime = formattedTime.replace(/(ص|م)/g, '');
+
+  return formattedTime.trim(); // Trim any extra whitespace
+};
+
+console.log(getTime("13:50"));
 var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
 
 
@@ -218,7 +236,7 @@ useEffect(() => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الفجر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">{data&&data[0].PrayerTime.substring(0, 5)} صباحا</li>     
+              <li className="col-md-3 col-xs-12">{data&&getTime(data[0].PrayerTime)} صباحا </li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
@@ -240,7 +258,7 @@ useEffect(() => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">الظهر</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">{data&&data[2].PrayerTime.substring(0, 5)}  ظهرا</li>     
+              <li className="col-md-3 col-xs-12">{data&&getTime(data[2].PrayerTime)}  ظهرا </li>     
              </ul>   
             </Col>
             <Col xs={3} md={2}>
@@ -263,7 +281,7 @@ useEffect(() => {
               <li className="col-md-3 col-xs-12">العصر</li>
               <li className="col-md-6 hidden-xs">-</li>   
               <li className="col-md-3 col-xs-12">	
-              {data&&data[3].PrayerTime.substring(0, 5)}  مساء</li>     
+              {data&&getTime(data[3].PrayerTime)}  مساء </li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -285,7 +303,7 @@ useEffect(() => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">المغرب</li>
               <li className="col-md-6 hidden-xs">-</li>   
-              <li className="col-md-3 col-xs-12">{data&&data[4].PrayerTime.substring(0, 5)}  مساء</li>     
+              <li className="col-md-3 col-xs-12">{data&&getTime(data[4].PrayerTime)}  مساء </li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -308,7 +326,7 @@ useEffect(() => {
               <li className="col-md-3 col-xs-12">العشاء</li>
               <li className="col-md-6 hidden-xs">-</li>  
               <li className="col-md-3 col-xs-12">	
-              {data&&data[5].PrayerTime.substring(0, 5)}  مساء</li>     
+              {data&&getTime(data[5].PrayerTime)}  مساء </li>     
              </ul>   
             </Col>
                <Col xs={3} md={2}>
@@ -330,7 +348,7 @@ useEffect(() => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">موعد الامساك</li>
               <li className="col-md-6 hidden-xs">-</li>  
-              <li className="col-md-3 col-xs-12">{`${formattedHours}:${formattedMinutes}`} صباحا</li>     
+              <li className="col-md-3 col-xs-12">{getTime(`${formattedHours}:${formattedMinutes}`)} صباحا </li>     
              </ul>   
             </div>                 
            </div>  
@@ -339,7 +357,7 @@ useEffect(() => {
              <ul className="list-inline row">
               <li className="col-md-3 col-xs-12">موعد الافطار</li>
               <li className="col-md-6 hidden-xs">-</li>  
-              <li className="col-md-3 col-xs-12">{data&&data[4].PrayerTime.substring(0, 5)} مساء</li>     
+              <li className="col-md-3 col-xs-12">{data&&getTime(data[4].PrayerTime)} مساء </li>     
              </ul>   
             </div>                 
            </div>                
