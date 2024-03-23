@@ -46,7 +46,7 @@ const month = parts[1];
         <td></td>
         <td></td>
         <td></td>
-        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>{precentage}%</td>
+        <td  rowSpan={30} style={{fontWeight: "bold", fontSize: "18px"}}>{Number(precentage.toFixed(2))}%</td>
     </tr>
     {renderedRows}
     </tbody>
