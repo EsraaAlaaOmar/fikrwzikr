@@ -187,7 +187,7 @@ p {
   background-color: #000;
 }
 .signed{
-  color: #E00800;
+  // color: #E00800;
 }
 .affix .row {
   display: flex;
@@ -208,6 +208,7 @@ p {
       display: inline-block;
       font-size: 16px;
       margin-left: 2px;
+      cursor: pointer;
     }
   }
 }
@@ -218,6 +219,7 @@ p {
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 .menu ul li a:hover,
 .menu ul li a:focus {

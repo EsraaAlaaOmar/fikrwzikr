@@ -23,6 +23,9 @@ const Navbar = () => {
   
   const ref = useRef(null)
   useOnClickOutside(ref, ()=>setShowSidebar(false))
+  var removeHistory = () => {
+    window && window.history.replaceState(null, '', window.location.pathname);
+  };
   return (
     <div>  
 { showSidebar &&  <div className="side-nav" style={{right: "0px"}} ref={ref}>      
@@ -194,16 +197,17 @@ const Navbar = () => {
             <span className='react-icon'><BsListUl /> </span> القائمة  
             </a>                
         </li>
-        <li>
+        <li aria-label="تسجيل الخروج" title="تسجيل الخروج" >
            { !Msdn || Msdn=='NA' || Msdn=='undefined'? 
               <a href="https://ka2naktraho.com/SignIn">
               <span className='react-icon'>  <LuUser /> </span>
                   تسجيل دخول
               </a>:
+                <a href="https://ka2naktraho.com/SignIn" onClick={()=>removeHistory()}>
            <span className='signed'>
-            <span className='react-icon'>  <LuUser /> </span>
+            <span className='react-icon'  >  <LuUser  /> </span>
            مرحبا {Msdn}</span>
-            
+            </a>
           }
         </li>       
     </ul> 
