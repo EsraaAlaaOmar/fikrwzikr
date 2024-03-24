@@ -26,7 +26,7 @@ const Ramdan = () => {
   const[addProfileCondition , setAddProfileConsition] =useState(false)
 
   const fetchData = async () => {
-    const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${Msdn}`, {
+    const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserTodayProfile?MobileNumbr=${Msdn}`, {
       headers: {
         'content-type': 'text/json'
       }
@@ -47,7 +47,7 @@ const Ramdan = () => {
     var _QuranRatio=arr?._QuranRatio;
     var _Zakaa=arr?._Zakaa;
     var thisDay =arr&&_FurdDVView.length 
-    console.log( _FurdDVView&&_FurdDVView[parseInt(thisDay) - 1].FAGRFU ?true:false)
+    console.log( _FurdDVView&&_FurdDVView[0].FAGRFU ?true:false)
   const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
     checkbox_a: false,
     checkbox_aa:false,
@@ -191,23 +191,23 @@ useEffect(() => {
     setCheckboxValues((prevValues)=>({
  
       ...prevValues,
-      checkbox_aa: _FurdDVView[parseInt(thisDay) - 1]?.FAGRFU || false,
-      checkbox_bb: _FurdDVView[parseInt(thisDay) - 1]?.DUHRFU || false,
-      checkbox_cc: _FurdDVView[parseInt(thisDay) - 1]?.ASRFU || false,
-      checkbox_dd: _FurdDVView[parseInt(thisDay) - 1]?.MAGFUIR || false,
-      checkbox_ee: _FurdDVView[parseInt(thisDay) - 1]?.ISHAFUIR || false,
+      checkbox_aa: _FurdDVView[0]?.FAGRFU || false,
+      checkbox_bb: _FurdDVView[0]?.DUHRFU || false,
+      checkbox_cc: _FurdDVView[0]?.ASRFU || false,
+      checkbox_dd: _FurdDVView[0]?.MAGFUIR || false,
+      checkbox_ee: _FurdDVView[0]?.ISHAFUIR || false,
       // Update other checkbox states as needed
-      checkbox_a: _SunahDVView[parseInt(thisDay) - 1]?.FAGRSO || false,
-      checkbox_b: _SunahDVView[parseInt(thisDay) - 1]?.DUHRSO || false,
-      checkbox_c: _SunahDVView[parseInt(thisDay) - 1]?.ASRSO || false,
-      checkbox_d: _SunahDVView[parseInt(thisDay) - 1]?.MAGSON      || false,
-      checkbox_e: _SunahDVView[parseInt(thisDay) - 1]?.ISHASON || false,
+      checkbox_a: _SunahDVView[0]?.FAGRSO || false,
+      checkbox_b: _SunahDVView[0]?.DUHRSO || false,
+      checkbox_c: _SunahDVView[0]?.ASRSO || false,
+      checkbox_d: _SunahDVView[0]?.MAGSON      || false,
+      checkbox_e: _SunahDVView[0]?.ISHASON || false,
 
-      checkbox_f:  _QuranVIEW[parseInt(thisDay) - 1]?.FAGRFU || false,
-      checkbox_g:  _QuranVIEW[parseInt(thisDay) - 1]?.DUHRFU || false,
-      checkbox_h:  _QuranVIEW[parseInt(thisDay) - 1]?.ASRFU || false,
-      checkbox_i:  _QuranVIEW[parseInt(thisDay) - 1]?.MAGFUIR || false,
-      checkbox_j:  _QuranVIEW[parseInt(thisDay) - 1]?.ISHAFUIR || false,
+      checkbox_f:  _QuranVIEW[0]?.FAGRFU || false,
+      checkbox_g:  _QuranVIEW[0]?.DUHRFU || false,
+      checkbox_h:  _QuranVIEW[0]?.ASRFU || false,
+      checkbox_i:  _QuranVIEW[0]?.MAGFUIR || false,
+      checkbox_j:  _QuranVIEW[0]?.ISHAFUIR || false,
 
     }));
   }
