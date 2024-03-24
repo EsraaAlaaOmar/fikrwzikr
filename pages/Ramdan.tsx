@@ -37,17 +37,17 @@ const Ramdan = () => {
   const {  data:pofileData,isLoading:profileLoading} = useQuery(
     queryKey,
     fetchData)
-    const arr = pofileData&&JSON.parse(pofileData);
+    // const arr = pofileData&&JSON.parse(pofileData);
  
-    var _FurdDVView=arr?._FurdDVView;
-    var _FurdRatio=arr?._FurdRatio;
-    var  _SunahDVView=arr?._SunahDVView;
-    var  _SunahRatio=arr?._SunahRatio;
-    var _QuranVIEW=arr?._QuranVIEW;
-    var _QuranRatio=arr?._QuranRatio;
-    var _Zakaa=arr?._Zakaa;
-    var thisDay =arr&&_FurdDVView.length 
-    console.log( _FurdDVView&&_FurdDVView[0].FAGRFU ?true:false)
+    // var _FurdDVView=arr?._FurdDVView;
+    // var _FurdRatio=arr?._FurdRatio;
+    // var  _SunahDVView=arr?._SunahDVView;
+    // var  _SunahRatio=arr?._SunahRatio;
+    // var _QuranVIEW=arr?._QuranVIEW;
+    // var _QuranRatio=arr?._QuranRatio;
+    // var _Zakaa=arr?._Zakaa;
+    // var thisDay =arr&&_FurdDVView.length 
+    // console.log( _FurdDVView&&_FurdDVView[0].FAGRFU ?true:false)
   const [checkboxValues, setCheckboxValues] = useState<CheckboxState>({
     checkbox_a: false,
     checkbox_aa:false,
