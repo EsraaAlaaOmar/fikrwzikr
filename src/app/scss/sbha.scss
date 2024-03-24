@@ -71,5 +71,11 @@
 }
 .sbha-reset{
     color: #999595;
-    cursor: pointer;
+
+    span{
+        color: #e00800;
+        font-weight: bold;
+        cursor: pointer;
+    
+    }
 }
