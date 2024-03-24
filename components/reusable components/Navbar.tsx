@@ -197,14 +197,14 @@ const Navbar = () => {
             <span className='react-icon'><BsListUl /> </span> القائمة  
             </a>                
         </li>
-        <li aria-label="تسجيل الخروج" title="تسجيل الخروج" >
+        <li >
            { !Msdn || Msdn=='NA' || Msdn=='undefined'? 
-              <a href="https://ka2naktraho.com/SignIn">
+              <a href="https://ka2naktraho.com/SignIn" >
               <span className='react-icon'>  <LuUser /> </span>
                   تسجيل دخول
               </a>:
                 <a href="https://ka2naktraho.com/SignIn" onClick={()=>removeHistory()}>
-           <span className='signed'>
+           <span className='signed'  aria-label="تسجيل الخروج" title="تسجيل الخروج">
             <span className='react-icon'  >  <LuUser  /> </span>
            مرحبا {Msdn}</span>
             </a>
