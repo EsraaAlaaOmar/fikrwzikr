@@ -2,6 +2,7 @@ import axios, { Axios } from 'axios';
 import React, { useState ,useEffect} from 'react'
 import SingleHeader from '../components/reusable components/SingleHeader';
 import { useRouter } from 'next/router';
+import { useQuery } from 'react-query';
 const Zkah = () => {
   const [Msdn,setMsdn]=useState('')
   const[zkah,setZkah] = useState(false)
@@ -17,7 +18,24 @@ const Zkah = () => {
    
 
   }, []);
-  
+  const fetchData = async () => {
+    const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserTodayProfile?MobileNumbr=${Msdn}`, {
+      headers: {
+        'content-type': 'text/json'
+      }
+    });
+    return response.data.description;
+  };
+  const queryKey = Msdn ? ["profile", Msdn] : ["myvideos"];
+  const {  data:pofileData,isLoading:profileLoading} = useQuery(
+    queryKey,
+    fetchData)
+    useEffect(() => {
+      const arr = pofileData&&JSON.parse(pofileData);
+      setZkah(arr?._Zakaa)
+    }, [pofileData]);
+   
+    
   const AddZakaa = async (e:any) => {
     console.log(e.target.value)
     setZkah(!zkah)
