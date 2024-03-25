@@ -1,5 +1,5 @@
 import React ,{useState, useEffect}from 'react'
-import VideoManagment from '../components/competitioncomponents/VideoManagment'
+import Acceptedmanagment from '../components/competitioncomponents/Acceptedmanagment'
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { Pagination } from 'react-bootstrap';
@@ -22,25 +22,24 @@ const lvideosManagment = () => {
   const[currentPage,setCurrentPage]=useState(1)
   const [playerVideo, setPlayerVideo] = useState<VideoData >();
   const[showVideo,setShowVideo] = useState(false)
-var pageSize=10;
+var pageSize=12;
 
-  const fetchVideos = async () => {
-    const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/GetAllPendingVideos?Page=${currentPage}&PageSize=${pageSize}`,
-      {},
-      {
-    
+const fetchData = async (page: number) => {
+
+    const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=${page }&PageSize=${pageSize}`, {
+      headers: {
+        'content-type': 'text/json'
       }
-    );
-    return response.data.description;
-   
-
+    });
+    return response.data;
   };
 
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-    ["pending", currentPage],
-    fetchVideos)
-    const arr = data&&JSON.parse(data);
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videos", currentPage,], () => fetchData(currentPage), {
+    keepPreviousData: true, // Keep previous data while fetching new data
+    staleTime: 0,
+    
+  });
+ 
     console.log(data)
     const ApproveorRejectVideo = async (VideoId:any,status:number) => {
 
@@ -55,19 +54,20 @@ var pageSize=10;
       refetch()
     
     };
-    const renderedvideo = data? arr.map((video: any) => {
-      return <VideoManagment details={video} refetchVideos={refetch} setPlayerVideo={setPlayerVideo}  setShowVideo={setShowVideo} />
-    }):<></>;
+    const renderedvideo = data?.map((video: any) => {
+      return <Acceptedmanagment details={video} refetchVideos={refetch} setPlayerVideo={setPlayerVideo}  setShowVideo={setShowVideo} />
+    });
   return (
-    <><h2 className="admin-title"> إدارة الفيديوهات</h2>
+    <><h2 className="admin-title"> إدارة الفيديوهات المنشورة</h2>
     
  {isLoading? <Loader /> :   
-  arr?.length>0 ? <table className="admin-table">
+  data?.length>0 ? <table className="admin-table">
   <thead>
     <tr>
       <th>ID</th>
       <th>عنوان الفيديو</th>
       <th>وصف الفيديو</th>
+      <th>عدد الاصوات</th>
       <th>التاريخ</th>
       <th>الاجراء</th>
     </tr>
@@ -113,7 +113,7 @@ var pageSize=10;
         <Pagination>
         <li className="page-item" onClick={()=>{currentPage>1&&setCurrentPage(currentPage-1)}}><a className="page-link"   style={{color: '#000'}} >السابق</a></li>
         <li className="page-item"><a className="page-link" style={{color: '#000'}} >{currentPage }</a></li>
-        <li className="page-item"  onClick={()=>arr?.length==pageSize&&setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
+        <li className="page-item"  onClick={()=>data?.length==pageSize&&setCurrentPage(currentPage+1)}><a className="page-link" style={{color: '#000'}} >التالي</a></li>
        </Pagination>
        </div>
         </>
