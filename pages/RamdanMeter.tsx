@@ -40,7 +40,7 @@ const RamdanMeter = () => {
       queryKey,
       fetchData)
 //  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
-  
+  isError &&  router.push(`https://ka2naktraho.com/SignIn`);
  const arr = data&&JSON.parse(data);
  
    var _FurdDVView=arr?._FurdDVView;
