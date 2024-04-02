@@ -40,7 +40,7 @@ const RamdanMeter = () => {
       queryKey,
       fetchData)
 //  const { isLoading, data, isError, error, isFetching, refetch } = useQuery("profile", fetchData)
-  isError &&  router.push(`https://ka2naktraho.com/SignIn`);
+  
  const arr = data&&JSON.parse(data);
  
    var _FurdDVView=arr?._FurdDVView;
@@ -101,7 +101,7 @@ const RamdanMeter = () => {
  <div className="progress">
    <div className="progress-bar" role="progressbar" style={{width: `${_QuranRatio}%`}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
-{!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowQuran(true)}>
+{!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>isError ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowQuran(true)}>
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
