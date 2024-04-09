@@ -186,7 +186,7 @@ const AddVideoComp=()=>{
                     </span>
                     <span className='parent'>
                 <Link href="/Competition" style={{color:"#000"}}>
-                           مسابقة رمضان 
+                           المسابقة 
                       </Link>
                         
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>

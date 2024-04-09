@@ -214,7 +214,7 @@ useEffect(() => {
 }, [pofileData]);
   return (
     <div className="wrapper">
-      <SingleHeader pageName='30 يوم
+      <SingleHeader pageName='
 رحلة التقرب إلي الله'/>
         {isLoading||profileLoading? <Loader /> :  <section className="single-content ramdan-content">
      <div className="container">

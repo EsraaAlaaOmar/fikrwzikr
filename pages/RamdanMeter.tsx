@@ -56,7 +56,7 @@ const RamdanMeter = () => {
    <>
 <div className="progress-container">
 <SingleHeader pageName='تفاصيل عبادتك'/>
- <h2 className="ramadan-meter-title">تفاصيل  عباداتك خلال رمضان</h2>
+ <h2 className="ramadan-meter-title">تفاصيل  عباداتك </h2>
  {isLoading? <Loader /> : <>
   {/* <!-- salah --> */}
 <div className="progress-category">
