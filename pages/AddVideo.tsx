@@ -227,8 +227,8 @@ const AddVideoComp=()=>{
               <input required className="upload-video-textarea"  placeholder="أدخل عنوان الفيديو " maxLength={25} name='Title' value={Title} onChange={e=>onChange(e)} />
       </div>
       <div className="upload-video-input">
-          <label className="upload-video-label">وصف الفيديو </label>
-          <textarea required className="upload-video-textarea" placeholder="أدخل وصف الفيديو " maxLength={35} name='Description' value={Description} onChange={e=>onChange(e)} ></textarea>
+          <label className="upload-video-label">اسم المشترك باللغة العربية  (ثلاثي)</label>
+          <input required className="upload-video-textarea" placeholder="أدخل اسم المشترك " maxLength={35} name='Description' value={Description} onChange={e=>onChange(e)} />
       </div>
       <div className="upload-video-input">
           <label className="upload-video-label" style={{fontSize:"14px"}}>غلاف الفيديو(اختياري) </label>
