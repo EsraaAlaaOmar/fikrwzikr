@@ -73,7 +73,7 @@ const Competition = () => {
                     </span>
                     <span className='parent'>
                 <Link href="/Competition" style={{color:"#000"}}>
-                           المسابقة 
+                مسابقة أفضل مرتل  
                       </Link>
                         
                     <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>

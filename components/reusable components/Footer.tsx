@@ -37,7 +37,7 @@ const Footer = () => {
        <ul >
         <Col xs={6} />
         <li className="col-xs-6" ><a href="Index"> الرئيسية</a></li>
-        <li className="col-xs-5"><Link href={`/Competition?MSISDN=${Msdn}`}> المسابقة </Link></li>
+        <li className="col-xs-5"><Link href={`/Competition?MSISDN=${Msdn}`}>  مسابقة أفضل مرتل  </Link></li>
         <li className="col-xs-6"><Link href={`/Ramdan?MSISDN=${Msdn}`} >  رحلة التقرب الي الله </Link></li>
         <li className="col-xs-5"> <Link href={`/Zkah?MSISDN=${Msdn}`}> حساب الزكاة </Link></li>
         <li className="col-xs-6"><Link href={`/RamdanMeter?MSISDN=${Msdn}`}  > مقياس العبادات </Link></li>

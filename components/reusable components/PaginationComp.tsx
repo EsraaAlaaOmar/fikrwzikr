@@ -68,7 +68,7 @@ paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     <div >
     
       {isLoading ? <Loader /> : (
-       data.length>0 ? <>
+       data?.length>0 ? <>
          <div className='videos-grid container' >   {renderedVideos}</div>
         <div className="pagination-butons">
         <Pagination>
