@@ -32,7 +32,7 @@ interface Props {
 
   const fetchData = async (page: number) => {
 
-    const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=${page + 1}&PageSize=${itemsPerPage}`, {
+    const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideosV2?Page=${page + 1}&PageSize=${itemsPerPage}`, {
       headers: {
         'content-type': 'text/json'
       }
@@ -40,7 +40,7 @@ interface Props {
     return response.data;
   };
 
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videos", currentPage,], () => fetchData(currentPage), {
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videosV2", currentPage,], () => fetchData(currentPage), {
     keepPreviousData: true, // Keep previous data while fetching new data
     staleTime: 0,
     
@@ -69,7 +69,7 @@ paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
   return (
     <div >
-        <h3 className='comp-name'>المسابقة السابقة</h3>
+    <h3 className='comp-name'>المسابقة الحالية</h3>
       {isLoading ? <Loader /> : (
        data?.length>0 ? <>
          <div className='videos-grid container' >   {renderedVideos}</div>
