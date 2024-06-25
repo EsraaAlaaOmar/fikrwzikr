@@ -114,14 +114,14 @@ interface Props {
    ( acceptedVideos?.length === 0)?<>ليس لديك اي فيديوهات </>
      :
      acceptedVideos?.map((video:VideoData)=><Myvideo key={video.VideoId} videodetails={video} refetch={refetch} />)
-     // end pending videos 
-       // start pending videos 
+     // end accepted videos 
+       // start refused videos 
   var refusedVideos =data?.filter((video:any)=>video.Status === 2) 
   const renderedrefused =
  ( refusedVideos?.length === 0)?<>ليس لديك اي فيديوهات </>
    :
    refusedVideos?.map((video:VideoData)=> <Refused  key={video.VideoId} videodetails={video} refetch={refetch}   />)
-   // end pending videos
+   // end refused videos
    //ref for alert 
    const ref = useRef(null)
 

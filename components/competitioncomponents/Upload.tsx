@@ -21,7 +21,7 @@ interface UploadProps {
     {
       Title: '',
       Description: '',
-      MobileNumber: '01126214650',
+      MobileNumber: '',
       videoFile: '',
       posterFile:"",
       
