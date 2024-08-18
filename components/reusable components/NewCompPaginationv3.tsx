@@ -40,7 +40,7 @@ interface Props {
     return response.data;
   };
 
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videosV2", currentPage,], () => fetchData(currentPage), {
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(["videosV3", currentPage,], () => fetchData(currentPage), {
     keepPreviousData: true, // Keep previous data while fetching new data
     staleTime: 0,
     

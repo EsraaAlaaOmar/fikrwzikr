@@ -69,7 +69,7 @@ paginationElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
   return (
     <div >
-        <h3 className='comp-name'>المسابقة السابقة</h3>
+        <h3 className='comp-name'>مسابقة شهر رمضان</h3>
       {isLoading ? <Loader /> : (
        data?.length>0 ? <>
          <div className='videos-grid container' >   {renderedVideos}</div>
