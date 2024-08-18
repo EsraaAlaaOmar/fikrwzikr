@@ -26,7 +26,7 @@ var pageSize=12;
 
 const fetchData = async (page: number) => {
 
-    const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideosV2?Page=${page }&PageSize=${pageSize}`, {
+    const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideosV3?Page=${page }&PageSize=${pageSize}`, {
       headers: {
         'content-type': 'text/json'
       }

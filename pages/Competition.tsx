@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Loader from '../components/competitioncomponents/Loader';
 import NewCompPagination from '../components/reusable components/NewCompPagination';
+import NewCompPaginationv3 from '../components/reusable components/NewCompPaginationv3';
 import PaginationCom from '../components/reusable components/PaginationComp';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
 
@@ -105,6 +106,7 @@ const Competition = () => {
            
         </div >
         </div>
+        <NewCompPaginationv3  itemsPerPage={8} Msdn={Msdn} userId={data}/>
         <NewCompPagination  itemsPerPage={8} Msdn={Msdn} userId={data}/>
 
 <PaginationCom itemsPerPage={8} Msdn={Msdn} userId={data}/>
