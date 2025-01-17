@@ -34,6 +34,7 @@ const CompetitonTerms = () => {
         </li>
         <li>تجدد الخدمة تلقائيا يوميا.</li>
         <li>لإلغاء الخدمة في أي وقت، اطلب *7711# مجانا.</li>
+        <li>في حال إقامة مسابقة، لا يُسمح لأي متسابق أو مشترك في المسابقة أو الخدمة بالفوز أكثر من مرة</li>
           </ol>
           <div className="terms-btn" onClick={()=>setShowTerms(false)}>OK</div>
             </div>
