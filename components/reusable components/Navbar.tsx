@@ -214,7 +214,7 @@ const Navbar = () => {
          </div>  
        </div>
        <div className="col-sm-2 col-xs-3">
-        <a href="index.html" className="menu-logo"><img src="images/ET_Logo.png" className="img-responsive" alt="logo"/></a>   
+        <a href="index.html" className="menu-logo"><img src="/images/ET_Logo.png" className="img-responsive" alt="logo"/></a>   
        </div>      
       </div>     
      </div>
