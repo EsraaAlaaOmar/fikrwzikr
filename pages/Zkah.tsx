@@ -79,7 +79,7 @@ const Zkah = () => {
     
     <div className="row zakah-body"  >
  
-    <div className="container " onClick={()=>{!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) : ''}}>
+    <div className="container " onClick={()=>{!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`http://fikrwzikr.com/SignIn` ) : ''}}>
     
         <h3>احسب زكاتك مع  كأنك تراه </h3>
         <div className="zkah-input col-sm-8" >

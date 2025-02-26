@@ -199,11 +199,11 @@ const Navbar = () => {
         </li>
         <li >
            { !Msdn || Msdn=='NA' || Msdn=='undefined'? 
-              <a href="https://ka2naktraho.com/SignIn" >
+              <a href="http://fikrwzikr.com/SignIn" >
               <span className='react-icon'>  <LuUser /> </span>
                   تسجيل دخول
               </a>:
-                <a href="https://ka2naktraho.com/SignIn" onClick={()=>removeHistory()}>
+                <a href="http://fikrwzikr.com/SignIn" onClick={()=>removeHistory()}>
            <span className='signed'  aria-label="تسجيل الخروج" title="تسجيل الخروج">
             <span className='react-icon'  >  <LuUser  /> </span>
            مرحبا {Msdn}</span>

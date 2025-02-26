@@ -66,7 +66,7 @@ const RamdanMeter = () => {
  <div className="progress">
  <div className="progress-bar" role="progressbar" style={{width:`${_FurdRatio}%`}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
- {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowFrood(true)} >
+ {!showfrood && <div id="prodress-salah-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`http://fikrwzikr.com/SignIn` ) :setShowFrood(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
@@ -83,7 +83,7 @@ const RamdanMeter = () => {
  <div className="progress">
    <div className="progress-bar" role="progressbar" style={{width: `${_SunahRatio} %`}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
- {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowSonan(true)} >
+ {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`http://fikrwzikr.com/SignIn` ) :setShowSonan(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}
@@ -101,7 +101,7 @@ const RamdanMeter = () => {
  <div className="progress">
    <div className="progress-bar" role="progressbar" style={{width: `${_QuranRatio}%`}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
-{!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>isError ? router.push(`https://ka2naktraho.com/SignIn` ) :setShowQuran(true)}>
+{!showquran && <div id="prodress-quran-more"className="progress-more"  onClick={()=>isError ? router.push(`http://fikrwzikr.com/SignIn` ) :setShowQuran(true)}>
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
 </span>
  </div>}

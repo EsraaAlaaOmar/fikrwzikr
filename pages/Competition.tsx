@@ -93,12 +93,12 @@ const Competition = () => {
       فيديوهات المسابقة
         </button>
         </Link>
-        <Link className='videos-link-div' href={!Msdn || Msdn=='NA' || Msdn=='undefined' ?'https://ka2naktraho.com/SignIn' :`/Myvideos?MSISDN=${Msdn}`} style={{color:"#000"}}>
+        <Link className='videos-link-div' href={!Msdn || Msdn=='NA' || Msdn=='undefined' ?'http://fikrwzikr.com/SignIn' :`/Myvideos?MSISDN=${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
        فيديوهاتي
         </button>
         </Link>
-        <Link className='videos-link-div' href={!Msdn || Msdn=='NA' || Msdn=='undefined' ?'https://ka2naktraho.com/SignIn' :`/AddVideo?MSISDN=${Msdn}`} style={{color:"#000"}}>
+        <Link className='videos-link-div' href={!Msdn || Msdn=='NA' || Msdn=='undefined' ?'http://fikrwzikr.com/SignIn' :`/AddVideo?MSISDN=${Msdn}`} style={{color:"#000"}}>
           <button className="my-videos-link" >
 اضافة فيديو        </button>
         </Link>
