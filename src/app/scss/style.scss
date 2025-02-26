@@ -73,7 +73,7 @@ p {
 }
 .side-nav h3 {
   font-size: 25px;
-  color: #f16e00;
+  color: #E00800;
   padding-right: 20px;
   margin-bottom: 20px;
 }
@@ -86,7 +86,7 @@ p {
   line-height: 60px;
   text-align: center;
   font-size: 36px;
-  color: #f16e00;
+  color: #E00800;
   z-index: 999;
 }
 .side-nav .caret {
@@ -107,7 +107,7 @@ p {
 }
 .side-nav > ul > li > a:hover,
 .side-nav > ul > li > a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 .side-nav li > a {
   color: #23201d;;
@@ -118,7 +118,7 @@ p {
 }
 .side-nav li > a:hover,
 .side-nav li > a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 .side-nav li > ul > li > a {
   position: relative;
@@ -187,7 +187,7 @@ p {
   background-color: #000;
 }
 .signed{
-  // color: #f16e00;
+  // color: #E00800;
 }
 .affix .row {
   display: flex;
@@ -199,7 +199,6 @@ p {
   width: 100%; */
   display: inline-block;
   vertical-align: text-top;
-  margin-top: 7px;
   font-size: 15px;
   li{
     display: inline-block;
@@ -215,7 +214,7 @@ p {
 }
 .menu ul li a {
   font-size: 15px;
-  color: #f16e00;
+  color: #E00800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -224,7 +223,7 @@ p {
 }
 .menu ul li a:hover,
 .menu ul li a:focus {
-  color: #fff;
+  color: #000;
 }
 .menu .col-sm-2{
  
@@ -267,7 +266,7 @@ p {
 }
 .alert-warning .close {
   opacity: 1;
-  color: #f16e00;
+  color: #E00800;
   outline: 0;
   box-shadow: none;
   text-shadow: none;
@@ -280,12 +279,12 @@ p {
   color: #fff;
   border: none;
   border-radius: 3px;
-  background-color: #f16e00;
+  background-color: #E00800;
   padding: 8px 16px;
   margin: 6px 0 10px;
 }
 .alert-warning a {
-  color: #f16e00;
+  color: #E00800;
   font-size: 12px;
 }
 /*
@@ -340,11 +339,11 @@ p {
   display: block;
   font-size: 40px;
   font-weight: 700;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 5px;
 }
 .prayer{
-  color: #f16e00;
+  color: #E00800;
 }
 /*
   #Most Viewed
@@ -359,7 +358,7 @@ p {
   display: block;
   font-size: 40px;
   font-weight: 700;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 5px;
 }
 .most-viewed .heading {
@@ -504,7 +503,7 @@ p {
 .single-content .heading h2 {
   display: inline-block;
   font-size: 40px;
-  color: #f16e00;
+  color: #E00800;
   margin: 0;
 }
 .single-content .item {
@@ -534,7 +533,7 @@ p {
 
 .category-content ul > h5 {
   font-size: 23px;
-  color: #f16e00;
+  color: #E00800;
   padding: 20px;
   margin-top: 0;
   margin-bottom: 20px;
@@ -556,7 +555,7 @@ p {
   position: absolute;
   right: 15px;
   font-size: 9px;
-  color: #f16e00;
+  color: #E00800;
   top: 11px;
 }
 .category-content .panel:last-of-type {
@@ -588,7 +587,7 @@ p {
   position: absolute;
   right: -13px;
   font-size: 9px;
-  color: #f16e00;
+  color: #E00800;
   top: 3px;
 }
 /*
@@ -660,7 +659,7 @@ p {
   border-radius: 0;
   padding: 10px 20px;
   color: #fff;
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .sub-phase .confirm .btns {
   margin-top: 20px;
@@ -763,7 +762,7 @@ p {
     vertical-align: text-top;
   }
   .menu img {
-    // width: 100%;
+    width: 100%;
   }
   .single-header {
     height: 60vh;
@@ -876,7 +875,7 @@ p {
 }
 .side-nav h3 {
   font-size: 25px;
-  color: #f16e00;
+  color: #E00800;
   padding-right: 20px;
   margin-bottom: 20px;
 }
@@ -889,7 +888,7 @@ p {
   line-height: 60px;
   text-align: center;
   font-size: 36px;
-  color: #f16e00;
+  color: #E00800;
   z-index: 999;
 }
 .side-nav .caret {
@@ -910,7 +909,7 @@ p {
 }
 .side-nav > ul > li > a:hover,
 .side-nav > ul > li > a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 .side-nav li > a {
   color: #fff;
@@ -921,7 +920,7 @@ p {
 }
 .side-nav li > a:hover,
 .side-nav li > a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 .side-nav li > ul > li > a {
   position: relative;
@@ -954,7 +953,7 @@ p {
 }
 .side-nav .wrapper-level .back a {
   font-size: 14px;
-  color: #f16e00;
+  color: #E00800;
   font-weight: 600;
   border: none;
 }
@@ -986,7 +985,7 @@ p {
   top: 0;
   width: 100%;
   padding: 15px 0;
-  background-color: #000;
+  background-color: #f2f0ed;
 }
 .affix .row {
   display: flex;
@@ -998,7 +997,7 @@ p {
 }
 .menu ul li a {
   font-size: 14px;
-  color: #f16e00;
+  color: #E00800;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1006,7 +1005,7 @@ p {
 }
 .menu ul li a:hover,
 .menu ul li a:focus {
-  color: #fff;
+  color: #000;
 }
 .menu img {
   opacity: 0;
@@ -1020,8 +1019,8 @@ p {
 .affix img {
   opacity: 1;
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 134px;
+  height: 34px;
 }
 /*
   #Alert
@@ -1045,7 +1044,7 @@ p {
 }
 .alert-warning .close {
   opacity: 1;
-  color: #f16e00;
+  color: #E00800;
   outline: 0;
   box-shadow: none;
   text-shadow: none;
@@ -1058,12 +1057,12 @@ p {
   color: #fff;
   border: none;
   border-radius: 3px;
-  background-color: #f16e00;
+  background-color: #E00800;
   padding: 8px 24px;
   margin: 6px 0 10px;
 }
 .alert-warning a {
-  color: #f16e00;
+  color: #E00800;
 }
 /*
   #Intro
@@ -1117,7 +1116,7 @@ p {
   display: block;
   font-size: 30px;
   font-weight: 700;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 5px;
 }
 /*
@@ -1133,7 +1132,7 @@ p {
   display: block;
   font-size: 35px;
   font-weight: 700;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 5px;
 }
 .most-viewed .heading {
@@ -1163,7 +1162,7 @@ p {
   margin-bottom: 0;
 }
 .most-viewed .item .free {
-  background-color: #f16e00;
+  background-color: #E00800;
   color: #fff;
   padding: 15px 20px;
   position: absolute;
@@ -1250,7 +1249,7 @@ p {
   margin-top: 12px;
 }
 .single-header .breadcrumb li.active {
-  color: #f16e00;
+  color: #E00800;
 }
 .single-header .breadcrumb > li + li:before {
   content: "\e113";
@@ -1277,7 +1276,7 @@ p {
 .single-content .heading h2 {
   display: inline-block;
   font-size: 40px;
-  color: #f16e00;
+  color: #E00800;
   margin: 0;
 }
 .single-content .item {
@@ -1289,7 +1288,7 @@ p {
   position: relative;
 }
 .single-content .item a .free {
-  background-color: #f16e00;
+  background-color: #E00800;
   color: #fff;
   padding: 8px 20px;
   position: absolute;
@@ -1318,7 +1317,7 @@ p {
   font-size: 28px;
   max-width: 100%;
   margin: 20px 0 10px;
-  color: #f16e00;
+  color: #E00800;
   font-weight: bold;
 }
 /*
@@ -1326,7 +1325,7 @@ p {
 */
 .category-content ul > h5 {
   font-size: 23px;
-  color: #f16e00;
+  color: #E00800;
   padding: 20px;
   margin-top: 0;
   margin-bottom: 20px;
@@ -1456,7 +1455,7 @@ p {
   border-radius: 0;
   padding: 10px 20px;
   color: #fff;
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .sub-phase .btn:disabled {
   display: block;
@@ -1468,7 +1467,7 @@ p {
   border-radius: 0;
   padding: 10px 20px;
   color: #fff;
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .sub-phase .confirm .btns {
   margin-top: 20px;
@@ -1496,7 +1495,7 @@ p {
 }
 .sub-phase .terms h4 {
   font-size: 22px;
-  color: #f16e00;
+  color: #E00800;
   margin-top: 25px;
   margin-bottom: 15px;
 }
@@ -1560,7 +1559,7 @@ p {
   position: relative;
   display: inline-block;
   font-size: 28px;
-  color: #f16e00;
+  color: #E00800;
   margin: 0;
 }
 .prayer-times .header h2:before {
@@ -1578,7 +1577,7 @@ p {
 .prayer-times .header .dropdown .btn-default:hover,
 .prayer-times .header .dropdown .btn-default:focus {
   color: #fff;
-  background-color: #f16e00;
+  background-color: #E00800;
   border: none;
   border-radius: 3px;
   padding: 10px 45px;
@@ -1637,7 +1636,7 @@ p {
   #Start Footer
 */
 footer {
-  background-color: #000;
+  background-color: #2c2c2c;
   padding: 30px 0 25px;
   border-radius: 40px 40px 0px 0px;
 
@@ -1674,7 +1673,7 @@ footer ul li a {
 }
 footer ul li a:hover,
 footer ul li a:focus {
-  color: #f16e00;
+  color: #E00800;
 }
 footer ul.list-inline li a {
   font-size: 20px;
@@ -1736,7 +1735,7 @@ footer .sub-footer span {
     margin: auto;
   }
   .menu img {
-    // width: 100%;
+    width: 100%;
   }
   .single-header {
     // height: 75vh;
@@ -1770,9 +1769,9 @@ footer .sub-footer span {
   .prayer-times .header .dropdown .btn-default,
   .prayer-times .header .dropdown .btn-default:hover,
   .prayer-times .header .dropdown .btn-default:focus {
-    color: #f16e00;
+    color: #E00800;
     background-color: transparent;
-    border: 2px solid #f16e00;
+    border: 2px solid #E00800;
   }
   .prayer-times .header .dropdown .btn-default .caret {
     position: absolute;
@@ -1814,12 +1813,12 @@ p.small {
   margin: 0 auto 10px;
 }
 p.small a {
-  color: #f16e00;
+  color: #E00800;
   font-weight: bold;
   text-decoration: underline;
 }
 .alert-warning p.heighlight {
-  color: #f16e00;
+  color: #E00800;
 }
 .more {
   font-size: 17px;
@@ -1827,14 +1826,14 @@ p.small a {
   width: 100%;
   position: relative;
   text-align: center;
-  color: #f16e00;
+  color: #E00800;
   margin-top: 15px;
   transition: all 0.3s ease-in-out;
 }
 .more:hover,
 .more:focus {
   opacity: 0.8;
-  color: #f16e00;
+  color: #E00800;
 }
 .terms-nav {
   border: none;
@@ -1930,7 +1929,7 @@ p.small a {
   padding: 7px 12px;
   border-radius: 3px;
   background-color: #f2f2f2;
-    color: #f16e00;
+    color: #ad0600;
 
 }
 .ramdan-content .content-read .item-col:after {
@@ -1989,7 +1988,7 @@ p.small a {
 .ramdan-content .prayer-box h3 {
   display: inline-block;
   color: #fff;
-  background-color: #f16e00;
+  background-color: #E00800;
   padding: 10px 20px;
   font-size: 20px;
   border-radius: 3px;
@@ -2007,10 +2006,10 @@ p.small a {
   // color: #fff;
   padding: 7px 0;
   border-radius: 3px;
-  // background-color: #f16e00;
+  // background-color: #E00800;
   text-align: center;
   background-color: #f2f2f2;
-  color: #f16e00;
+  color: #ad0600;
 
 }
 .ramdan-content .prayer-box ul li:nth-child(3) {
@@ -2154,7 +2153,7 @@ p.small a {
   margin: 20px auto;
 }
 .progress-bar {
-  background-color: #f16e00 !important;
+  background-color: #E00800 !important;
   margin-bottom: 2px;
 }
 .progress-title {
@@ -2163,7 +2162,7 @@ p.small a {
 }
 .progress-more {
   margin-top: 3px;
-  color: #f16e00;
+  color: #E00800;
   font-weight: bold;
   float: left;
   font-size: 14px;
@@ -2188,7 +2187,7 @@ p.small a {
 }
 .progress-less {
   margin-top: 3px;
-  color: #f16e00;
+  color: #E00800;
   font-weight: bold;
   float: left;
   font-size: 14px;
@@ -2211,7 +2210,7 @@ td {
   // display: none;
 }
 .table-void {
-  background-color: #f16e00;
+  background-color: #E00800;
 }
 .not-bold {
   color: #444444;
@@ -2272,7 +2271,7 @@ td {
   width: 320px;
   margin: auto;
   text-align: right;
-  color: #f16e00;
+  color: #E00800;
 }
 .upload-video-input {
   width: 320px;
@@ -2282,7 +2281,7 @@ td {
 .upload-video-label {
   display: block;
   font-size: 12px;
-  color: #f16e00;
+  color: #E00800;
   margin-bottom: 1px;
 }
 .upload-video-textarea {
@@ -2300,11 +2299,11 @@ td {
   width: 320px;
   padding: 5px;
   margin: 20px auto;
-  border-color: #f16e00;
+  border-color: #E00800;
 }
 .video-link,
 .video-link:hover {
-  color: #f16e00;
+  color: #E00800;
 }
 .like-video {
   margin: auto;
@@ -2364,7 +2363,7 @@ td {
   float: left;
   background: black;
   color: #fff;
-  border: solid 2px #f16e00;
+  border: solid 2px #E00800;
   padding: 5px 29px;
   margin: 2px;
 }
@@ -2452,7 +2451,7 @@ td {
     .ramdan-content .prayer-box h3 {
       display: inline-block;
       // color: #fff;
-      // background-color: #f16e00;
+      // background-color: #E00800;
       padding: 10px 20px;
       font-size: 20px;
       border-radius: 3px;
@@ -2475,10 +2474,10 @@ td {
       // color: #fff;
       padding: 7px 0;
       border-radius: 3px;
-      // background-color: #f16e00;
+      // background-color: #E00800;
       text-align: center;
       background-color: #f2f2f2;
-      color: #f16e00;
+      color: #ad0600;
     }
     .ramdan-content .prayer-box ul li:nth-child(3) {
       text-transform: uppercase;
