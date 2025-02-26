@@ -214,7 +214,11 @@ const Navbar = () => {
          </div>  
        </div>
        <div className="col-sm-2 col-xs-3">
+<<<<<<< HEAD
         <a href="index.html" className="menu-logo"><img src="/images/ET_Logo.png" className="img-responsive" alt="logo"/></a>   
+=======
+        <a href="index.html" className="menu-logo"><img src="/images/OrangeLogo.png" className="img-responsive" alt="logo"/></a>   
+>>>>>>> f3a15b1a813e62e78313c3d02f854c13b645f0dd
        </div>      
       </div>     
      </div>
