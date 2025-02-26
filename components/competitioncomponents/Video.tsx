@@ -175,7 +175,7 @@ const formattedDate = date.toLocaleString('ar-EG', options);
       </video>
       </div>
       <div className='video-info'>
-      <span style={{cursor:"pointer", color:"#e00800"}} onClick={()=>addVoteRedirect( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
+      <span style={{cursor:"pointer", color:"#f16e00"}} onClick={()=>addVoteRedirect( videodetails.VideoId)}>{Liked? <AiFillHeart/>: <AiOutlineHeart /> }</span>{videodetails.VotesCount}
         
         {/* <span><BiShare /> </span>3k */}
         {/* <span><PiEyeBold /> </span>10k */}
