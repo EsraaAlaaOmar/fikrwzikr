@@ -12,7 +12,7 @@
 }
 .select-div{
     // padding:10px 20px;
-    background-color: #e00800;
+    background-color:#f16e00;
     width: 325px;
     margin: auto;
 
@@ -27,8 +27,8 @@
     color: #000;
     font-size: 18px;
     outline: none;
-    background-color: #e00800;
-    border-color: #e00800;
+    background-color:#f16e00;
+    border-color:#f16e00;
     color: #fff;
     border-radius: 20px;
     option{
@@ -52,7 +52,7 @@
     padding: 50px auto;
     border-radius: 50%;
     font-size: 30px;
-    background-color: #f2f2f2;
+    background-color: #fff;
     color: #000;
     font-weight: bold;
     border: solid 2px #fff;
@@ -61,19 +61,19 @@
     height: 150px;
     margin: 10px 0;
     border-radius: 30px 10px 30px 30px !important;
-    border:solid 1px #e00800;
+    border:solid 1px#f16e00;
     cursor: pointer;
     outline: none;
   
     &:hover{
-        border-color: #e00800;
+        border-color:#f16e00;
     } 
 }
 .sbha-reset{
     color: #999595;
 
     span{
-        color: #e00800;
+        color:#f16e00;
         font-weight: bold;
         cursor: pointer;
     
