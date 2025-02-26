@@ -9,7 +9,7 @@ const SingleHeader: React.FC<props> = ({pageName}) => {
     <div className="single-header category-header">
      <div className=" text-center">
       <div className="animatable fadeInUp" style={{width: '100vw'}}>     
-       <a href="https://ka2naktraho.com/Index"><img src="images/menu-logo.png" className="center-block" alt="logo" /></a>     
+       <a href="http://fikrwzikr.com/Index"><img src="images/menu-logo.png" className="center-block" alt="logo" /></a>     
        <h3>{pageName}</h3>       
       </div>      
      </div>    

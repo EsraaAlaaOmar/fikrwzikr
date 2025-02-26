@@ -150,7 +150,7 @@ interface Props {
         {/* {pendingVideo&&<div className='pending-msg'>تم اضافة فيديو بعنوان {pendingVideo} والفيديو قيد المراجعة </div>} */}
         <div className='page-hierarchy'>
              <span className='parent'>
-             <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
+             <a href="http://fikrwzikr.com/Index" style={{color:"#000"}}>
                 الرئيسية 
              </a>
            <span className='arow-icon'><MdOutlineKeyboardArrowLeft /></span>

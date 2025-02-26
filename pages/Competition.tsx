@@ -67,7 +67,7 @@ const Competition = () => {
       
           <div className='page-hierarchy'>
                 <span className='parent'>
-                <a href="https://ka2naktraho.com/Index" style={{color:"#000"}}>
+                <a href="http://fikrwzikr.com/Index" style={{color:"#000"}}>
                             الرئيسية 
                         </a>
                         

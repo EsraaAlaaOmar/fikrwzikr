@@ -19,28 +19,28 @@ const index = () => {
       <div className="row">
       <div className="col-md-4 item">
                       <a href="VideoDetails?id=10229">
-                          <img alt="من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين..." className="img-responsive" src="https://ka2naktraho.com/contents/Content/islamic-10229.jpg" style={{opacity: "1", visibility: "visible"}}/>
+                          <img alt="من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين..." className="img-responsive" src="http://fikrwzikr.com/contents/Content/islamic-10229.jpg" style={{opacity: "1", visibility: "visible"}}/>
                           <h3>من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين.. ... </h3>
                           <span className="free" style={{opacity: "1", visibility: "visible", display: "none"}}></span>
                       </a>
                   </div>
                   <div className="col-md-4 item">
                       <a href="VideoDetails?id=10229">
-                          <img alt="من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين..." className="img-responsive" src="https://ka2naktraho.com/contents/Content/islamic-10229.jpg" style={{opacity: "1", visibility: "visible"}}/>
+                          <img alt="من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين..." className="img-responsive" src="http://fikrwzikr.com/contents/Content/islamic-10229.jpg" style={{opacity: "1", visibility: "visible"}}/>
                           <h3>من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين.. ... </h3>
                           <span className="free" style={{opacity: "1", visibility: "visible", display: "none"}}></span>
                       </a>
                   </div>
                   <div className="col-md-4 item">
                       <a href="VideoDetails?id=10226">
-                          <img alt="القارئ/  محمد النجم ثاقب - الفاتحة وأول البقرة" className="img-responsive" src="https://ka2naktraho.com/contents/Content/islamic-10226.jpg" style={{opacity: "1", visibility: "visible"}}/>
+                          <img alt="القارئ/  محمد النجم ثاقب - الفاتحة وأول البقرة" className="img-responsive" src="http://fikrwzikr.com/contents/Content/islamic-10226.jpg" style={{opacity: "1", visibility: "visible"}}/>
                           <h3>القارئ/  محمد النجم ثاقب - الفاتحة وأول البقرة </h3>
                           <span className="free" style={{opacity: "1", visibility: "visible"}}>مجاناً</span>
                       </a>
                   </div>
                   <div className="col-md-4 item">
                       <a href="VideoDetails?id=10229">
-                          <img alt="من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين..." className="img-responsive" src="https://ka2naktraho.com/contents/Content/islamic-10229.jpg" style={{opacity: "1", visibility: "visible"}}/>
+                          <img alt="من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين..." className="img-responsive" src="http://fikrwzikr.com/contents/Content/islamic-10229.jpg" style={{opacity: "1", visibility: "visible"}}/>
                           <h3>من سورة البقرة بصوت القارئ/ أولي الأمر زين الدين.. ... </h3>
                           <span className="free" style={{opacity: "1", visibility: "visible", display: "none"}}></span>
                       </a>
