@@ -45,7 +45,7 @@ const Competition = () => {
   }, []);
   const fetchVideos = async () => {
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/GetUserID?MobileNumber=${Msdn}`,
+      `https://vf.alerting.services/fekrwzekrOrangeApis/Users/GetUserID?MobileNumber=${Msdn}`,
       {},
       {
     
@@ -106,8 +106,8 @@ const Competition = () => {
            
         </div >
         </div>
-        <NewCompPaginationv3  itemsPerPage={8} Msdn={Msdn} userId={data}/>
-        <NewCompPagination  itemsPerPage={8} Msdn={Msdn} userId={data}/>
+        {/* <NewCompPaginationv3  itemsPerPage={8} Msdn={Msdn} userId={data}/>
+        <NewCompPagination  itemsPerPage={8} Msdn={Msdn} userId={data}/> */}
 
 <PaginationCom itemsPerPage={8} Msdn={Msdn} userId={data}/>
 

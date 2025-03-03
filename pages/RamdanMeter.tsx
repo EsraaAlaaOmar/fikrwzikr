@@ -28,7 +28,7 @@ const RamdanMeter = () => {
     const[showquran,setShowQuran] = useState(false)
  
     const fetchData = async () => {
-      const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserProfile?MobileNumbr=${Msdn}`, {
+      const response = await axios.post(`https://vf.alerting.services/fekrwzekrOrangeApis/Users/GetUserProfile?MobileNumbr=${Msdn}`, {
         headers: {
           'content-type': 'text/json'
         }

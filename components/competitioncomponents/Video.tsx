@@ -85,7 +85,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
  
   try {
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!Liked}`,
+      `https://vf.alerting.services/fekrwzekrOrangeApis/Users/AddVote?VideoId=${videoId}&MobileNumber=${Msdn}&Vote=${!Liked}`,
       null, // Since there's no request body, pass null
       {
         headers: {

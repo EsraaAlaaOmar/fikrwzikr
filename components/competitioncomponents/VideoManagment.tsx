@@ -25,7 +25,7 @@ interface VideoData {
     const ApproveorRejectVideo = async (VideoId:number,status:number) => {
 
       await axios.post(
-        `https://vf.alerting.services/fekrwzekrApis/Users/ApproveorRejectVideo?VideoID=${VideoId}&Status=${status}
+        `https://vf.alerting.services/fekrwzekrOrangeApis/Users/ApproveorRejectVideo?VideoID=${VideoId}&Status=${status}
         `,
         {},
         {

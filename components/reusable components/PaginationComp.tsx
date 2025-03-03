@@ -32,7 +32,7 @@ interface Props {
 
   const fetchData = async (page: number) => {
 
-    const response = await axios.get(`https://vf.alerting.services/fekrwzekrApis/Users/GetAllVideos?Page=${page + 1}&PageSize=${itemsPerPage}`, {
+    const response = await axios.get(`https://vf.alerting.services/fekrwzekrOrangeApis/Users/GetAllVideos?Page=${page + 1}&PageSize=${itemsPerPage}`, {
       headers: {
         'content-type': 'text/json'
       }

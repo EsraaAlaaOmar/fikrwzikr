@@ -61,7 +61,7 @@ const handleClickOutside = () => {
 const DeleteVideo = async (VideoId:number) => {
 
   await axios.post(
-    `https://vf.alerting.services/fekrwzekrApis/Users/DeleteVideo?VideoId=${VideoId}
+    `https://vf.alerting.services/fekrwzekrOrangeApis/Users/DeleteVideo=${VideoId}
     `,
     {},
     {

@@ -26,7 +26,7 @@ var pageSize=10;
 
   const fetchVideos = async () => {
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/GetAllPendingVideos?Page=${currentPage}&PageSize=${pageSize}`,
+      `https://vf.alerting.services/fekrwzekrOrangeApis/Users/GetAllPendingVideos?Page=${currentPage}&PageSize=${pageSize}`,
       {},
       {
     

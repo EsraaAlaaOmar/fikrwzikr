@@ -97,7 +97,7 @@ const AddVideoComp=()=>{
 
   const addVideoMutation = useMutation(
       () =>
-        axios.post('https://vf.alerting.services/fekrwzekrApis/Users/Addvideo', reqdata, {
+        axios.post('https://vf.alerting.services/fekrwzekrOrangeApis/Users/Addvideo', reqdata, {
           headers: { 'Content-Type': 'multipart/form-data' },
         }),
     {
@@ -159,7 +159,7 @@ const AddVideoComp=()=>{
  
   const fetchVideos = async () => {
     const response = await axios.post(
-      `https://vf.alerting.services/fekrwzekrApis/Users/GetMyVdeos?MobileNumber=${Msdn}`,
+      `https://vf.alerting.services/fekrwzekrOrangeApis/Users/GetMyVdeos?MobileNumber=${Msdn}`,
       {},
       {
     

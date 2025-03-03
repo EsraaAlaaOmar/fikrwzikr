@@ -84,7 +84,7 @@ interface UploadProps {
      
   console.log(formData)
       try {
-        const response = await axios.post("https://vf.alerting.services/fekrwzekrApis/Users/Addvideo", reqdata,{ headers: {
+        const response = await axios.post("https://vf.alerting.services/fekrwzekrOrangeApis/Users/Addvideo", reqdata,{ headers: {
      
           'content-type': 'text/json'
         }});

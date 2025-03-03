@@ -26,7 +26,7 @@ const Ramdan = () => {
   const[addProfileCondition , setAddProfileConsition] =useState(false)
 
   const fetchData = async () => {
-    const response = await axios.post(`https://vf.alerting.services/fekrwzekrApis/Users/GetUserTodayProfile?MobileNumbr=${Msdn}`, {
+    const response = await axios.post(`https://vf.alerting.services/fekrwzekrOrangeApis/Users/GetUserTodayProfile?MobileNumbr=${Msdn}`, {
       headers: {
         'content-type': 'text/json'
       }
@@ -90,7 +90,7 @@ const addProfile = async () => {
   // event.preventDefault(); 
   setAddProfileConsition(false)
     try {
-      const response = await axios.post("https://vf.alerting.services/fekrwzekrApis/Users/AddProfile",requestData ,{ headers: {
+      const response = await axios.post("https://vf.alerting.services/fekrwzekrOrangeApis/Users/AddProfile",requestData ,{ headers: {
    
         'content-type': 'text/json'
       }});
