@@ -109,7 +109,7 @@ const Video: React.FC<VideoProps> = ({ videodetails, refetchVideos,Msdn,userId }
   }
 };    
 
- const addVoteRedirect =(videoId: number)=>  !Msdn || Msdn=='NA' || Msdn=='undefined' ?  router.push(`http://fikrwzikr.com/SignIn`) :addVote(videoId);
+ const addVoteRedirect =(videoId: number)=>  !Msdn || Msdn=='NA' || Msdn==="000" || Msdn=='undefined' ?  router.push(`http://fikrwzikr.com/SignIn`) :addVote(videoId);
 
 //     const { isLoading, data, isError, error, isFetching, refetch } = useQuery("votes", addVote)
 //  console.log(error)
@@ -160,7 +160,7 @@ const formattedDate = date.toLocaleString('ar-EG', options);
       <div className='video-box'>
      
         <div className='rel'>
-          <span className='play-icon' onClick={()=>{ !Msdn || Msdn=='NA' || Msdn=='undefined' ?  router.push(`http://fikrwzikr.com/SignIn`) :setPlay(true)}}><BsPlay /></span>
+          <span className='play-icon' onClick={()=>{ !Msdn || Msdn=='NA' || Msdn==="000" || Msdn=='undefined' ?  router.push(`http://fikrwzikr.com/SignIn`) :setPlay(true)}}><BsPlay /></span>
           <video
         className="competetion-video"
            

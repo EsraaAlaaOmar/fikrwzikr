@@ -117,7 +117,7 @@ const handleCheckboxChange = async (event:any) => {
       ...prevValues,
       [id]: checked,
     }));
-    !Msdn || Msdn=='NA' || Msdn=='undefined' ? router.push(`http://fikrwzikr.com/SignIn` ):setAddProfileConsition(true)
+    !Msdn || Msdn=='NA' || Msdn==="000" || Msdn=='undefined' ? router.push(`http://fikrwzikr.com/SignIn` ):setAddProfileConsition(true)
    
   };
 {addProfileCondition&& addProfile()}
