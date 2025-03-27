@@ -219,7 +219,7 @@ const AddVideoComp=()=>{
         </div>
        {data?.length>= 10 ?<div className="videos-limit">عفوا لقد تجاوزت العدد المسموح به للمستخدم الواحد وهو 10 فيديوهات</div>:
         <form onSubmit={(e) => addVideo(e)} className='container'>
-        {addVideoMutation.isLoading &&<div className="overlay"><div className="overlay-text">   <img  alt='loading'  src="/images/Rolling-2.gif"/> </div> </div>}
+        {addVideoMutation.isLoading &&<div className="overlay"><div className="overlay-text">   <img  alt='loading'  src="/images/Rolling.gif"/> </div> </div>}
         <div className='right-section'>
             <div className='page-title'>
                <div className="upload-video-input">
