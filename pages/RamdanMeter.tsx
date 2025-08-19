@@ -46,7 +46,7 @@ const RamdanMeter = () => {
    var _FurdDVView=arr?._FurdDVView;
    var _FurdRatio=arr?._FurdRatio;
    var  _SunahDVView=arr?._SunahDVView;
-   var  _SunahRatio=arr?._SunahRatio;
+   var  _SunahRatio=arr?._SunahRatio; 
    var _QuranVIEW=arr?._QuranVIEW;
    var _QuranRatio=arr?._QuranRatio;
    var _Zakaa=arr?._Zakaa;
@@ -81,7 +81,7 @@ const RamdanMeter = () => {
    السنن
  </div>
  <div className="progress">
-   <div className="progress-bar" role="progressbar" style={{width: `${_SunahRatio} %`}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
+   <div className="progress-bar" role="progressbar"  style={{width:`${_SunahRatio}%`}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}></div>
  </div>
  {!showsonan && <div id="prodress-sonan-more"className="progress-more" onClick={()=>!Msdn || Msdn=='NA' || Msdn==="000" || Msdn=='undefined' ? router.push(`http://fikrwzikr.com/SignIn` ) :setShowSonan(true)} >
   اعرف المزيد <span className='arrow'><BsArrowUpLeft />
