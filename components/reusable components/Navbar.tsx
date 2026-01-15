@@ -214,7 +214,7 @@ const Navbar = () => {
          </div>  
        </div>
        <div className="col-sm-2 col-xs-3">
-        <a href="https://www.orange.eg/ar/" className="menu-logo"><img src="/images/OrangeLogo.png" className="img-responsive" alt="logo"/></a>   
+        <a href="http://fikrwzikr.com/" className="menu-logo"><img src="/images/OrangeLogo.png" className="img-responsive" alt="logo"/></a>   
        </div>      
       </div>     
      </div>
