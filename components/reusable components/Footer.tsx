@@ -26,9 +26,9 @@ const Footer = () => {
       <Col md={4}>
        <h3>عن الموقع</h3>
        <ul className="list-unstyled">
-        <li><a href="About">وصف الموقع</a></li><br/>
-        <li><a href="Terms">الشروط و الأحكام</a></li><br/>
-        <li><a href="UnSubConfirm">الغاء الاشتراك</a></li>   
+        <li><a href="http://fikrwzikr.com/About">وصف الموقع</a></li><br/>
+        <li><a href="http://fikrwzikr.com/Terms">الشروط و الأحكام</a></li><br/>
+        <li><a href="http://fikrwzikr.com/UnSubConfirm">الغاء الاشتراك</a></li>   
        </ul> 
       </Col> 
       <Col md={4}>
