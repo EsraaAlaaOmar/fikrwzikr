@@ -174,8 +174,21 @@ const getTime = (timeString: string) => {
 };
 
 console.log(getTime("13:50"));
-var date =new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now())
 
+var today = new Date();
+
+// ناقص يوم واحد
+today.setDate(today.getDate() - 1);
+var date = new Intl.DateTimeFormat(
+  'ar-EG-u-ca-islamic',
+  {
+    day: 'numeric',
+    month: 'long',
+    // weekday: 'long',
+    year: 'numeric',
+    timeZone: 'Africa/Cairo'
+  }
+).format(new Date(today));
 
 useEffect(() => {
   if (!pofileData) return; // Return if data is not available yet
