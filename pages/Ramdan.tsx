@@ -178,13 +178,13 @@ console.log(getTime("13:50"));
 var today = new Date();
 
 // ناقص يوم واحد
-today.setDate(today.getDate()-1);
+today.setDate(today.getDate());
 var date = new Intl.DateTimeFormat(
   'ar-EG-u-ca-islamic',
   {
     day: 'numeric',
     month: 'long',
-    // weekday: 'long',
+    weekday: 'long',
     year: 'numeric',
     timeZone: 'Africa/Cairo'
   }
